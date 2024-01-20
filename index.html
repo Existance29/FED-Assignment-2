@@ -3,11 +3,50 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
   </head>
-  <body>
+  <body>   
+
+    <header id="header">               <!---Header section--->
+      <div class="navbar">   
+        <div class="logo">  <!---Logo--->
+          <img src="Images/logo.png" width="125px">
+        </div>
+        <!-----Navigation bar------->
+        <nav>
+          <ul id="MenuItems">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Products</a></li>
+            <li><a href="tours.html">About</a></li>
+            <li><a href="merch.html">Contact</a></li>
+          </ul>
+        </nav>
+        <!-----Navigation bar icons------->
+        <div class="nav-icon">
+          <a href="loginpage.html"><i class='bx bx-user'></i></a>
+          <a href="cart.html"><i class='bx bx-cart'></i></a>
+        </div>
+        <div class='bx bx-menu' id="menu-icon" onclick="menutoggle()"></div> <!-----Use javascript function------>
+      </div>
+      <!----End of navigation bar----------->
+    </header> <!-----End of header section------>
+    
+    <!------Intro video section-------->
+    <div class="intro-video">
+      <video muted autoplay loop id="big"> <!---Video for big screens-->
+        <source src="Videos/Homepage-video-1.mp4" type="video/mp4">
+      </video>
+      <video muted autoplay loop id="small"> <!---Video for smaller screens-->
+        <source src="Videos/Homepage-video-2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!------End of intro video section-------->
+
+
+
+
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script.js"></script>

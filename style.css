@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}  
+body { /*Setting the entire body to be the Poppins font from google fonts*/
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/*-----------------------Start of header styling------------------------*/
+
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0%;
+    right: 0;
+    z-index: 1000;
+    padding: 20px;
+    justify-content: space-between;
+    background-color: white;
+}
+
+/*Styling the navigation bar in header*/
+.navbar {
+    display: flex; 
+    align-items: center;
+    padding: 20px;
+  }
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul a:hover{
+    color: #001689;
+}
+
+.nav-icon a {
+    font-size: 30px;
+}
+
+.nav-icon a:hover{
+    color: #001689;
+}
+
+/*End of navigation bar styling*/
+
+
+/*-----------------------End of header styling------------------------*/
+
+.intro-video {
+    display: flex;
+  }
+
+.intro-video video { /*Setting the video to be 100% of the width of the screen*/
+width: 100%;
+}
+
+.intro-video #small { /*Hiding the small video when screen is greater than 600px*/
+display: none;
+}
+
+@media only screen and (max-width: 600px) { /*Hiding the big video when screen is less than 600px and showing the small video instead*/
+.intro-video #big{
+    display: none;
+}
+.intro-video #small {
+    display: block;
+}
+
+}
