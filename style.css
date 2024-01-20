@@ -2,13 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
 }  
 body { /*Setting the entire body to be the Poppins font from google fonts*/
     font-family: 'Poppins', sans-serif;
+    color: white;
 }
 
 
@@ -29,7 +26,7 @@ header {
 /*Styling the navigation bar in header*/
 .navbar {
     display: flex; 
-    align-items: center;
+    align-items: right;
     padding: 20px;
   }
 
@@ -65,16 +62,18 @@ nav ul a:hover{
 
 /*-----------------------End of header styling------------------------*/
 
+
+/*-----------------------Start of intro styling------------------------*/
 .intro-video {
     display: flex;
-  }
+}
 
 .intro-video video { /*Setting the video to be 100% of the width of the screen*/
-width: 100%;
+    width: 100%;
 }
 
 .intro-video #small { /*Hiding the small video when screen is greater than 600px*/
-display: none;
+    display: none;
 }
 
 @media only screen and (max-width: 600px) { /*Hiding the big video when screen is less than 600px and showing the small video instead*/
@@ -84,5 +83,28 @@ display: none;
 .intro-video #small {
     display: block;
 }
-
 }
+
+
+/* Centered text */
+.center-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 100px;
+    font-weight: bold;
+    mix-blend-mode: difference;
+}
+
+    
+
+a {
+    text-decoration: none;
+    color: #555;
+}
+
+p {
+    color: #555
+}
+
