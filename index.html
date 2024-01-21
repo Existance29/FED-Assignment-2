@@ -11,9 +11,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
-  <body>   
-
-    <header id="header">               <!---Header section--->
+  <body class="text-white">   
+    <header id="header">  <!---Header section--->
       <div class="navbar">   
         <div class="logo">  <!---Logo--->
           <img src="Images/logo.png" width="125px">
@@ -37,20 +36,60 @@
       <!----End of navigation bar----------->
     </header> <!-----End of header section------>
 
-    <!------Intro Hero video section-------->
-    <div class="intro-video">
-      <video muted autoplay loop id="big"> <!---Video for big screens-->
-        <source src="Videos/Homepage-video-1.mp4" type="video/mp4">
-      </video>
-      <video muted autoplay loop id="small"> <!---Video for smaller screens-->
-        <source src="Videos/Homepage-video-2.mp4" type="video/mp4">
-      </video>
-      <h1 class="center-text">JSB TECH</h1> 
-    </div>
-    <!------End of intro hero video section-------->
+    <main>
+      <!------Intro Hero video section-------->
+      <div class="intro-video">
+        <video muted autoplay loop id="big"> <!---Video for big screens-->
+          <source src="Videos/Homepage-video-1.mp4" type="video/mp4">
+        </video>
+        <video muted autoplay loop id="small"> <!---Video for smaller screens-->
+          <source src="Videos/Homepage-video-2.mp4" type="video/mp4">
+        </video>
+        <h1 class="center-text">JSB TECH</h1> 
+      </div>
+      <!------End of intro hero video section-------->
 
-    <!------Featured products section-------->
-    
+      <!------Games banner section-------->
+      <div class="games-banner">  
+        <div class="grid-container">
+          <div class="content">
+            <h1>PLAY GAMES AND EARN EXCLUSIVE REWARDS!</h1>
+            <p>Stand a chance to earn free vouchers, loyalty points and many more rewards through our in-site games!</p>
+            <a href="games.html" class="btn">Play now!</a>
+          </div>
+        </div>
+      </div>
+      <!------End of Games banner section-------->
+
+      <!------Slideshow section-------->
+      <div class="home-slideshow">
+        <div class="grid-container">
+          <div class="content">
+            <div class="slideshow-container reveal">
+              <div class="mySlides fade">
+                <img src="images/slideshow 1.png" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/slideshow 2.png" style="width:100%">
+              </div>
+              <div class="mySlides fade">
+                <img src="images/slideshow 3.png" style="width:100%">
+              </div>
+            </div>
+            <br>
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+            <br>
+          </div>
+        </div>
+      </div>
+      <!------End of Slideshow section-------->
+
+
+    </main>
 
 
 
