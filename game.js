@@ -60,6 +60,6 @@ function load(){
         document.getElementById("overlay").style.display = "block"
         document.getElementById("finalScore").innerText = score
 
-    }, 10000);
+    }, 30000);
 
 }
