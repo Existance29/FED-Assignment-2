@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="gamestyle.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload="load()"> <!--Trigger the load function-->
+    <!-- A header at the top for the timer and score-->
+    <div class = "header">
+        <label id = "timer">61</label> 
+        <label id = "score">0</label> 
+    </div>
+    <!-- This is the area where the object can spawn in-->
+    <div id = "objectSpawn" class = "objectSpawn"></div>
+    <!-- This contains the overlay that pops up when the game ends-->
+    <div id = "overlay">
+        <div class = "statArea">
+            <label class = "gameOver">Game Over!</label>
+            <!-- Show stats-->
+            <!-- split-flex-row is used to align the label and value on opposite ends-->
+            <div class = "split-flex-row" style="margin-top: 10vh;">
+                <label class = "finalText">Score:</label>
+                <label id = "finalScore" class = "finalText statText">0</label>
+            </div>
+            <div class = "split-flex-row" style="margin-top: 6vh;">
+                <label class = "finalText">Points earned:</label>
+                <label id = "finalScore" class = "finalText statText">0</label>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+  </body>
+</html>
