@@ -19,22 +19,28 @@ header {
     top: 0%;
     right: 0;
     z-index: 1000;
-    background-color: rgba(0,0,0,0);
+    background-color: #1E2532;
     transition: all 1s ease;
 }
 
 .navbar-brand {
-    font-weight: bold; /* Adjust as needed */
+    font-weight: bold; 
 }
 .navbar-nav .nav-link {
     color: #FFF; /* For white text */
 }
 .navbar-nav .nav-link.active {
-    border-bottom: 2px solid #00B2FF; /* Active item underline color */
+    border-bottom: 2px solid #3c4a64; /* Active item underline color */
 }
-.nav-icons {
-    font-size: 1.25rem; /* Adjust size as needed */
+.navbar-nav .nav-link:hover {
+    color: #3c4a64; /* For white text */
+}
+.nav-icons a{
+    font-size: 1.25rem; 
     color: #FFF; /* For white icons */
+}
+.nav-icons a:hover{
+    color: #3c4a64; /* For white icons */
 }
 
 /*End of navigation bar styling*/
@@ -120,7 +126,7 @@ header {
     padding: 5%;
 }
 
-.games-banner .btn {
+.btn {
     background-color: #1E2532;
     color: white;
     border: none;
@@ -132,7 +138,7 @@ header {
     text-decoration: none;
 }
 
-.games-banner .btn:hover {
+.btn:hover {
     background-color: white;
     color: #1E2532;
 }
@@ -157,4 +163,103 @@ header {
     
 
  /*-------------------Start of slideshow styling----------------*/  
-/*-------------------End of slideshow styling----------------*/     
+
+
+/*-------------------End of slideshow styling----------------*/    
+
+/*-------------------Start of product feature styling----------------*/  
+.product-feature {
+    padding: 10%;
+    background-color: #3c4a64;
+    overflow: hidden;
+}
+
+.product-feature img {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+.text-center h1{
+    text-shadow:rgba(0, 0, 0, 0.4);
+}
+
+/*-------------------End of product feature styling----------------*/  
+
+
+/*-------------------Start of PC banner styling----------------*/  
+.pc-banner .grid-container{
+    background: url("Images/PC-banner-1.webp") no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    padding: 10%; 
+    color: white;
+}
+
+.grid-container h1, .grid-container p{
+    text-shadow: 4px 4px 4px #000000;
+}
+
+.grid-container h1{
+    font-size: 3em;
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.grid-container p {
+    font-size: 1em;
+    margin: 0.25em 0 1em;
+}
+
+.grid-container .content {
+    max-width: 70%;
+    padding: 5%;
+}
+
+.grid-container .btn {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+
+/*-------------------Start of Keyboard banner styling----------------*/  
+.keyboard-banner .grid-container{
+    background: url("Images/Keyboard-banner-1.webp") no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    padding: 10%; 
+    color: white;
+}
+
+/*-------------------Start of Mouse banner styling----------------*/  
+.mouse-banner .grid-container{
+    background: url("Images/Mouse-banner-1.png") no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    padding: 10%; 
+    color: white;
+}
+
+
+/*-------------------Start of Audio banner styling----------------*/  
+.audio-banner .grid-container{
+    background: url("Images/Audio-banner-1.jpg") no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    padding: 10%; 
+    color: white;
+}
+
