@@ -7,7 +7,7 @@ body{
     /*draw grid lines */
     background-image:
     linear-gradient(to right, rgb(60, 60, 60) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(60, 60, 60) 1px, black 1px);
+    linear-gradient(to bottom, rgb(60, 60, 60) 1px, #1A1E26 1px);
     /*set the font */
     font-family: 'Poppins', sans-serif;
 }

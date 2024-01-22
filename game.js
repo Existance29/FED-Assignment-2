@@ -3,6 +3,8 @@
 let score = -1;
 let time = 30;
 let gameEnd = false
+let hit = new Audio("./Sounds/menuhover.ogg")
+let finish = new Audio("./Sounds/finish.ogg")
 //generate a random integer between 2 values
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -12,7 +14,7 @@ function getRandomInt(min, max) {
 
 function show_image() {
     if (gameEnd){ return} //prevent it from being clickable after the game has ended
-
+    hit.play()
     var src = "./images/game/object.png"
     //update the score
     score += 1
@@ -52,13 +54,18 @@ function load(){
     setTimeout(function()
     {
         //after 30 seconds, stop the game
+        finish.play()
         gameEnd = true
         clearInterval(interval) //stop updating the timer
         document.getElementById("timer").innerHTML = 0
+        
+        //Bring up the game over popup after a 300ms delay
+        setTimeout(function()
+        {
+            document.getElementById("overlay").style.display = "block"
+            document.getElementById("finalScore").innerText = score
 
-        //Bring up the game over popup
-        document.getElementById("overlay").style.display = "block"
-        document.getElementById("finalScore").innerText = score
+        }, 300);
 
     }, 30000);
 
