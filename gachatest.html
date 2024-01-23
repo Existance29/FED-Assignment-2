@@ -6,13 +6,114 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
-    <!-- Bootstrap and jquery -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-	<button onclick="pull()">Click me</button>
+    <header>  <!---Header section--->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+          <!-- Brand/logo -->
+          <a class="navbar-brand" href="#">
+            <img src="path-to-logo.png" alt="Logo" style="height: 25px;">
+          </a>
+          <!-- Toggler/collapsibe Button for mobile view -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="products.html">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="game.html">Games</a>
+              </li>
+            </ul>
+          </div>
+          <!-- Icons on the right -->
+          <div class="d-flex align-items-center nav-icons">
+            <a href="#" class="nav-icon-link me-3"><i class="bx bx-user"></i></a> <!-- Use appropriate icons -->
+            <a href="#" class="nav-icon-link"><i class="bx bx-cart"></i></a> <!-- Use appropriate icons -->
+          </div>
+        </div>
+      </nav>
+    </header> <!-----End of header section------>
+
+    <main>
+    <!--------------Start of Gacha page-------------->
+    <div class="gacha-page">
+      <!------gacha banner section-------->
+      <div class="gacha-banner">  
+        <div class="grid-container">
+          <div class="content"  data-aos="fade-up">
+            <h1>PLAY GAMES AND EARN EXCLUSIVE REWARDS!</h1>
+            <p>Stand a chance to earn free vouchers, loyalty points and many more rewards through our in-site games!</p>
+          </div>
+        </div>
+      </div>
+      <!------End of gacha banner section-------->
+      
+	    <button onclick="pull()">Click me</button>
+
+    </div>
+
+    <!--------------End of gacha page-------------->
+
+    </main>
+<!--------Footer--------->
+    <footer class="bg-light text-dark pt-4">
+      <div class="container p-3">
+        <div class="row justify-content-center">
+          <div class="col-md-3 col-6 mb-4 text-center">
+            <ul class="list-unstyled">
+              <li><a href="index.html" class="text-dark">HOME</a></li>
+              <li><a href="#" class="text-dark">PRODUCTS</a></li>
+              <li><a href="#" class="text-dark">ABOUT</a></li>
+              <li><a href="#" class="text-dark">GAMES</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3 col-6 mb-4 text-center">
+            <ul class="list-unstyled">
+              <li><a href="#" class="text-dark">LOGITECH</a></li>
+              <li><a href="#" class="text-dark">RAZER</a></li>
+              <li><a href="#" class="text-dark">HYPERX</a></li>
+              <li><a href="#" class="text-dark">CHALLENGER</a></li>
+            </ul>
+          </div>
+        </div>
+    
+        <div class="row align-items-center justify-content-between">
+          <!-- Copyright Text -->
+          <div class="col-md-auto mb-3 mb-md-0">
+            <p class="text-muted mb-0">© 2024 JSB Tech. All rights reserved</p>
+          </div>
+      
+          <!-- Subscription Form -->
+          <div class="col-md-auto mb-3 mb-md-0">
+            <form class="row gx-2 gy-2 align-items-center">
+              <div class="col">
+                <input type="email" class="form-control" placeholder="Email Address*" aria-label="Email Address">
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-dark">Subscribe</button>
+              </div>
+            </form>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="subscribeCheck">
+              <label class="form-check-label" for="subscribeCheck">
+                Yes, I want to receive emails about products, news, and more from JSB TECH*.
+              </label>
+            </div>
+          </div>
+        </div>
+      
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="gachatest.js"></script>
   </body>
