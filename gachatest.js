@@ -27,3 +27,8 @@ function pull(){
         push += value
       }
 }
+
+function load(){
+    var ele = document.getElementById("gacha-anim-obj")
+    ele.classList.add("active")
+}

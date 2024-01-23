@@ -377,7 +377,7 @@ form input {
     color: white;
 }
 
-
+}
 
 
 
@@ -499,8 +499,8 @@ form input {
     font-weight: 400;
 }
 
-.gacha-button{
-    background-color: rgb(100,113,167,0.7);
+.gacha-container{
+    background-color: #2A374F;
     width: 9.1vw;
     height: 45px;
     margin-left: auto; /*Align to the right */
@@ -508,6 +508,7 @@ form input {
     display: flex;
     align-items: center;
     justify-content: space-evenly; /*Set the spacing between text and image */
+    box-shadow: 3px 3px 3px 3px rgba(10,10,10,0.3);
 }
 
 .gacha-text{
@@ -520,5 +521,43 @@ form input {
     margin-left: 50%;
     display: flex;
     justify-content: space-between;
->>>>>>> c9cf838c54c2fc52638c7a415ca015a6b95334be
 }
+
+.gacha-button{
+    width: 200px;
+}
+.gacha-button:hover{
+    background-color: #425270;
+}
+
+/*Cover the entire screen */
+.dark-overlay{
+    display: none;
+    z-index: 999999;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top:0;
+    left:0;
+
+}
+
+#gacha-anim-obj{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.reveal{
+    transform: translate(-50%,-60px); /*set intial position before transition */
+    opacity: 0; /* hide */
+    transition: 0.9s all ease;
+    overflow: hidden; /*hide scroll bar */
+}
+
+.reveal.active{
+    transform: translate(-50%,-50%); /* move to center */
+    opacity: 1;
+    }
+

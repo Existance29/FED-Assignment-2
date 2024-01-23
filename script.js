@@ -48,4 +48,7 @@ function login() {
     Indicator.style.transform = "translateX(0px)";
 }
 
-/*Testing the API stuff*/
+/* Handle which product category to show based */
+function setProdCat(cat){
+  localStorage.setItem("pCategory",cat)
+}
