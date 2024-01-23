@@ -274,13 +274,13 @@ header {
 /*-------Login page styling------*/
 .account-page {
     padding: 250px;
-    background-image: url("images/1975 banner1.jpg");
+    background-image: url("");
     background-size: cover;
     background-position: center;
     font-size: 14px;
-  }
+}
   
-  .form-container {
+.form-container {
     background: white;
     width: 300px;
     height: 400px;
@@ -290,30 +290,30 @@ header {
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1);
     overflow: hidden;
-  }
+ }
   
-  .form-container span {
+.form-container span {
     font-weight: bold;
     padding: 0 10px;
     color:#001689;
     cursor: pointer;
     width: 100px;
     display: inline-block;
-  }
+}
   
-  .form-btn {
+.form-btn {
     display: inline-block;
-  }
+}
   
-  .form-container form {
+.form-container form {
     width: 240px;
     margin: 0 30px;
     position: absolute;
     top: 90px;
     transition: transform 1s;
-  }
+}
   
-  form input {
+form input {
     width: 100%;
     height: 30px;
     margin: 10px 0;
@@ -366,7 +366,7 @@ header {
 
 /*-------Start of gacha page styling------*/
 .gacha-banner .grid-container{
-    background: url("Images/Audio-banner-1.jpg") no-repeat center center;
+    background: url("Images/Gacha-banner-1.png") no-repeat center center;
     background-size: cover;
     height: 700px;
     display: flex;
@@ -375,6 +375,7 @@ header {
     text-align: center; /* Aligns text to the left */
     padding: 10%; 
     color: white;
+}
 
 }
 
