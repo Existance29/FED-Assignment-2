@@ -9,7 +9,10 @@ body { /*Setting the entire body to be the Poppins font from google fonts*/
     font-family: 'Poppins', sans-serif;
     color: white;
 }
-
+/*Remove default css properties from button */
+button{
+    all: unset;
+}
 
 /*-----------------------Start of header styling------------------------*/
 
@@ -157,4 +160,62 @@ header {
     
 
  /*-------------------Start of slideshow styling----------------*/  
-/*-------------------End of slideshow styling----------------*/     
+/*-------------------End of slideshow styling----------------*/    
+
+
+/*-------------------Gacha CSS----------------*/ 
+
+.gacha-body{
+    background: #0F121F; /*Set background colour*/
+}
+.gacha-content{
+    width: 85%;
+    margin-left: 7.5%;
+    margin-top: 10vh;
+}
+
+.gacha-banner{
+    top: 2vh;
+    position: relative;
+    display: flex;
+}
+
+.gacha-banner-text{
+    margin-top: 8%;
+    margin-left: 10vw;
+}
+
+.gacha-banner-title{
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.gacha-banner-subtitle{
+    margin-top: 2vh;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+.gacha-button{
+    background-color: rgb(100,113,167,0.7);
+    width: 9.1vw;
+    height: 45px;
+    margin-left: auto; /*Align to the right */
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /*Set the spacing between text and image */
+}
+
+.gacha-text{
+    font-weight: 500;
+    font-size: 18px;
+    margin-left: -20%; /*Use negative to bring the text and image closer together */
+}
+
+.gacha-button-row{
+    margin-left: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
