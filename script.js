@@ -78,6 +78,7 @@ async function productCategoryLoad(){
   var bannerURL = "./Images/"
   var bannerTitle = "THE ULTIMATE PC EXPERIENCE\nInsane Series: Ultracore"
   var bannerSubtitle = "From $2000"
+  var cutoff = "Mouse"
   //change the banner image, title, subtitle based on what category is selected
   if (category == "pc"){
     bannerURL += "PC-banner-1.webp"
@@ -100,20 +101,37 @@ async function productCategoryLoad(){
   document.getElementsByTagName("h1")[0].innerText = bannerTitle
   document.getElementsByTagName("p")[0].innerText = bannerSubtitle
   document.getElementById("advertisment").src = `./Images/mini_banner_${category}.png`
-
+  
   //get the items from the api. Use a query to get items only from the category in descending order of sales
   var apiData = await getAPI(`https://jsbtech-84ac.restdb.io/rest/items?q={"category":"${category}"}&h={"$orderby":{"sales":-1}}`)
-
-  bsr = document.getElementById("best-seller-row")
-  for (var i = 0; i < Math.min(apiData.length,4); i++){
+  var row = ""
+  //iterate through all items and display them
+  for (var i = 0; i < apiData.length; i++){
     var data = apiData[i]
-    bsr.innerHTML +=   `
+    //Shorten the name, get only the relevant text 
+    var name = data["name"].split(cutoff)[0] + cutoff
+    //create the html for the item
+    var html = `
     <div class = "product-display">
-      <img src="./Images/65acf7c520a3f04100000291_1.png">
-      <label class = "title">${data["name"]}</label>
+      <img src="https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${data["_id"]}_1.png" referrerpolicy="no-referrer">
+      <label class = "title">${name}</label>
       <label class = "price">S$${data["price"]}</label>
     </div>
     `
+    //add the first 4 popular items to the best sellers section
+    if (i < 4){
+      document.getElementById("best-seller-row").innerHTML += html
+    }
+    //add the item to the row
+    row += html
+    //each row contains a maximum of 4 items
+    //once there are 4 items, display the row and reset it
+    //also account for the last items, where the rows arent fully filled
+    console.log(row)
+    if ((i+1)%4 == 0 || i == apiData.length-1){
+      document.getElementById("more-products").innerHTML += `<div class = "product-display-row">${row}</div>`
+      row = ""
+    }
   }
 
 }
