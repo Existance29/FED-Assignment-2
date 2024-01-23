@@ -200,8 +200,8 @@ header {
     height: 700px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Aligns content to the left */
-    text-align: center; /* Aligns text to the left */
+    justify-content: center; /* Aligns content to the center */
+    text-align: center; /* Aligns text to the center */
     padding: 10%; 
     color: white;
 }
@@ -465,6 +465,8 @@ header {
 
 
 
+
+
 /*-------------------Gacha CSS----------------*/ 
 
 .gacha-body{
@@ -560,3 +562,96 @@ header {
     opacity: 1;
     }
 
+
+#product-banner{
+    position: relative;
+    background-image: url(./Images/PC-banner-1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 85vh; /*Occupy 75% in height*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#product-banner #text-area{
+    margin-left: 3%;
+    width: 50%;
+}
+#product-banner h1{
+    font-size: 2.8em;
+    font-weight: bold;
+    text-shadow: 4px 4px 4px #000000;
+    line-height: 1.4;
+}
+
+#product-banner p{
+    text-shadow: 4px 4px 4px #000000;
+    font-size: 1.5em;
+}
+
+.product-main{
+    background: #1A1E26;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-category-bacground{
+    opacity: 0.2;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100;
+    height: auto;
+}
+.product-content{
+    margin-left: 12.5%;
+    width: 75%;
+    position: absolute;
+    top:0;
+    left: 0;
+    z-index: 99;
+}
+
+.product-content label{
+    margin-top: 8vh;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.product-display-row{
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.product-display{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.product-display img{
+    width: 100%;
+    height: 40vh;
+    object-fit: contain;
+}
+
+.product-display .title{
+    margin-top: 4vh;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+.product-display .price{
+    margin-top: 2vh;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+#advertisment{
+    margin-top: 10vh;
+    width: 100%;
+}
