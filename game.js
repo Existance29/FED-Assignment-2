@@ -19,19 +19,23 @@ function show_image() {
     //update the score
     score += 1
     document.getElementById("score").innerText = score
-    //convert 8vw to px
-    var width = document.documentElement.clientWidth*8/100
+    //set the width of the object in vw
+    var vw_width = 7.8
+    //convert vw to px
+    var width = document.documentElement.clientWidth*vw_width/100
     //since its a circle, height = width
     var height = width
     //get the div that sets the spawn area of the object
-    var spawnArea = document.getElementById("objectSpawn")
+    var spawnArea = document.getElementById("objectSpawn") 
     //get the random area to spawn
     //we get a random number between 0 and the spawn area's width and height. 
     //Subtract the image's width and height to prevent it from spawning outside the area
     var x = getRandomInt(0,spawnArea.offsetWidth-width)
     var y = getRandomInt(0,spawnArea.offsetHeight-height)
     //create the image
-    spawnArea.innerHTML = `<img src=${src} width = ${width} id = "object" 
+    //oncontextmenu return false to disable right clicking
+    //use absolute position to set the position to the x and y variables
+    spawnArea.innerHTML = `<img src=${src} width = ${width} id = "object" oncontextmenu="return false;"
     style = "position:absolute;top:${y}px;left:${x}px">`
 
     //setup a listener to trigger when the object is clicked
