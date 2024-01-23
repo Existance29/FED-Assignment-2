@@ -13,7 +13,7 @@ body{
 }
 
 /*This is the area where the target can spawn*/
-.objectSpawn{
+.object-spawn{
     margin-top: 10vh;
     width: 80%;
     margin-left: 10%;
@@ -48,7 +48,7 @@ body{
     font-weight: 400;
 }
 
-#overlay{
+.overlay{
     z-index: 1; /*show ontop of everything */
     background: rgb(0, 0, 0, 0.6); /*make it a slightly transparent black overlay*/
     /*Set the overlay's size */
@@ -62,7 +62,7 @@ body{
     display: none; /*Hide by default */
 }
 
-.statArea{
+.stat-area{
     display: flex;
     flex-direction: column; /*Use flex column.*/
     /*Use absolute position to center the area*/
@@ -73,7 +73,7 @@ body{
     margin-right: -50%;
     transform: translate(-50%, -50%);
 }
-.gameOver{
+.game-over{
     color: white;
     font-weight: 600;
     font-size: 1.9vw;
@@ -82,7 +82,7 @@ body{
     margin-top: 2vh;
 }
 
-.finalText{
+.final-text{
     color: white;
     font-size: 1.5vw;
     margin-left: 8%;
@@ -90,7 +90,7 @@ body{
 
 }
 
-.statText{
+.stat-text{
     color: aqua;
 }
 .split-flex-row{

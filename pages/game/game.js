@@ -15,7 +15,7 @@ function getRandomInt(min, max) {
 function show_image() {
     if (gameEnd){ return} //prevent it from being clickable after the game has ended
     hit.play()
-    var src = "./images/game/object.png"
+    var src = "./images/object.png"
     //update the score
     score += 1
     document.getElementById("score").innerText = score
@@ -26,7 +26,7 @@ function show_image() {
     //since its a circle, height = width
     var height = width
     //get the div that sets the spawn area of the object
-    var spawnArea = document.getElementById("objectSpawn") 
+    var spawnArea = document.getElementById("object-spawn") 
     //get the random area to spawn
     //we get a random number between 0 and the spawn area's width and height. 
     //Subtract the image's width and height to prevent it from spawning outside the area
@@ -66,8 +66,8 @@ function load(){
         //Bring up the game over popup after a 300ms delay
         setTimeout(function()
         {
-            document.getElementById("overlay").style.display = "block"
-            document.getElementById("finalScore").innerText = score
+            document.getElementById("game-over-overlay").style.display = "block"
+            document.getElementById("final-score").innerText = score
 
         }, 300);
 
