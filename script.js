@@ -86,10 +86,12 @@ async function productCategoryLoad(){
     bannerURL += "Mouse-banner-1.png"
     bannerTitle = "Gaming\nMice"
     bannerSubtitle = "Award-winning wireless and wired gaming mice. Constantly innovating from sensors to shape, find the right one for you."
+    cutoff = "Mouse"
   }else if (category == "keyboard"){
     bannerURL += "Keyboard-banner-1.webp"
     bannerTitle = "GAMING\nKEYBOARDS"
     bannerSubtitle = "Speed. Accuracy. Durability. Gaming keyboards are designed with the technology and materials required for high performance gaming."
+    cutoff = "Keyboard"
   }else{
     bannerURL += "Audio-banner-1.jpg"
     bannerTitle = "GAMING\nHEADSETS & AUDIO"
@@ -132,6 +134,8 @@ async function productCategoryLoad(){
       document.getElementById("more-products").innerHTML += `<div class = "product-display-row">${row}</div>`
       row = ""
     }
+    document.getElementById("loading-screen").style.display = "none"
+    document.getElementById("loaded-content").style.display = "block"
   }
 
 }
