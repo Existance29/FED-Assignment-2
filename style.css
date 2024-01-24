@@ -14,6 +14,13 @@ button{
     all: unset;
 }
 
+/*Responsive font sizes for em*/
+@media only screen and (max-width: 600px) {
+    html{
+        font-size: 10px;
+    }
+}
+
 /*-----------------------Start of header styling------------------------*/
 
 header {
@@ -466,7 +473,6 @@ form input {
 
 
 
-
 /*-------------------Gacha CSS----------------*/ 
 
 .gacha-body{
@@ -576,24 +582,27 @@ form input {
     justify-content: center;
 }
 
+/* The area of text on the banner */
 #product-banner #text-area{
     margin-left: 3%;
     width: 50%;
 }
 #product-banner h1{
-    font-size: 2.8em;
+    font-size: 2.6em;
     font-weight: bold;
     text-shadow: 4px 4px 4px #000000;
-    line-height: 1.4;
+    line-height: 1.4; /*Increase the line height from the default 1.2 */
 }
 
 #product-banner p{
     text-shadow: 4px 4px 4px #000000;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 .product-main{
-    background: #1A1E26;
+    background-color: #1A1E26;
+    background-image: url("./Images/product-category-background.png");
+    background-blend-mode: lighten; /*Use ligten to blend the colour with the image */
     overflow: hidden;
     position: relative;
 }
@@ -606,12 +615,10 @@ form input {
     width: 100;
     height: auto;
 }
+/*Use only 75% of the screen, centered */
 .product-content{
     margin-left: 12.5%;
     width: 75%;
-    position: absolute;
-    top:0;
-    left: 0;
     z-index: 99;
 }
 
@@ -621,37 +628,82 @@ form input {
     font-weight: 500;
 }
 
-.product-display-row{
+.product-display-grid{
     margin-top: 10vh;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    column-gap: 10%;
+    row-gap: 10vh;
+    grid-template-columns: repeat(4, 1fr); /*Allow for a max of 4 products per row */
     width: 100%;
 
 }
 .product-display{
     display: flex;
     flex-direction: column;
-    width: 20%;
+    align-items: center;
 }
 .product-display img{
-    width: 100%;
+    width: 90%;
     height: 40vh;
-    object-fit: contain;
+    object-fit: contain; /*Scale image appriopriately to show entire product and no warping/stretching */
+}
+
+/*Child elements will not be horizontally centered*/
+.product-display .text{
+    width: 100%; /*fill up entire horizontal width*/
 }
 
 .product-display .title{
     margin-top: 4vh;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 400;
 }
 
 .product-display .price{
     margin-top: 2vh;
-    font-size: 1.1em;
+    font-size: 1em;
     font-weight: 300;
 }
 
 #advertisment{
     margin-top: 10vh;
     width: 100%;
+}
+
+#loaded-content{
+    display: none;
+}
+
+/*Make a black background cover everything except the navbar*/
+#loading-screen{
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+/*The lotte animation class. Center it*/
+.loading-animation{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 10%;
+}
+
+/*Mobile view*/
+@media only screen and (max-width: 600px) { 
+    .product-display-grid{
+        grid-template-columns: repeat(2,1fr);
+        margin-top: 5vh;
+    }
+    /*make content fill more space*/
+    .product-content{
+        margin-left: 5%;
+        width: 90%;
+    }
+    #product-banner{
+        height:60vh; /*Reduced to take up only 60% of the height */
+    }
 }
