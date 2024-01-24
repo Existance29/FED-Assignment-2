@@ -1,0 +1,21 @@
+.main_container div {
+    position: relative;    
+}
+.thumbnail {
+    height: 200px;
+    cursor: none;
+}
+
+.thumbnail-container{
+    position: relative;
+}
+div.zoom_container {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    pointer-events: none;
+}
+.zoom_container.hidden {
+    display: none;    
+}
