@@ -108,7 +108,6 @@ async function productCategoryLoad(){
   
   //get the items from the api. Use a query to get items only from the category in descending order of sales
   var apiData = await getAPI(`https://jsbtech-84ac.restdb.io/rest/items?q={"category":"${category}"}&h={"$orderby":{"sales":-1}}`)
-  var row = ""
   //iterate through all items and display them
   for (var i = 0; i < apiData.length; i++){
     var data = apiData[i]
@@ -118,7 +117,7 @@ async function productCategoryLoad(){
     //create the html for the item
     var html = `
     <div class = "product-display" data-aos="fade-up">
-      <img src="https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${data["_id"]}_1.png" referrerpolicy="no-referrer">
+      <img src="https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${data["_id"]}_1.png" referrerpolicy="no-referrer" alt="${name}">
       <div class = "text">
         <label class = "title">${name}</label>
         <label class = "price">S$${data["price"]}</label>
