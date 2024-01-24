@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="products.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
@@ -47,55 +48,107 @@
     </header> <!-----End of header section------>
 
     <main>
-
-
-      <!------PC banner section-------->
-      <div class="pc-banner">  
-        <div class="grid-container">
-          <div class="content"  data-aos="fade-up">
-            <h1>PERSONAL COMPUTERS</h1>
-            <p>The ultimate PC experience. View out Insane Series: Ultracore and find valuable and powerful machines to give you a fully immersive gaming experience</p>
-            <a href="products-category.html" class="btn" onclick = "setProdCat('pc')">Shop now!</a>
-          </div>
+         <!-- carousel -->
+    <div class="carousel">
+        <!-- list item -->
+        <div class="list">
+            <div class="item">
+                <img src="Images/PC-banner-1.webp">
+                <div class="content">
+                    <div class="title">GAMING PCS</div>
+                    <div class="des">
+                        The ultimate PC experience. View out Insane Series: Ultracore and find valuable and powerful machines to give you a fully immersive gaming experience
+                    </div>
+                    <a href="products-category.html" class="btn" onclick = "setProdCat('pc')">Shop now!</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Images/Keyboard-banner-1.webp">
+                <div class="content">
+                    <div class="title">GAMING KEYBOARDS</div>
+                    <div class="des">
+                        Speed. Accuracy. Durability. Gaming keyboards are designed with the technology and materials required for high performance gaming.
+                    </div>
+                    <a href="products-category.html" class="btn" onclick = "setProdCat('keyboard')">Shop now!</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Images/Mouse-banner-1.png">
+                <div class="content">
+                    <div class="title">GAMING MICE</div>
+                    <div class="des">
+                        Award-winning wireless and wired gaming mice. Constantly innovating from sensors to shape, find the right one for you here.
+                    </div>
+                    <a href="products-category.html" class="btn" onclick = "setProdCat('mice')">Shop now!</a>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Images/Audio-banner-1.jpg">
+                <div class="content">
+                    <div class="title">GAMING HEADSETS</div>
+                    <div class="des">
+                        Immersive sound, crystal clear mics, customizable EQ. Everything you need to get into the game and perform with precise audio.
+                    </div>
+                    <a href="products-category.html" class="btn" onclick = "setProdCat('audio')">Shop now!</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <!------End of PC banner section-------->
-
-      <!------Keyboard banner section-------->
-      <div class="keyboard-banner">  
-        <div class="grid-container">
-          <div class="content"  data-aos="fade-up">
-            <h1>GAMING KEYBOARDS</h1>
-            <p>Speed. Accuracy. Durability. Gaming keyboards are designed with the technology and materials required for high performance gaming.</p>
-            <a href="products-category.html" class="btn" onclick = "setProdCat('keyboard')">Shop now!</a>
-          </div>
+        <!-- list thumnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="Images/PC-banner-1.webp">
+                <div class="content">
+                    <div class="title">
+                        Gaming PCs
+                    </div>
+                    <div class="description">
+                        From $900
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Images/Keyboard-banner-1.webp">
+                <div class="content">
+                    <div class="title">
+                        Gaming Keyboards
+                    </div>
+                    <div class="description">
+                        From $30
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Images/Mouse-banner-1.png">
+                <div class="content">
+                    <div class="title">
+                        Gaming Mice
+                    </div>
+                    <div class="description">
+                        From $30
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="Images/Audio-banner-1.jpg">
+                <div class="content">
+                    <div class="title">
+                        Gaming Audio
+                    </div>
+                    <div class="description">
+                        From $20
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!------End of Keyboard banner section-------->
+        <!-- next prev -->
 
-      <!------Mouse banner section-------->
-      <div class="mouse-banner">  
-        <div class="grid-container">
-          <div class="content"  data-aos="fade-up">
-            <h1>GAMING MICE</h1>
-            <p>Award-winning wireless and wired gaming mice. Constantly innovating from sensors to shape, find the right one for you here.</p>
-            <a href="products-category.html" class="btn" onclick = "setProdCat('mice')">Shop now!</a>
-          </div>
+        <div class="arrows">
+            <button id="prev"><</button>
+            <button id="next">></button>
         </div>
-      </div>
-      <!------End of mouse banner section-------->
-
-      <!------Audio banner section-------->
-      <div class="audio-banner">  
-        <div class="grid-container">
-          <div class="content"  data-aos="fade-up">
-            <h1>GAMING HEADSETS AND AUDIO</h1>
-            <p>Immersive sound, crystal clear mics, customizable EQ. Everything you need to get into the game and perform with precise audio.</p>
-            <a href="products-category.html" class="btn" onclick = "setProdCat('audio')">Shop now!</a>
-          </div>
-        </div>
-      </div>
-      <!------End of mouse banner section-------->
+        <!-- time running -->
+        <div class="time"></div>
+    </div>
 
     </main>
 <!--------Footer--------->
@@ -147,16 +200,12 @@
       
     </footer>
 
-
-
-
-
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
     <script src="script.js"></script>
+    <script src="products.js"></script>
   </body>
 </html>
