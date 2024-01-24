@@ -72,7 +72,10 @@
                   </div>
               </div>
               <!-- advertisment-->
-              <img src = "./Images/mini_banner_pc.png" id = "advertisment" data-aos="fade-up">
+              <!-- wrap the img in a div so a fade-up aos can be applied-->
+              <div data-aos="fade-up">
+                <img src = "./Images/mini_banner_pc.png" id = "advertisment" data-aos="fade-up">
+              </div>
               <!--Remaining products-->
               <!-- Leave a 10vh gap between the bottom of the grid and the footer-->
               <div id = "more-products" class = "product-display-grid" style = "margin-bottom: 10vh;"></div>
@@ -136,9 +139,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
-    <script>
-      AOS.init();
-    </script>
     <script src="script.js"></script>
   </body>
 </html>

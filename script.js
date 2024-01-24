@@ -117,7 +117,7 @@ async function productCategoryLoad(){
     if (typeof cutoff == "string") name += cutoff //Only add the cutoff back if it is a string. This is to avoid adding the regex statement
     //create the html for the item
     var html = `
-    <div class = "product-display">
+    <div class = "product-display" data-aos="fade-up">
       <img src="https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${data["_id"]}_1.png" referrerpolicy="no-referrer">
       <div class = "text">
         <label class = "title">${name}</label>
@@ -137,5 +137,7 @@ async function productCategoryLoad(){
   //hide the loading screen and show the content
   document.getElementById("loading-screen").style.display = "none"
   document.getElementById("loaded-content").style.display = "block"
+  //load aos
+  AOS.init()
 
 }
