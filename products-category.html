@@ -44,11 +44,14 @@
           </div>
         </div>
       </nav>
-    </header> <!-----End of header section------>
+    </header> 
+    <!-----End of header section------>
+    <!-----The loading screen, shows by default and hidden by the code------>
     <div id = "loading-screen">
       <dotlottie-player src="https://lottie.host/86ed7305-aee0-4577-aae1-a41d4ab5a5a3/TrLUVsKbo6.json" class = "loading-animation" background="transparent" speed="1" loop autoplay></dotlottie-player>
     </div>
-      <div id = "loaded-content">
+    <!-- Content to be hidden until it is done loading-->
+    <div id = "loaded-content">
       <!------banner section-------->
       <div id = "product-banner">
           <div id = "text-area">
@@ -58,16 +61,21 @@
       </div>
       
       <!------End of banner section-------->
+      <!--Main content area. Set background-->
       <main class = "product-main">
-          <img src="./Images/product-category-background.png" class = "product-category-background">
+          <!-- The area for the content-->
           <div class = "product-content">
+            <!-- First row of most popular products-->
               <div id = "best-sellers" data-aos="fade-up">
                   <label>Best Sellers</label> 
-                  <div class = "product-display-row" id = "best-seller-row">      
+                  <div class = "product-display-grid" id = "best-seller">      
                   </div>
               </div>
+              <!-- advertisment-->
               <img src = "./Images/mini_banner_pc.png" id = "advertisment" data-aos="fade-up">
-              <div id = "more-products"></div>
+              <!--Remaining products-->
+              <!-- Leave a 10vh gap between the bottom of the grid and the footer-->
+              <div id = "more-products" class = "product-display-grid" style = "margin-bottom: 10vh;"></div>
           </div>
       </main>
       <!--------Footer--------->

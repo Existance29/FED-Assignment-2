@@ -82,6 +82,7 @@ async function productCategoryLoad(){
   //change the banner image, title, subtitle based on what category is selected
   if (category == "pc"){
     bannerURL += "PC-banner-1.webp"
+    cutoff = /,|-/ //use a regex statement to split by either commas or dashes
   }else if (category == "mice"){
     bannerURL += "Mouse-banner-1.png"
     bannerTitle = "Gaming\nMice"
@@ -96,6 +97,7 @@ async function productCategoryLoad(){
     bannerURL += "Audio-banner-1.jpg"
     bannerTitle = "GAMING\nHEADSETS & AUDIO"
     bannerSubtitle = "Immersive sound, crystal-clear mics, customizable EQ and optional 7.1 surround. Everything you need to get into the game and perform with the added benefit of precise audio."
+    cutoff = /:|,|with|\|/ //use a regex statement to split by: with , | :
   }
   
   //Update banner image, text and advertisment
@@ -110,32 +112,30 @@ async function productCategoryLoad(){
   //iterate through all items and display them
   for (var i = 0; i < apiData.length; i++){
     var data = apiData[i]
-    //Shorten the name, get only the relevant text 
-    var name = data["name"].split(cutoff)[0] + cutoff
+    //Shorten the name, get only the relevant text using the cutoff variable 
+    var name = data["name"].split(cutoff)[0]
+    if (typeof cutoff == "string") name += cutoff //Only add the cutoff back if it is a string. This is to avoid adding the regex statement
     //create the html for the item
     var html = `
     <div class = "product-display">
       <img src="https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${data["_id"]}_1.png" referrerpolicy="no-referrer">
-      <label class = "title">${name}</label>
-      <label class = "price">S$${data["price"]}</label>
+      <div class = "text">
+        <label class = "title">${name}</label>
+        <label class = "price">S$${data["price"]}</label>
+      </div>
     </div>
     `
     //add the first 4 popular items to the best sellers section
     if (i < 4){
-      document.getElementById("best-seller-row").innerHTML += html
+      document.getElementById("best-seller").innerHTML += html
     }
-    //add the item to the row
-    row += html
-    //each row contains a maximum of 4 items
-    //once there are 4 items, display the row and reset it
-    //also account for the last items, where the rows arent fully filled
-    console.log(row)
-    if ((i+1)%4 == 0 || i == apiData.length-1){
-      document.getElementById("more-products").innerHTML += `<div class = "product-display-row">${row}</div>`
-      row = ""
+    else{
+      //add the item to the all products grid
+      document.getElementById("more-products").innerHTML += html
     }
-    document.getElementById("loading-screen").style.display = "none"
-    document.getElementById("loaded-content").style.display = "block"
   }
+  //hide the loading screen and show the content
+  document.getElementById("loading-screen").style.display = "none"
+  document.getElementById("loaded-content").style.display = "block"
 
 }
