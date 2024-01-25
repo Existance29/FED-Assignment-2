@@ -403,8 +403,23 @@ form input {
     padding: 10%; 
     color: white;
 }
+.about .story {
+    text-align: center;
+    justify-content: center;
+}
+.about .content{
+    max-width: 100%;
+    padding: 10%;
+}
+.about .story h1{
+    text-shadow: none;
+    color: #1E2532;
+}
 
-
+.about .story p {
+    text-shadow: none;
+    color: #3c4a64;
+}
 
 
 
