@@ -61,6 +61,10 @@ async function getAPI(url){
     }
   }
   const response = await fetch(url, settings)
+  //check if the response was successful
+  if (!response.ok){
+    location.href = "error.html"
+  }
   const json = await response.json()
   return json
 
