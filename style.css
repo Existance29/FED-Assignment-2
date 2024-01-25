@@ -501,16 +501,38 @@ form input {
 
 
 
+/*-------------------Game Page CSS----------------*/ 
 
+#game-banner{
+    position: relative;
+    background-image: url(./Images/Games-banner-1.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 70vh; /*Occupy 70% in height*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-
+/* The area of text on the banner */
+#game-banner #text-area{
+    margin-left: 3%;
+    width: 40%;
+}
+#game-banner h1{
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 4px 4px 4px #000000;
+}
 
 /*-------------------Gacha CSS----------------*/ 
 
 .gacha-body{
     background: #0F121F; /*Set background colour*/
 }
-.gacha-content{
+.games-content{
     width: 85%;
     margin-left: 7.5%;
     margin-top: 10vh;
@@ -528,13 +550,13 @@ form input {
 }
 
 .gacha-banner-title{
-    font-size: 32px;
+    font-size: 1.6em;
     font-weight: 600;
 }
 
 .gacha-banner-subtitle{
     margin-top: 2vh;
-    font-size: 21px;
+    font-size: 1.3em;
     font-weight: 400;
 }
 
@@ -601,6 +623,14 @@ form input {
     }
 
 
+.product-main{
+    background-color: #1A1E26;
+    background-image: url("./Images/product-category-background.png");
+    background-blend-mode: lighten; /*Use ligten to blend the colour with the image */
+    overflow: hidden;
+    position: relative;
+}
+
 #product-banner{
     position: relative;
     background-image: url(./Images/PC-banner-1.webp);
@@ -629,14 +659,6 @@ form input {
 #product-banner p{
     text-shadow: 4px 4px 4px #000000;
     font-size: 1.2em;
-}
-
-.product-main{
-    background-color: #1A1E26;
-    background-image: url("./Images/product-category-background.png");
-    background-blend-mode: lighten; /*Use ligten to blend the colour with the image */
-    overflow: hidden;
-    position: relative;
 }
 
 .product-category-bacground{
