@@ -391,6 +391,19 @@ form input {
     margin-top: 70px;
 }
 
+/*---------About page----------*/
+.about-banner .grid-container {
+    background: url("Images/Gacha-banner-1.png") no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    padding: 10%; 
+    color: white;
+}
+
 
 
 
