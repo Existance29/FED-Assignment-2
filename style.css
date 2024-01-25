@@ -527,6 +527,15 @@ form input {
     text-shadow: 4px 4px 4px #000000;
 }
 
+#games-grid{
+    display: grid;
+    margin-top: 4vh;
+    column-gap: 10%;
+    row-gap: 8vh;
+    grid-template-columns: repeat(4, 1fr); /*Allow for a max of 4 games per row */
+    width: 100%;
+}
+
 /*-------------------Gacha CSS----------------*/ 
 
 .gacha-body{
@@ -574,7 +583,7 @@ form input {
 
 .gacha-text{
     font-weight: 500;
-    font-size: 18px;
+    font-size: 1.125em;
     margin-left: -20%; /*Use negative to bring the text and image closer together */
 }
 
@@ -630,7 +639,7 @@ form input {
     overflow: hidden;
     position: relative;
 }
-
+/*-------------------Product Category  CSS----------------*/ 
 #product-banner{
     position: relative;
     background-image: url(./Images/PC-banner-1.webp);
