@@ -755,3 +755,7 @@ div.zoom_container {
 .zoom_container.hidden {
     display: none;    
 }
+
+#cart-success{
+    position: fixed;
+}

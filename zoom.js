@@ -1,4 +1,4 @@
-
+//script for the zoom function in the products-details page
 $( '#productImg' ).mousemove(function(e) {
     // Show original picture    
     var $original = $( '#' + this.id + '_original');

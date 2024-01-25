@@ -159,7 +159,11 @@ async function productCategoryLoad(){
 }
 
 function showProduct(){
+  //hide the success alert
+  document.getElementById("cart-success").style.display = "none"
+  //retrieve the product object
   pObj = JSON.parse(localStorage.getItem("product"))
+  //update the page's elements
   document.getElementById("product-name").innerText = pObj["name"]
   console.log(pObj["description"].replace("\n","\n\n"))
   document.getElementById("product-details").innerText = pObj["description"].replaceAll("&amp;","&").replaceAll("\n","\n\n")
@@ -167,4 +171,37 @@ function showProduct(){
   img_src = `https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${pObj["_id"]}_1.png`
   document.getElementById("productImg").src = img_src
   document.getElementById("productImg_original").src = img_src
+}
+
+function addToCart(){
+  sessionStorage.removeItem("cart")
+  cart = sessionStorage.getItem("cart")
+  //check if a cart exists
+  //if it doesnt, make a new one
+  if (cart == null){
+    cart = []
+  }
+  else{
+    cart = JSON.parse(cart) //convert from string to array
+  }
+  //get the product object
+  pObj = JSON.parse(localStorage.getItem("product"))
+  //get the quantity and add it to the object
+  pObj["quantity"] = parseInt(document.getElementById("quantity").value)
+  cart.push(pObj)
+  console.log(cart)
+  //save the cart
+  sessionStorage.setItem("cart", JSON.stringify(cart))
+
+  //shows the success alrt for 2 secs
+  //start playing the lottie animation + enter text
+  document.getElementById("cart-success-content").innerHTML += 
+  `<dotlottie-player src="https://lottie.host/4377115b-47bb-4c44-9302-598d7f225602/qpO9TCh4pH.json" background="transparent" speed="0.9" style="width: 60px; height: 60px;" autoplay></dotlottie-player>
+  Item Added To Cart`
+  //use a slide down animation
+  $("#cart-success").slideDown(400)
+  setTimeout(function() {
+    document.getElementById("cart-success").style.display = "none";
+  }, 2000)
+
 }
