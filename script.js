@@ -80,7 +80,7 @@ function setProdCat(cat){
 //stores the product object and redirects the user
 function selectProduct(obj){
   localStorage.setItem("product",obj)
-  location.href = "view-product.html"
+  location.href = "product-details.html"
 }
 
 async function productCategoryLoad(){
@@ -160,5 +160,8 @@ async function productCategoryLoad(){
 
 function showProduct(){
   pObj = JSON.parse(localStorage.getItem("product"))
-  document.getElementById("p-data").innerText = pObj["name"]
+  document.getElementById("product-name").innerText = pObj["name"]
+  console.log(pObj["description"].replace("\n","\n\n"))
+  document.getElementById("product-details").innerText = pObj["description"].replaceAll("&amp;","&").replaceAll("\n","\n\n")
+  document.getElementById("price").innerText = `S$${pObj["price"]}`
 }
