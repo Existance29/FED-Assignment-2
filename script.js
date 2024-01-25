@@ -72,6 +72,13 @@ function setProdCat(cat){
   localStorage.setItem("pCategory",cat)
 }
 
+//triggers when item is clicked
+//stores the product object and redirects the user
+function selectProduct(obj){
+  localStorage.setItem("product",obj)
+  location.href = "view-product.html"
+}
+
 async function productCategoryLoad(){
   //get the category selected
   var category = localStorage.getItem("pCategory")
@@ -114,23 +121,28 @@ async function productCategoryLoad(){
     //Shorten the name, get only the relevant text using the cutoff variable 
     var name = data["name"].split(cutoff)[0]
     if (typeof cutoff == "string") name += cutoff //Only add the cutoff back if it is a string. This is to avoid adding the regex statement
-    //create the html for the item
-    var html = `
-    <div class = "product-display" data-aos="fade-up">
+    //create the product item
+    var productDiv = document.createElement("div") //create a div element
+    productDiv.className = "product-display" //apply the class
+    productDiv.id = JSON.stringify(data) //store the object as its id
+    productDiv.setAttribute("onclick","selectProduct(this.id)") //trigger the function on click. Pass the object into the function
+    productDiv.setAttribute("data-aos","fade-up") //apply aos
+    //fill in the div's content
+    productDiv.innerHTML+= ` 
       <img src="https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${data["_id"]}_1.png" referrerpolicy="no-referrer" alt="${name}">
       <div class = "text">
         <label class = "title">${name}</label>
         <label class = "price">S$${data["price"]}</label>
       </div>
-    </div>
     `
+
     //add the first 4 popular items to the best sellers section
     if (i < 4){
-      document.getElementById("best-seller").innerHTML += html
+      document.getElementById("best-seller").appendChild(productDiv)
     }
     else{
       //add the item to the all products grid
-      document.getElementById("more-products").innerHTML += html
+      document.getElementById("more-products").appendChild(productDiv)
     }
   }
   //hide the loading screen and show the content
@@ -139,4 +151,9 @@ async function productCategoryLoad(){
   //load aos
   AOS.init()
 
+}
+
+function showProduct(){
+  pObj = JSON.parse(localStorage.getItem("product"))
+  document.getElementById("p-data").innerText = pObj["name"]
 }
