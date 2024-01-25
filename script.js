@@ -164,4 +164,7 @@ function showProduct(){
   console.log(pObj["description"].replace("\n","\n\n"))
   document.getElementById("product-details").innerText = pObj["description"].replaceAll("&amp;","&").replaceAll("\n","\n\n")
   document.getElementById("price").innerText = `S$${pObj["price"]}`
+  img_src = `https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${pObj["_id"]}_1.png`
+  document.getElementById("productImg").src = img_src
+  document.getElementById("productImg_original").src = img_src
 }
