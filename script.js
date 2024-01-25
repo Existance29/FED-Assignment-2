@@ -174,7 +174,6 @@ function showProduct(){
 }
 
 function addToCart(){
-  sessionStorage.removeItem("cart")
   cart = sessionStorage.getItem("cart")
   //check if a cart exists
   //if it doesnt, make a new one
@@ -195,7 +194,7 @@ function addToCart(){
 
   //shows the success alrt for 2 secs
   //start playing the lottie animation + enter text
-  document.getElementById("cart-success-content").innerHTML += 
+  document.getElementById("cart-success-content").innerHTML = 
   `<dotlottie-player src="https://lottie.host/4377115b-47bb-4c44-9302-598d7f225602/qpO9TCh4pH.json" background="transparent" speed="0.9" style="width: 60px; height: 60px;" autoplay></dotlottie-player>
   Item Added To Cart`
   //use a slide down animation

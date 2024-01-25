@@ -68,6 +68,7 @@ function load(){
         {
             document.getElementById("game-over-overlay").style.display = "block"
             document.getElementById("final-score").innerText = score
+            document.getElementById("final-time").innerText = `${Math.round(30000/score)}ms`
 
         }, 300);
 
