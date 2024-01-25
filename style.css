@@ -725,3 +725,20 @@ form input {
         height:60vh; /*Reduced to take up only 60% of the height */
     }
 }
+
+/*Style for the product-detail image zoom */
+.thumbnail {
+    cursor: none /*Hide the cursor */
+}
+
+
+div.zoom_container {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    pointer-events: none; /*Stop the cursor from interfering with the elements below it */
+}
+.zoom_container.hidden {
+    display: none;    
+}

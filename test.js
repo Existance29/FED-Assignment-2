@@ -24,14 +24,11 @@ $( '.thumbnail' ).mousemove(function(e) {
     $original.css( 'marginLeft', moX );
     $original.css( 'marginTop', moY );
     //Calculate the position of the zoom
-    var y = e.pageY - $($container).height()/2
-    var x = e.pageX - $($container).width()/2
+    console.log( $('#header').height())
+    var y = e.clientY - $('#header').height() - $container.height()/2
+    var x = e.clientX - $container.width()/2
     $container.css('top',y)
     $container.css('left',x)
-    // Log values
-    $('#ratios').html( 'Ratio X: <b>' + ratioX + '</b><br>Ratio Y: <b>' +  ratioY + '</b>' );
-    $('#coordinates_thumbnail').html( 'tX: <b>' + tX + '</b><br>tY: <b>' +  tY + '</b>' );
-    $('#coordinates_original' ).html( 'Margin left: <b>' + Math.round(moX) + '</b><br>Margin top: <b>' +  moY + '</b>' );
 });
 
 $( '.thumbnail' ).mouseout(function(e) {
