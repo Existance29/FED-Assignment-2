@@ -1,5 +1,5 @@
 
-$( '.thumbnail' ).mousemove(function(e) {
+$( '#productImg' ).mousemove(function(e) {
     // Show original picture    
     var $original = $( '#' + this.id + '_original');
     var $container = $original.parent();
@@ -14,9 +14,6 @@ $( '.thumbnail' ).mousemove(function(e) {
     var offset = $( this ).offset();
     var tX = e.pageX - offset.left;
     var tY = e.pageY - offset.top;
-    // We stay inside the limits of the zoomable area
-    tX = Math.max( zoom_radius, Math.min( $( this ).width() - zoom_radius, tX ) )
-    tY = Math.max( zoom_radius, Math.min( $( this ).height() - zoom_radius, tY ) )
     // Ratios
     var ratioX = ( $original.width() - zoom_container_size) / ( $( this ).width() - zoom_area_size )
     var ratioY = ( $original.height() - zoom_container_size) / ( $( this ).height() - zoom_area_size )
@@ -35,7 +32,7 @@ $( '.thumbnail' ).mousemove(function(e) {
     $container.css('left',x)
 });
 
-$( '.thumbnail' ).mouseout(function(e) {
+$( '#productImg' ).mouseout(function(e) {
     var $original = $( '#' + this.id + '_original');
     var $container = $original.parent();
     $container.addClass( 'hidden' );

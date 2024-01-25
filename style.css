@@ -742,7 +742,7 @@ form input {
 }
 
 /*Style for the product-detail image zoom */
-.thumbnail {
+#productImg {
     cursor: zoom-in /*change cursor */
 }
 
