@@ -127,6 +127,7 @@ async function productCategoryLoad(){
     productDiv.id = JSON.stringify(data) //store the object as its id
     productDiv.setAttribute("onclick","selectProduct(this.id)") //trigger the function on click. Pass the object into the function
     productDiv.setAttribute("data-aos","fade-up") //apply aos
+    productDiv.setAttribute("data-aos-once","true")
     //fill in the div's content
     productDiv.innerHTML+= ` 
       <img src="https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${data["_id"]}_1.png" referrerpolicy="no-referrer" alt="${name}">
