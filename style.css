@@ -217,18 +217,18 @@ header {
     text-shadow: 4px 4px 4px #000000;
 }
 
-.grid-container h1{
+.pc-banner .grid-container h1{
     font-size: 3em;
     margin: 0.5em 0;
     font-weight: bold;
 }
 
-.grid-container p {
+.pc-banner .grid-container p {
     font-size: 1em;
     margin: 0.25em 0 1em;
 }
 
-.grid-container .content {
+.pc-banner .grid-container .content {
     max-width: 70%;
     padding: 5%;
 }
@@ -420,6 +420,34 @@ form input {
     text-shadow: none;
     color: #3c4a64;
 }
+
+
+/*---------Game page----------*/
+.aim-banner {
+    background: url("Images/game-1.png") no-repeat center center;
+    width: 100%;
+    background-size: cover; 
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    color: white;
+}
+
+.aim-banner i {
+    font-size: 40px;
+    text-shadow: 4px 4px 4px #000000;
+}
+
+.games-content {
+    margin-bottom: 50px;
+}
+
+.games-content .text {
+    text-shadow: 4px 4px 4px #000000;
+}
+
 
 
 
