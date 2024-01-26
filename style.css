@@ -527,13 +527,21 @@ form input {
     text-shadow: 4px 4px 4px #000000;
 }
 
-#games-grid{
+.games-grid{
     display: grid;
     margin-top: 4vh;
     column-gap: 10%;
+    margin-bottom: 8vh;
     row-gap: 8vh;
     grid-template-columns: repeat(4, 1fr); /*Allow for a max of 4 games per row */
     width: 100%;
+}
+
+.game-display{
+    width: 100%;
+    padding-top: 200%;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 /*-------------------Gacha CSS----------------*/ 
