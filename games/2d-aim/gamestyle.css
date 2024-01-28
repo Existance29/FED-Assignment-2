@@ -59,6 +59,19 @@ body{
     top: 0;
     left: 0;
     flex-direction: column; /*Use flex column. Display: flex will be set in code */
+    
+}
+
+#game-start-time{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-weight: 600;
+    font-size: 5vw;
+    transform: translate(-50%, -50%);
+}
+#game-over-overlay{
     display: none; /*Hide by default */
 }
 

@@ -8,11 +8,14 @@
   <body onload="load()"> <!--Trigger the load function-->
     <!-- A header at the top for the timer and score-->
     <div class = "header">
-        <label id = "timer">61</label> 
+        <label id = "timer">30</label> 
         <label id = "score">0</label> 
     </div>
     <!-- This is the area where the object can spawn in-->
     <div id = "object-spawn" class = "object-spawn"></div>
+    <div class = "overlay" id = "game-start-overlay">
+      <label id = "game-start-time">3</label>
+    </div>
     <!-- This contains the overlay that pops up when the game ends-->
     <div class = "overlay" id = "game-over-overlay">
         <div class = "stat-area">
@@ -28,9 +31,9 @@
               <label id = "final-time" class = "final-text stat-text">0</label>
           </div>
             <div class = "split-flex-row" style="margin-top: 4vh;">
-                <label class = "final-text">Points earned:</label>
+                <label class = "final-text">Draws earned:</label>
                 <div style="display: flex; align-items: center;">
-                  <img src="./Images/gacha.png" style="height: 100%;">
+                  <img src="./Images/gacha.png" style="height: 2vw">
                   <label id = "final-points" class = "final-text stat-text">0</label>
                 </div>
             </div>

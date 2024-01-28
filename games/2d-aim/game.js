@@ -4,7 +4,9 @@ let score = -1;
 let time = 30;
 let gameEnd = false
 let hit = new Audio("./Sounds/menuhover.ogg")
+hit.volume = 0.2
 let finish = new Audio("./Sounds/finish.ogg")
+finish.volume = 0.1
 //generate a random integer between 2 values
 function getRandomInt(min, max) {
     min = Math.ceil(min);
@@ -14,7 +16,6 @@ function getRandomInt(min, max) {
 
 function show_image() {
     if (gameEnd){ return} //prevent it from being clickable after the game has ended
-    hit.play()
     var src = "./images/object.png"
     //update the score
     score += 1
@@ -39,9 +40,10 @@ function show_image() {
     style = "position:absolute;top:${y}px;left:${x}px">`
 
     //setup a listener to trigger when the object is clicked
-    document.getElementById('object').addEventListener('click', () =>
+    document.getElementById('object').addEventListener('click', function(){
+        hit.play()
         show_image()
-    );
+    });
 }
 
 //update the timer
@@ -52,8 +54,36 @@ function updateTimer() {
     document.getElementById("timer").innerHTML = time
 }
 function load(){
+    //countdown before start of game
+    var countdown = 3
+    var startText = document.getElementById("game-start-time")
+    //update the countdown text
+    var startInterval = setInterval(function(){
+        countdown -= 1
+        startText.innerText = countdown
+        var countSound = new Audio(`./Sounds/countdown${countdown}.ogg`)
+        countSound.volume = 0.1
+        countSound.play()
+        
+    }, 1000);
+    setTimeout(function()
+    {
+        //stop updating countdown
+        clearInterval(startInterval)
+        //hide the overlay
+        document.getElementById("game-start-overlay").style.display = "none"
+        //start the game
+        gameStart()
+        playSound()
+    }, 3000)
+}
+
+function gameStart(){
+    var a = new Audio(`./Sounds/go.ogg`)
+    a.volume = 0.1
+    a.play()
     show_image()
-    document.getElementById("timer").innerHTML = 30
+    document.getElementById("timer").innerText= 30
     var interval = setInterval(updateTimer, 1000); //every second, update the timer
     setTimeout(function()
     {
@@ -61,17 +91,21 @@ function load(){
         finish.play()
         gameEnd = true
         clearInterval(interval) //stop updating the timer
-        document.getElementById("timer").innerHTML = 0
+        document.getElementById("timer").innerText = 0
         
         //Bring up the game over popup after a 300ms delay
         setTimeout(function()
         {
+            //update the texts
             document.getElementById("game-over-overlay").style.display = "block"
             document.getElementById("final-score").innerText = score
-            document.getElementById("final-time").innerText = `${Math.round(30000/score)}ms`
+            var time = 0 //default to 0. If score is 0, the time would also be 0.
+            if (score > 0) time = Math.round(30000/score) 
+            document.getElementById("final-time").innerText = `${time}ms`
+            var pulls_earned = Math.floor(score/25)
+            document.getElementById("final-points").innerText = pulls_earned
 
         }, 300);
 
     }, 30000);
-
 }
