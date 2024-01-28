@@ -448,9 +448,106 @@ form input {
     text-shadow: 4px 4px 4px #000000;
 }
 
-.games-content .items {
-    
+.games-content .items thead{
+    font-size: 11.5px;
 }
+
+.games-content .items th{
+    background-color: rgb(231, 231, 231);
+    color: #3c4a64;
+    font-size: 21px; 
+    text-align: center;
+}
+
+.games-content .items tr{
+    vertical-align: middle; 
+    font-size: 18px; 
+    color: rgb(118, 118, 118);
+}
+
+.games-content table img{
+    width: 100%;
+}
+
+#pull-animation {
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*-------------------Game Page CSS----------------*/ 

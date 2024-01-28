@@ -6,23 +6,6 @@ var dict = {
     "ultra rare":0.6
 }
 
-var pullCounter = 1
-
-function drawItem(){
-    //generate a random float from 0-1, multiply by 1000 and divide it by 100.
-    //This allows values to be generated from 1-100, with 2 decimal places
-    var chance = Math.floor(Math.random() * 10000)*0.01
-    var push = 0
-    //iterate through dictionary
-    for (const [key, value] of Object.entries(dict)) {
-        //check which chance bracket the random value belongs to
-        if (chance < push+value){
-            return key
-            console.log(chance)
-        }
-        push += value
-    }
-}
 function pull(n){
     //show the results of the pull
     var screen = document.getElementById("gacha-anim")
@@ -32,7 +15,19 @@ function pull(n){
     var out = []
     
     for (var i = 0; i < n; i++){
-        var rarity = drawItem()
+        var chance = Math.floor(Math.random() * 10000)*0.01
+        var push = 0
+        var rarity = ""
+        //iterate through dictionary
+        for (const [key, value] of Object.entries(dict)) {
+            //check which chance bracket the random value belongs to
+            if (chance < push+value){
+                rarity = key
+                break
+            }
+            push += value
+        }
+
         //display the items with a border for rarity
         if (rarity == "ultra rare"){
             //rainbowq border for ultra rare
