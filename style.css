@@ -465,6 +465,9 @@ form input {
     color: rgb(118, 118, 118);
 }
 
+.games-content table img{
+    width: 100%;
+}
 
 #pull-animation {
     display: none;
