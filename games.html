@@ -8,7 +8,17 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-  <body class = "text-white gacha-body" onload="load()">
+  <body class = "text-white gacha-body">
+    <!-- Content to be shown where drawn-->
+    <div class = "dark-overlay" id = "gacha-anim">
+       <div class = "pull-content">
+        <!-- Display the items-->
+        <div id = "item-display-row"> </div>
+        <!-- -->
+        <label id = "continue-text">Click anywhere to continue</label>
+       </div>
+    </div>
+
     <header id="header">  <!---Header section--->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -91,18 +101,14 @@
       </div>
       <!-- draw buttons-->
       <div class = "gacha-button-row">
-        <button class = "gacha-button gacha-container">
+        <button class = "gacha-button gacha-container" onclick = "pull(5)">
           <img src = "./Images/gacha.png" style="height: 73%">
           <label class = "gacha-text">5x Draw</label>
         </button>
-        <button class = "gacha-button gacha-container" onclick = "pull()">
+        <button class = "gacha-button gacha-container" onclick = "pull(1)">
           <img src = "./Images/gacha.png" style="height: 73%">
           <label class = "gacha-text">1x Draw</label>
         </button>
-      </div>
-      <!-- Draw animations and effects-->
-      <div class = "dark-overlay">
-        <img src = "./Images/Mask group.png" width="20%" class = "reveal" id = "gacha-anim-obj">
       </div>
       <!----Details----->
       <div class="story">  

@@ -57,6 +57,9 @@ function load(){
     //countdown before start of game
     var countdown = 3
     var startText = document.getElementById("game-start-time")
+     //hide intro text and show countdown
+     document.getElementById("intro").style.display = "none"
+     startText.style.display = "block"
     //update the countdown text
     var startInterval = setInterval(function(){
         countdown -= 1
@@ -66,6 +69,9 @@ function load(){
         countSound.play()
         
     }, 1000);
+    var countSound = new Audio(`./Sounds/countdown3.ogg`)
+    countSound.volume = 0.1
+    countSound.play()
     setTimeout(function()
     {
         //stop updating countdown
@@ -74,7 +80,6 @@ function load(){
         document.getElementById("game-start-overlay").style.display = "none"
         //start the game
         gameStart()
-        playSound()
     }, 3000)
 }
 
@@ -104,6 +109,7 @@ function gameStart(){
             document.getElementById("final-time").innerText = `${time}ms`
             var pulls_earned = Math.floor(score/25)
             document.getElementById("final-points").innerText = pulls_earned
+
 
         }, 300);
 

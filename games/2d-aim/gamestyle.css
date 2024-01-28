@@ -12,6 +12,17 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+button{
+    all: unset; /*Remove the default css from buttons */
+    /*Make own css */
+    color: white;
+    font-weight: 600;
+    font-size: 1.3vw;
+    border: white 0.2vw solid;
+    border-radius: 15px;
+    text-align: center;
+}
+
 /*This is the area where the target can spawn*/
 .object-spawn{
     margin-top: 10vh;
@@ -49,7 +60,7 @@ body{
 }
 
 .overlay{
-    z-index: 1; /*show ontop of everything */
+    z-index: 2; /*show ontop of everything */
     background: rgb(0, 0, 0, 0.6); /*make it a slightly transparent black overlay*/
     /*Set the overlay's size */
     width: 100%;
@@ -62,6 +73,35 @@ body{
     
 }
 
+#intro{
+    /*Set the div's size to the whole screen */
+    width: 100%;
+    height: 100vh;
+    /*set positon*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /*Use flex column. Display: flex will be set in code */
+}
+
+
+#intro label{
+    color: white;
+    font-weight: 400;
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+#intro button{
+    margin-top: 4vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width: 13%;
+}
+
 #game-start-time{
     position: absolute;
     top: 50%;
@@ -70,7 +110,9 @@ body{
     font-weight: 600;
     font-size: 5vw;
     transform: translate(-50%, -50%);
+    display: none; /*Hide by default */
 }
+
 #game-over-overlay{
     display: none; /*Hide by default */
 }
@@ -98,7 +140,6 @@ body{
 .final-text{
     color: white;
     font-size: 1.5vw;
-    margin-left: 8%;
     font-weight: 400;
 
 }
@@ -109,4 +150,11 @@ body{
 .split-flex-row{
     display: flex;
     justify-content: space-between;
+}
+
+.exit-button{
+    margin-top: 7vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width: 70%;
 }
