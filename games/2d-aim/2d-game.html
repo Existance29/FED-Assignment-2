@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="gamestyle.css" rel="stylesheet" type="text/css" />
   </head>
-  <body onload="load()"> <!--Trigger the load function-->
+  <body> <!--Trigger the load function-->
     <!-- A header at the top for the timer and score-->
     <div class = "header">
         <label id = "timer">30</label> 
@@ -13,7 +13,12 @@
     </div>
     <!-- This is the area where the object can spawn in-->
     <div id = "object-spawn" class = "object-spawn"></div>
+    <!-- Overlay that shows when game starts-->
     <div class = "overlay" id = "game-start-overlay">
+      <div id = "intro">
+        <label>You have 30 seconds to click on as many targets as possible<br>The more targets you click, the more pulls you earn</label>
+        <button onclick = "load()">Start</button>
+      </div>
       <label id = "game-start-time">3</label>
     </div>
     <!-- This contains the overlay that pops up when the game ends-->
@@ -29,14 +34,19 @@
             <div class = "split-flex-row" style="margin-top: 4vh;">
               <label class = "final-text">Time/target</label>
               <label id = "final-time" class = "final-text stat-text">0</label>
-          </div>
+            </div>
             <div class = "split-flex-row" style="margin-top: 4vh;">
                 <label class = "final-text">Draws earned:</label>
                 <div style="display: flex; align-items: center;">
-                  <img src="./Images/gacha.png" style="height: 2vw">
+                  <img src="../../Images/gacha.png" style="height: 2vw">
                   <label id = "final-points" class = "final-text stat-text">0</label>
                 </div>
             </div>
+            <!-- Exit button to return back to games page-->
+            <div style="display: flex; justify-content: center; width: 100%;">
+              <button class = "exit-button" onclick="location.href = '../../games.html'">Exit</button>
+            </div>
+            
         </div>
     </div>
     

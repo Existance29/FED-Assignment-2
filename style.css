@@ -450,85 +450,6 @@ form input {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*-------------------Game Page CSS----------------*/ 
 
 #game-banner{
@@ -636,37 +557,61 @@ form input {
     background-color: #425270;
 }
 
-/*Cover the entire screen */
 .dark-overlay{
-    display: none;
-    z-index: 999999;
-    background: rgba(0, 0, 0, 0.7);
+    display: none; /*hide by default */
+    z-index: 999999; /*Show over everything */
+    background: rgba(0, 0, 0, 0.7); /*make a semi-transparent dark overlay */
+    /*cover the entire screen */
     width: 100%;
     height: 100vh;
-    position: absolute;
+    position: fixed; /*Make sure it always shows no matter where the user scrolls */
     top:0;
     left:0;
 
 }
 
-#gacha-anim-obj{
+.pull-content{
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
 }
 
-.reveal{
-    transform: translate(-50%,-60px); /*set intial position before transition */
-    opacity: 0; /* hide */
-    transition: 0.9s all ease;
-    overflow: hidden; /*hide scroll bar */
+#continue-text{
+    font-size: 1.2em;
+    margin-top: 7vh;
+    /*Center text in available space */
+    width: 100%;
+    text-align: center;
+    opacity: 0; /*hide by default */
+    /*use opacity instead of display to prevent other elements from shifting when it shows */
+}
+#item-display-row{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
 }
 
-.reveal.active{
-    transform: translate(-50%,-50%); /* move to center */
-    opacity: 1;
-    }
+#item-display-row div{
+    border-width: 0.4vw;
+    border-style: solid;
+    border-radius: 10px;
+    aspect-ratio: 1/1; /*Keep it squared shape*/
+    width: 11%;
+    /*Set image properties*/
+    background-position: center center; 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
+#item-display-row div:only-child{
+    /*Center the item if there is only one present*/
+    margin: 0 auto;
+}
 
 .product-main{
     background-color: #1A1E26;
