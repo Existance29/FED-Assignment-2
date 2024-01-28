@@ -10,6 +10,7 @@ var dict = {
     "?":0.01
 }
 
+
 function pull(){
     //generate a random float from 0-1, multiply by 1000 and divide it by 100.
     //This allows values to be generated from 1-100, with 2 decimal places
@@ -26,7 +27,24 @@ function pull(){
         }
         push += value
       }
+    // Play Lottie animation
+    playLottieAnimation();
 }
+
+function playLottieAnimation() {
+    var lottiePlayer = document.getElementById("pull-animation");
+    lottiePlayer.style.display = "block";
+    lottiePlayer.goToAndPlay(0, true); 
+}
+function setupLottiePlayer() {
+    var lottiePlayer = document.getElementById("pull-animation");
+    lottiePlayer.addEventListener('complete', function() {
+        lottiePlayer.style.display = "none";
+    });
+}
+
+// Call this function when the page loads
+document.addEventListener('DOMContentLoaded', setupLottiePlayer);
 
 function load(){
     var ele = document.getElementById("gacha-anim-obj")
