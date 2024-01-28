@@ -13,6 +13,7 @@ function pull(n){
     disableScroll()
     var row = document.getElementById("item-display-row")
     var openAnim = document.getElementById("open-anim")
+    openAnim.style.display = "block"
     var src = "https://lottie.host/81fe254e-8e25-44b3-a723-fcfe68b7b916/psA9kkEEVW.json"
     openAnim.load(src)
     setTimeout(function(){
@@ -45,15 +46,15 @@ function pull(n){
                 row.innerHTML += `<div style = "border-color:white" class = "fade-in"></div>`
             }
         }
-
+        openAnim.style.display = "none"
         //wait 1 second before letting user continue
         setTimeout(function(){
-            openAnim.style.display = "none"
             //show continue text
             var text = document.getElementById("continue-text")
             text.style.opacity = "1"
             //add onclick event to allow user to continue
             screen.addEventListener("click", function(){
+                screen.style.display = "none" //hide screen 
                 text.style.opacity = "0"
                 row.innerHTML = "" //clear all items display
                 enableScroll()
