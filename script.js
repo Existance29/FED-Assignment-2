@@ -64,10 +64,45 @@ async function getAPI(url){
   //check if the response was successful
   if (!response.ok){
     location.href = "error.html"
+    console.log(response)
   }
   const json = await response.json()
   return json
 
+}
+
+async function getAccount(){
+  var id = "65b6fe715f523a05000000ad"
+  var out = await getAPI(`https://jsbtech-84ac.restdb.io/rest/profiles?q={"_id":"${id}"}`)
+  return out[0]
+}
+
+//update data
+//dont use async function, nothing to return and makes it easy to use with non-async functions
+function update(url, id, jsondata){
+  let settings = {
+    async: true,
+    crossDomain: true,
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": key,
+      "cache-control": "no-cache"
+    },
+    body: JSON.stringify(jsondata)
+  }
+
+  fetch(url+`/${id}`, settings)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response)
+  })
+  
+}
+
+function updateAccount(jsondata){
+  var id = "65b6fe715f523a05000000ad"
+  update("https://jsbtech-84ac.restdb.io/rest/profiles", id, jsondata)
 }
 
 /* Handle which product category to show based */
@@ -204,3 +239,4 @@ function addToCart(){
   }, 2000)
 
 }
+
