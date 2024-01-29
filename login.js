@@ -19,6 +19,8 @@ function login() {
     Indicator.style.transform = "translateX(0px)";
 }
 
+login();
+
 function redirect(){
   var link = localStorage.getItem("profileRedirect")
   //redirect to home page if no link is found
