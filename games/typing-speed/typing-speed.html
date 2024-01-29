@@ -4,8 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="../../script.js"></script>
   </head>
-  <body>
+  <body onload = "getData()">
     <div class="wrapper">
       <input type="text" class="input-field">
       <div class="typing-text">
@@ -17,7 +18,7 @@
       <ul class="result-details">
         <li class="time">
           <p>Time Left:</p>
-          <span>30s</span>
+          <span>60s</span>
         </li>
         <li class="mistake">
           <p>Mistakes:</p>
@@ -29,6 +30,29 @@
         </li>
       </ul>
     </div>
+    <div class = "overlay" id = "game-over-overlay">
+      <div class = "stat-area">
+          <label class = "game-over">Game Over!</label>
+          <!-- Show stats-->
+          <div class = "split-flex-row" style="margin-top: 4vh;">
+            <label class = "final-text">Wpm:</label>
+            <label id = "final-score" class = "final-text stat-text">0</label>
+        </div>
+          <div class = "split-flex-row" style="margin-top: 4vh;">
+              <label class = "final-text">Draws earned:</label>
+              <div style="display: flex; align-items: center;">
+                <img src="../../Images/gacha.png" style="height: 2vw">
+                <label id = "final-points" class = "final-text stat-text">0</label>
+              </div>
+          </div>
+          <!-- Exit button to return back to games page-->
+          <div style="display: flex; justify-content: center; width: 100%;">
+            <button class = "exit-button" onclick="location.href = '../../games.html'">Exit</button>
+          </div>
+          
+      </div>
+  </div>
+
     <script src="paragraphs.js"></script>
     <script src="script.js"></script>
   

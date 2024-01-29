@@ -63,7 +63,8 @@ async function registerUser(){
   }
   //create the data
   var cooldownData = {
-    "2d-aim-trainer": 0
+    "2d-aim-trainer": 0,
+    "typing-speed-tester":0
   }
   var newData = {
     "email":email,

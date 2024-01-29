@@ -1,42 +1,56 @@
-  <!doctype html>
-  <html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link href="gamestyle.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-      <div class="wrapper">
-        <input type="text" class="input-field">
-        <div class="content-box">
-          <div class="typing-text">
-            <p></p>
-          </div>
-          <div class="content">
-            <ul class="result-details">
-              <li class="time">
-                <p>Time Left:</p>
-                <span><b>60</b>s</span>
-              </li>
-              <li class="mistake">
-                <p>Mistakes:</p>
-                <span>0</span>
-              </li>
-              <li class="wpm">
-                <p>WPM:</p>
-                <span>0</span>
-              </li>
-              <li class="cpm">
-                <p>CPM:</p>
-                <span>0</span>
-              </li>
-            </ul>
-            <button>Try Again</button>
-          </div>
-        </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="gamestyle.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body onload = "getData()"> <!--Trigger the load function-->
+    <!-- A header at the top for the timer and score-->
+    <div class = "header">
+        <label id = "timer">30</label> 
+        <label id = "score">0</label> 
+    </div>
+    <!-- This is the area where the object can spawn in-->
+    <div id = "object-spawn" class = "object-spawn"></div>
+    <!-- Overlay that shows when game starts-->
+    <div class = "overlay" id = "game-start-overlay">
+      <div id = "intro">
+        <label>You have 30 seconds to click on as many targets as possible<br>The more targets you click, the more pulls you earn</label>
+        <button onclick = "load()">Start</button>
       </div>
-      <script src="script.js"></script>
-      <script src="paragraph.js"></script>
+      <label id = "game-start-time">3</label>
+    </div>
+    <!-- This contains the overlay that pops up when the game ends-->
+    <div class = "overlay" id = "game-over-overlay">
+        <div class = "stat-area">
+            <label class = "game-over">Game Over!</label>
+            <!-- Show stats-->
+            <!-- split-flex-row is used to align the label and value on opposite ends-->
+            <div class = "split-flex-row" style="margin-top: 10vh;">
+                <label class = "final-text">Score:</label>
+                <label id = "final-score" class = "final-text stat-text">0</label>
+            </div>
+            <div class = "split-flex-row" style="margin-top: 4vh;">
+              <label class = "final-text">Time/target</label>
+              <label id = "final-time" class = "final-text stat-text">0</label>
+            </div>
+            <div class = "split-flex-row" style="margin-top: 4vh;">
+                <label class = "final-text">Draws earned:</label>
+                <div style="display: flex; align-items: center;">
+                  <img src="../../Images/gacha.png" style="height: 2vw">
+                  <label id = "final-points" class = "final-text stat-text">0</label>
+                </div>
+            </div>
+            <!-- Exit button to return back to games page-->
+            <div style="display: flex; justify-content: center; width: 100%;">
+              <button class = "exit-button" onclick="location.href = '../../games.html'">Exit</button>
+            </div>
+            
+        </div>
+    </div>
     
-    </body>
-  </html>
+    <script src="game.js"></script>
+    <script src="../../script.js"></script>
+  </body>
+</html>
