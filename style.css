@@ -278,10 +278,11 @@ header {
     color: white;
 }
 
+
 /*-------Login page styling------*/
 .account-page {
-    padding: 250px;
-    background-image: url("");
+    padding: 150px;
+    background-image: url("Images/about-banner-1.png");
     background-size: cover;
     background-position: center;
     font-size: 14px;
@@ -372,7 +373,7 @@ form a {
 
 @media screen and (max-width: 600px) {
     .account-page {
-        padding: 50px 10px; /* Reduce padding on smaller screens */
+        padding: 100px 10px; /* Reduce padding on smaller screens */
     }
 
     .form-container {
@@ -407,7 +408,7 @@ form a {
 
 /*---------About page----------*/
 .about-banner .grid-container {
-    background: url("Images/Gacha-banner-1.png") no-repeat center center;
+    background: url("Images/about-banner-1.png") no-repeat center center;
     background-size: cover;
     height: 700px;
     display: flex;

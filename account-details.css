@@ -1,10 +1,18 @@
 /* Basic body styling for background and top margin */
 body {
-    background-color: #3c4a64;
     padding-top: 100px;
-    padding-bottom: 50px;
+    background: url("Images/about-banner-1.png") no-repeat center center;
+    background-size: cover;
+    min-height: 700px;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    color: white;
 }
 
+h4 {
+    color: white;
+}
 /* Style for profile picture with fixed width and auto height */
 .ui-w-80 {
     width: 80px;
