@@ -1,6 +1,7 @@
 /* Adjusts the top padding of the cart page for better alignment */
 .cart-page {
   padding-top: 2rem; 
+  background-color: #2A374F;
 }
 
 /* Ensures that the images in the cart are thumbnail-sized and rounded*/
@@ -33,7 +34,7 @@
 /*--------Action Link Styles--------*/
 
 /* Styles for action links to provide a contrast against the dark background */
-.action-link {
+a {
   color: #3c4a64; /* Complementary color for links */
   font-size: 0.875rem; 
 }
