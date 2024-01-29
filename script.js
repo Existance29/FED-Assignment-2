@@ -49,13 +49,13 @@ function login() {
 }
 
 //check if user is logged on
-function isLoggedin(){
-  return !(sessionStorage.getItem("userid") == null)
+function isLoggedIn(){
+  return !sessionStorage.getItem("userid") == null
 }
 //check if user is logged in before redirecting to the page
 function checkLogin(path){
   var user = sessionStorage.getItem("userid")
-  if (isLoggedin){
+  if (isLoggedIn()){
     location.href = path
   }
   else{

@@ -16,8 +16,8 @@ var ultraRareDict = {
 }
 //contains the data for the prizes
 var prizeDict = {
-    "common": ["Images/credits.png","Images/shipping.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad062520a3f041000002b6_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063efbc76544800001100_1.png"],
-    "rare": ["Images/credits.png","Images/shipping.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfa8820a3f0410000029a_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063fbbc76544800001102_1.png"],
+    "common": ["Images/credits.png","Images/shipping.png"],
+    "rare": ["https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad062520a3f041000002b6_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063efbc76544800001100_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfa8820a3f0410000029a_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063fbbc76544800001102_1.png"],
     "ultra rare": ["https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b06197bc765448000010eb_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfb3020a3f0410000029d_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad078b20a3f041000002bf_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063ccbc765448000010fd_1.png"]
 }
 
@@ -48,18 +48,19 @@ function msToTime(duration) {
   
     return hours + ":" + minutes + ":" + seconds
 }
-function gameCheckLogin(path = "./games.html", redirect = true){
-    var user = sessionStorage.getItem("userid")
-    if (isLoggedin){
+function gameCheckLogin(path = "./games.html"){
+    if (isLoggedIn()){
+        window.alert("hi")
         location.href = path  
     }
-    else if (redirect){
+    else{
         location.href = "./profile.html"
         //save the place to redirect after user signs in
         localStorage.setItem("profileRedirect","./games.html")
     }
   }
 
+//update the api only when leaving the page
 function checkCDS(){
     currDate = new Date()
     for (const [key, value] of Object.entries(gameCDS)) {
@@ -115,7 +116,8 @@ function pullResults(){
         }
 
         //Determine which item to get
-        var prize = prizeDict[rarity][getRandomInt(0,3)]
+        var prizeArray = prizeDict[rarity]
+        var prize = prizeArray[getRandomInt(0,prizeArray.length -1)]
 
         //display the items with a border for rarity
         if (rarity == "ultra rare"){
@@ -165,7 +167,13 @@ function skipAnim(){
 
 }
 function pull(n){
-    if (!isLoggedin) return
+    //if user is not logged in, redirect to profile page
+    if (!isLoggedIn()){
+        location.href = "./profile.html"
+        //save the place to redirect after user signs in
+        localStorage.setItem("profileRedirect","./games.html")
+        return
+    }
     //store it in a global variable
     pullNum = n
     //show the results of the pull
