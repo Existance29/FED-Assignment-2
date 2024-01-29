@@ -1,0 +1,75 @@
+/* Basic body styling for background and top margin */
+body {
+    background-color: #3c4a64;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+/* Style for profile picture with fixed width and auto height */
+.ui-w-80 {
+    width: 80px;
+    height: auto;
+}
+
+/* Style for buttons, ensuring the cursor indicates a clickable element */
+.btn {
+    cursor: pointer;
+}
+
+/* Style for hidden file input used in image upload */
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* General styling for list-group items within account settings links */
+.account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03);
+}
+
+/* Style for active state of list-group items */
+.account-settings-links .list-group-item.active {
+    font-weight: bold;
+    background: transparent;
+    color: #4E5155;
+}
+
+
+/* Responsive design adjustments for smaller screens */
+@media (max-width: 768px) {
+    .account-settings-links .list-group-item {
+        padding: 0.85rem 1rem; /* Reduced padding */
+    }
+}
+
+/* Styles for select2 component if used */
+.account-settings-multiselect ~ .select2-container {
+    width: 100%;
+}
+
+/* Enhanced label styling for better readability */
+.form-group label {
+    font-weight: bold;
+}
+
+/* Rounded borders for input fields */
+.form-control {
+    border-radius: 0.25rem;
+}
+
+/* Default button styles */
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+}
+
+.btn-default {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+}
