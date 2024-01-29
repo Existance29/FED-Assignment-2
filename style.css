@@ -720,7 +720,7 @@ form a {
     /*Set image properties*/
     background-position: center center; 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
 .fade-in{
@@ -775,7 +775,6 @@ form a {
     text-shadow: 4px 4px 4px #000000;
     line-height: 1.4; /*Increase the line height from the default 1.2 */
 }
-
 #product-banner p{
     text-shadow: 4px 4px 4px #000000;
     font-size: 1.2em;
@@ -826,6 +825,15 @@ form a {
 /*Child elements will not be horizontally centered*/
 .product-display .text{
     width: 100%; /*fill up entire horizontal width*/
+}
+
+.play-icon{
+    display: none;
+}
+
+.game-countdown{
+    font-size: 2em; 
+    font-weight: 500;
 }
 
 .product-display .title{

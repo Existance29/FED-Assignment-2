@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-  <body class = "text-white gacha-body">
+  <body class = "text-white gacha-body" onload = "gamePageLoad()">
     <!-- Content to be shown where drawn-->
     <div class = "dark-overlay" id = "gacha-anim">
       <dotlottie-player background="transparent" speed="1.1" id = "open-anim" loop autoplay></dotlottie-player>
@@ -73,7 +73,8 @@
           <div class="content"  data-aos="fade-up" data-aos-once="true">
             <h1>PLAY OUR 2D AIM TRAINER AND GET REWARDS</h1>
             <p>Aim and click on the circles for 30s and try to get as many points as possible!</p>
-            <a class="icon" href="./games/2d-aim/2d-game.html" id = "2d-aim-trainer" style="color:white;"><i class='bx bx-play'></i></a>
+            <label class = "game-countdown" id = "2d-aim-trainer-countdown">20:00:00</label>
+            <a class="icon play-icon" href="./games/2d-aim/2d-game.html" id = "2d-aim-trainer" style="color:white;"><i class='bx bx-play'></i></a>
           </div>
         </div>
       </div>
@@ -87,7 +88,7 @@
         <label class="text" style = "font-size: 1.4em;font-weight: 500;">Lucky Draw</label> 
         <div class = "gacha-container">
           <img src = "./Images/gacha.png" style="height: 73%">
-          <label class = "gacha-text">100</label>
+          <label class = "gacha-text" id = "pulls">100</label>
         </div>
       </div>
       <!-- The draw banner, image on left, text on right-->
@@ -116,11 +117,9 @@
         <div class="grid-container">
           <div class="content"  data-aos="fade-up">
             <h1>Lucky Draw Details</h1>
-            <p>The Lucky Draw is a permanent event, you can only make sets of 5 draws. Every 5 draws guarantees a Rare or above prize.
-              For this Lucky Draw, the chances of obtaining an Ultra Rare prize is 0.600%, and the consolidated chance including the guanrantee is 1.600%. Every 90 Draws guanrantees an Ultra Rare prize.
-
-              For this Lucky Draw, the base chance of obtaining Rare entities is 5.100%. The consolidated chance of obtaining Rare rewards including the guanrantee is 13.00%. Every 5 Draws guarantees a Rare or above prize.
-              The chance of obtaining a Rare prize from the guarantee is 94.000% and the chance of obtaining a Ultra Rare prize is 0.600%
+            <p>The Lucky Draw is a permanent event, you can only make sets of 5 draws. For this Lucky Draw, the chances of obtaining a Common prize is 94.3%, Rare is 5.1% and Ultra Rare prize is 0.6%
+                Every 10 draws is guaranteed a rare or above prize. (97% chance for rare, 3% chance for ultra rare)
+                Every 120 draws is guaranteed an ultra rare prize
             </p>
           </div>
         </div>

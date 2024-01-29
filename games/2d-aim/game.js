@@ -14,6 +14,10 @@ function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
+//get user data
+async function getData(){
+    data = await getAccount()
+}
 function show_image() {
     if (gameEnd){ return} //prevent it from being clickable after the game has ended
     var src = "./images/object.png"
@@ -54,6 +58,7 @@ function updateTimer() {
     document.getElementById("timer").innerHTML = time
 }
 function load(){
+    console.log(data)
     //countdown before start of game
     var countdown = 3
     var startText = document.getElementById("game-start-time")
@@ -97,7 +102,14 @@ function gameStart(){
         gameEnd = true
         clearInterval(interval) //stop updating the timer
         document.getElementById("timer").innerText = 0
-        
+        //update the user's game cooldown and add pulls
+        var gameCD = JSON.parse(data["game-cds"])
+        gameCD["2d-aim-trainer"] = Date.now()
+        data["game-cds"] = JSON.stringify(gameCD)
+        var pulls_earned = Math.floor(score/25)
+        data["pulls"] += pulls_earned
+        updateAccount(data)
+
         //Bring up the game over popup after a 300ms delay
         setTimeout(function()
         {
@@ -107,7 +119,6 @@ function gameStart(){
             var time = 0 //default to 0. If score is 0, the time would also be 0.
             if (score > 0) time = Math.round(30000/score) 
             document.getElementById("final-time").innerText = `${time}ms`
-            var pulls_earned = Math.floor(score/25)
             document.getElementById("final-points").innerText = pulls_earned
 
 
