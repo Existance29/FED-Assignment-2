@@ -44,15 +44,15 @@ function msToTime(duration) {
   
     return hours + ":" + minutes + ":" + seconds
 }
-function gameCheckLogin(path = "./games.html"){
+function gameCheckLogin(path = "./games.html", redirect = true){
     var user = sessionStorage.getItem("userid")
-    if (user == null){
-      location.href = "./profile.html"
-      //save the place to redirect after user signs in
-      localStorage.setItem("profileRedirect","./games.html")
+    if (isLoggedin){
+        location.href = path  
     }
-    else{
-      location.href = path
+    else if (redirect){
+        location.href = "./profile.html"
+        //save the place to redirect after user signs in
+        localStorage.setItem("profileRedirect","./games.html")
     }
   }
 
@@ -83,7 +83,7 @@ async function gamePageLoad(){
     setInterval(checkCDS, 1000)
 }
 function pull(n){
-    gameCheckLogin()
+    if (!isLoggedin) return
     //show the results of the pull
     var pulls = document.getElementById("pulls")
     if (data["pulls"] < n) return false

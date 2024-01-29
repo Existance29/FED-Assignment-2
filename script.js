@@ -48,16 +48,20 @@ function login() {
     Indicator.style.transform = "translateX(0px)";
 }
 
+//check if user is logged on
+function isLoggedin(){
+  return !(sessionStorage.getItem("userid") == null)
+}
 //check if user is logged in before redirecting to the page
 function checkLogin(path){
   var user = sessionStorage.getItem("userid")
-  if (user == null){
+  if (isLoggedin){
+    location.href = path
+  }
+  else{
     location.href = "./profile.html"
     //save the place to redirect after user signs in
     localStorage.setItem("profileRedirect",path)
-  }
-  else{
-    location.href = path
   }
 }
 //retrieve from API
