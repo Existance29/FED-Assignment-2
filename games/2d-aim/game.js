@@ -106,7 +106,7 @@ function gameStart(){
         var gameCD = JSON.parse(data["game-cds"])
         gameCD["2d-aim-trainer"] = Date.now()
         data["game-cds"] = JSON.stringify(gameCD)
-        var pulls_earned = Math.floor(score/25)
+        var pulls_earned = Math.floor(score/20)
         data["pulls"] += pulls_earned
         updateAccount(data)
 

@@ -48,16 +48,20 @@ function login() {
     Indicator.style.transform = "translateX(0px)";
 }
 
+//check if user is logged on
+function isLoggedIn(){
+  return !sessionStorage.getItem("userid") == null
+}
 //check if user is logged in before redirecting to the page
 function checkLogin(path){
   var user = sessionStorage.getItem("userid")
-  if (user == null){
+  if (isLoggedIn()){
+    location.href = path
+  }
+  else{
     location.href = "./profile.html"
     //save the place to redirect after user signs in
     localStorage.setItem("profileRedirect",path)
-  }
-  else{
-    location.href = path
   }
 }
 //retrieve from API
@@ -92,7 +96,7 @@ async function getAccount(){
     "password": "",
     "username": "",
     "pulls": 0,
-    "game-cds": "{\"2d-aim-trainer\":0}",
+    "game-cds": "{\"2d-aim-trainer\":0, \"typing-speed-tester\":0}",
     "points": 0,
     "pity": 0
     }

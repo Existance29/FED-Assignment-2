@@ -21,6 +21,7 @@ function login() {
 
 login();
 
+//redirect the user to the previous page
 function redirect(){
   var link = localStorage.getItem("profileRedirect")
   //redirect to home page if no link is found
@@ -38,8 +39,10 @@ async function getUsers(){
 function loginUser(){
   var email = document.getElementById("lemail").value
   var password = document.getElementById("lpassword").value
+  //check if the email and password matches
   for (var i = 0; i < data.length; i++){
     if (data[i]["email"] == email && data[i]["password"] == password){
+      //success, save the id and redirect
       sessionStorage.setItem("userid",data[i]["_id"])
       redirect()
       return
@@ -47,7 +50,7 @@ function loginUser(){
   }
   console.log()
 }
-function registerUser(){
+async function registerUser(){
   var username = document.getElementById("rusername").value 
   var email = document.getElementById("remail").value
   var password = document.getElementById("rpassword").value
@@ -58,8 +61,10 @@ function registerUser(){
       return
     }
   }
+  //create the data
   var cooldownData = {
-    "2d-aim-trainer": 0
+    "2d-aim-trainer": 0,
+    "typing-speed-tester":0
   }
   var newData = {
     "email":email,
@@ -70,7 +75,8 @@ function registerUser(){
     "points": 0,
     "pity": 0
   }
-  uid = post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)["_id"]
+  //store the data
+  uid = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)["_id"]
   sessionStorage.setItem("userid",uid)
   redirect()
 }

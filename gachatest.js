@@ -16,13 +16,17 @@ var ultraRareDict = {
 }
 //contains the data for the prizes
 var prizeDict = {
-    "common": ["Images/credits.png","Images/shipping.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad062520a3f041000002b6_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063efbc76544800001100_1.png"],
-    "rare": ["Images/credits.png","Images/shipping.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfa8820a3f0410000029a_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063fbbc76544800001102_1.png"],
+    "common": ["Images/credits.png","Images/shipping.png"],
+    "rare": ["https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad062520a3f041000002b6_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063efbc76544800001100_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfa8820a3f0410000029a_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063fbbc76544800001102_1.png"],
     "ultra rare": ["https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b06197bc765448000010eb_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfb3020a3f0410000029d_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad078b20a3f041000002bf_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063ccbc765448000010fd_1.png"]
 }
 
 //play cooldown for games (in ms)
-var gameCD = 72000000 //20 hours
+//the idea is to let the user play each game every 20hours
+//for testing purposes, this has been disabled
+//We plan to disable this in the submission as well
+//if you want to test this, set gameCD variable to 72000000
+var gameCD = 0 //72000000ms = 20 hours
 
 //generate a random integer between 2 values
 function getRandomInt(min, max) {
@@ -45,17 +49,18 @@ function msToTime(duration) {
     return hours + ":" + minutes + ":" + seconds
 }
 function gameCheckLogin(path = "./games.html"){
-    var user = sessionStorage.getItem("userid")
-    if (user == null){
-      location.href = "./profile.html"
-      //save the place to redirect after user signs in
-      localStorage.setItem("profileRedirect","./games.html")
+    if (isLoggedIn()){
+        window.alert("hi")
+        location.href = path  
     }
     else{
-      location.href = path
+        location.href = "./profile.html"
+        //save the place to redirect after user signs in
+        localStorage.setItem("profileRedirect","./games.html")
     }
   }
 
+//update the api only when leaving the page
 function checkCDS(){
     currDate = new Date()
     for (const [key, value] of Object.entries(gameCDS)) {
@@ -82,86 +87,114 @@ async function gamePageLoad(){
     checkCDS()
     setInterval(checkCDS, 1000)
 }
+
+function pullResults(){
+    console.log("b")
+    //remove the skipAnim listener, prevents it from triggering again
+    screen.removeEventListener("click",skipAnim)
+    for (var i = 0; i < pullNum; i++){
+        var chance = Math.floor(Math.random() * 10000)*0.01
+        var push = 0
+        var rarity = ""
+        var dict = normalDict
+        //increment the number of pulls (aka pity) 
+        //check what nth pull it is and apply the correct prize pool
+        data["pity"] += 1
+        if (data["pity"]%120 == 0){
+            dict = ultraRareDict
+        } else if (data["pity"]%10 == 0){
+            dict = rareDict
+        }
+        //iterate through dictionary
+        for (const [key, value] of Object.entries(dict)) {
+            //check which chance bracket the random value belongs to
+            if (chance < push+value){
+                rarity = key
+                break
+            }
+            push += value
+        }
+
+        //Determine which item to get
+        var prizeArray = prizeDict[rarity]
+        var prize = prizeArray[getRandomInt(0,prizeArray.length -1)]
+
+        //display the items with a border for rarity
+        if (rarity == "ultra rare"){
+            //rainbowq border for ultra rare
+            row.innerHTML += `<div style = "border: 5px solid transparent;
+                                            border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
+                                            border-image-slice: 1;
+                                            background-image: url(${prize})"
+                                            class = "fade-in"
+                                            ></div>`
+        } else if (rarity == "rare"){
+            //purple border for rare
+            row.innerHTML += `<div style = "border-color:#A020F0; background-image: url(${prize})" 
+                                   class = "fade-in"
+                                            ></div>`
+        }else{
+            //white border for common
+            row.innerHTML += `<div style = "border-color:white; background-image: url(${prize});" 
+                                   class = "fade-in"
+                                   ></div>`
+        }
+    }
+    //updateAccount(data)
+    openAnim.style.display = "none"
+    //wait 1 second before letting user continue
+    setTimeout(function(){
+        //show continue text
+        var text = document.getElementById("continue-text")
+        text.style.opacity = "1"
+        //add onclick event to allow user to continue
+        screen.addEventListener("click", function(){
+            screen.style.display = "none" //hide screen 
+            text.style.opacity = "0"
+            row.innerHTML = "" //clear all items display
+            enableScroll()
+        }, { once: true })
+
+    }, 1000);
+    
+}
+function skipAnim(){
+    //cancel the timeout and trigger the results
+    console.log("a")
+    clearTimeout(animationTime) 
+    pullResults()
+    openAnim.style.display = "none"
+
+}
 function pull(n){
-    gameCheckLogin()
+    //if user is not logged in, redirect to profile page
+    if (!isLoggedIn()){
+        location.href = "./profile.html"
+        //save the place to redirect after user signs in
+        localStorage.setItem("profileRedirect","./games.html")
+        return
+    }
+    //store it in a global variable
+    pullNum = n
     //show the results of the pull
     var pulls = document.getElementById("pulls")
     if (data["pulls"] < n) return false
-    var screen = document.getElementById("gacha-anim")
+    screen = document.getElementById("gacha-anim")
     screen.style.display = "block"
+    $(screen).off("click")
+    //subtract the pulls and update it
     data["pulls"] -= n
     pulls.innerText = data["pulls"]
     disableScroll()
-    var row = document.getElementById("item-display-row")
-    var openAnim = document.getElementById("open-anim")
+    row = document.getElementById("item-display-row")
+    openAnim = document.getElementById("open-anim")
+    //start animation
     openAnim.style.display = "block"
     var src = "https://lottie.host/81fe254e-8e25-44b3-a723-fcfe68b7b916/psA9kkEEVW.json"
     openAnim.load(src)
-    setTimeout(function(){
-        for (var i = 0; i < n; i++){
-            var chance = Math.floor(Math.random() * 10000)*0.01
-            var push = 0
-            var rarity = ""
-            var dict = normalDict
-            //increment the number of pulls (aka pity) 
-            //check what nth pull it is and apply the correct prize pool
-            data["pity"] += 1
-            if (data["pity"]%120 == 0){
-                dict = ultraRareDict
-            } else if (data["pity"]%10 == 0){
-                dict = rareDict
-            }
-            //iterate through dictionary
-            for (const [key, value] of Object.entries(dict)) {
-                //check which chance bracket the random value belongs to
-                if (chance < push+value){
-                    rarity = key
-                    break
-                }
-                push += value
-            }
-
-            //Determine which item to get
-            var prize = prizeDict[rarity][getRandomInt(0,3)]
-
-            //display the items with a border for rarity
-            if (rarity == "ultra rare"){
-                //rainbowq border for ultra rare
-                row.innerHTML += `<div style = "border: 5px solid transparent;
-                                                border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
-                                                border-image-slice: 1;
-                                                background-image: url(${prize})"
-                                                class = "fade-in"
-                                                ></div>`
-            } else if (rarity == "rare"){
-                //purple border for rare
-                row.innerHTML += `<div style = "border-color:#A020F0; background-image: url(${prize})" 
-                                       class = "fade-in"
-                                                ></div>`
-            }else{
-                //white border for common
-                row.innerHTML += `<div style = "border-color:white; background-image: url(${prize});" 
-                                       class = "fade-in"
-                                       ></div>`
-            }
-        }
-        updateAccount(data)
-        openAnim.style.display = "none"
-        //wait 1 second before letting user continue
-        setTimeout(function(){
-            //show continue text
-            var text = document.getElementById("continue-text")
-            text.style.opacity = "1"
-            //add onclick event to allow user to continue
-            screen.addEventListener("click", function(){
-                screen.style.display = "none" //hide screen 
-                text.style.opacity = "0"
-                row.innerHTML = "" //clear all items display
-                enableScroll()
-            }, { once: true })
-
-        }, 1000);
-    }, 2000)
+    //make it so that it skips the gift open animation when clicked anywhere on screen
+    animationTime = setTimeout(pullResults, 2000)
+    screen.addEventListener("click", skipAnim)
 }
 
 //prevent scrolling
