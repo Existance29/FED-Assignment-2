@@ -1,0 +1,79 @@
+/* General page styling */
+.cart-page {
+    padding-top: 500px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  /* Styling for tables to align with Bootstrap's dark theme */
+  table {
+    color: white;
+  }
+  
+  /* Flexbox styling for cart item information */
+  .cart-info {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Table header styling */
+  th {
+    text-align: left;
+    background-color: #001689;
+    font-weight: normal;
+  }
+  
+  /* Table cell padding */
+  td {
+    padding: 10px 5px;
+  }
+  
+  /* Quantity input field size */
+  td input[type="number"] {
+    width: auto; /* Bootstrap's form control width is usually 100% */
+  }
+  
+  /* Styling for action links (e.g., Remove) */
+  td a {
+    color: #001689;
+    font-size: 0.875rem; /* Using Bootstrap's font size scale */
+  }
+  
+  /* Image sizing within cart items */
+  td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+  }
+  
+  /* Aligning the total price section to the end */
+  .total-price {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  /* Top border styling for the total price table */
+  .total-price table {
+    border-top: 3px solid #001689;
+  }
+  
+  /* Text alignment for the last table cell and header */
+  td:last-child,
+  th:last-child {
+    text-align: right;
+  }
+  
+  /* Media query for small screens to adjust padding */
+  @media only screen and (max-width: 600px) {
+    .cart-page {
+      padding-top: 50px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  
+    /* Hiding product details on small screens */
+    .cart-info p {
+      display: none;
+    }
+  }
+  
