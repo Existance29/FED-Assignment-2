@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-  <body class="text-white">   
+  <body class="text-white" onload = "getUsers()">   
     <header>  <!---Header section--->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -60,18 +60,18 @@
                       </div>
 
                       <form id="loginform">
-                          <input type="text" placeholder="Username">
-                          <input type="password" placeholder="Password">
-                          <button type="submit" class="btn">Login</button>
+                          <input type="text" id = "lemail" placeholder="email">
+                          <input type="password" id = "lpassword" placeholder="Password">
+                          <button type="submit" class="btn" onclick = "loginUser()">Login</button>
                           <br>
                           <a href="">Forgot Password</a>
                       </form>
 
                       <form id="regform">
-                          <input type="text" placeholder="Username">
-                          <input type="email" placeholder="Email">
-                          <input type="password" placeholder="Password">
-                          <button type="submit" class="btn">Register</button>
+                          <input type="text" id = "rusername" placeholder="Username">
+                          <input type="email" id = "remail" placeholder="Email">
+                          <input type="password" id = "rpassword" placeholder="Password">
+                          <button type="submit" class="btn" onclick = "registerUser()">Register</button>
                       </form>
                   </div>
               </div>

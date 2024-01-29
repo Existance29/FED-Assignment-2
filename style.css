@@ -828,6 +828,7 @@ form a {
 
 .play-icon{
     display: none;
+    cursor: pointer;
 }
 
 .game-countdown{

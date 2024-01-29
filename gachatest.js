@@ -44,6 +44,17 @@ function msToTime(duration) {
   
     return hours + ":" + minutes + ":" + seconds
 }
+function gameCheckLogin(path = "./games.html"){
+    var user = sessionStorage.getItem("userid")
+    if (user == null){
+      location.href = "./profile.html"
+      //save the place to redirect after user signs in
+      localStorage.setItem("profileRedirect","./games.html")
+    }
+    else{
+      location.href = path
+    }
+  }
 
 function checkCDS(){
     currDate = new Date()
@@ -72,6 +83,7 @@ async function gamePageLoad(){
     setInterval(checkCDS, 1000)
 }
 function pull(n){
+    gameCheckLogin()
     //show the results of the pull
     var pulls = document.getElementById("pulls")
     if (data["pulls"] < n) return false

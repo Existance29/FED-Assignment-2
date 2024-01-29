@@ -48,7 +48,19 @@ function login() {
     Indicator.style.transform = "translateX(0px)";
 }
 
-//API functions
+//check if user is logged in before redirecting to the page
+function checkLogin(path){
+  var user = sessionStorage.getItem("userid")
+  if (user == null){
+    location.href = "./profile.html"
+    //save the place to redirect after user signs in
+    localStorage.setItem("profileRedirect",path)
+  }
+  else{
+    location.href = path
+  }
+}
+//retrieve from API
 async function getAPI(url){
   let settings = {
     method: "GET",
@@ -72,11 +84,39 @@ async function getAPI(url){
 }
 
 async function getAccount(){
-  var id = "65b6fe715f523a05000000ad"
+  var id = sessionStorage.getItem("userid")
+  //return some dummy data for display
+  if (id == null){
+    return {
+    "email": "",
+    "password": "",
+    "username": "",
+    "pulls": 0,
+    "game-cds": "{\"2d-aim-trainer\":0}",
+    "points": 0,
+    "pity": 0
+    }
+  }
   var out = await getAPI(`https://jsbtech-84ac.restdb.io/rest/profiles?q={"_id":"${id}"}`)
   return out[0]
 }
 
+async function post(url, jsondata){
+  let settings = {
+    method: "POST",
+    headers: {
+      "content-type": "application/json",
+      "x-apikey": key,
+      "cache-control": "no-cache"
+    },
+
+    body: JSON.stringify(jsondata)
+  }
+  const response = await fetch(url, settings)
+  const json = await response.json()
+  return json
+  
+}
 //update data
 //dont use async function, nothing to return and makes it easy to use with non-async functions
 function update(url, id, jsondata){
