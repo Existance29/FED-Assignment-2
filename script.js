@@ -96,7 +96,7 @@ async function getAccount(){
     "password": "",
     "username": "",
     "pulls": 0,
-    "game-cds": "{\"2d-aim-trainer\":0}",
+    "game-cds": "{\"2d-aim-trainer\":0, \"typing-speed-tester\":0}",
     "points": 0,
     "pity": 0
     }

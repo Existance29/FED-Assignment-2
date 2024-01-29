@@ -439,8 +439,9 @@ form a {
 
 /*---------Game page----------*/
 .aim-banner {
-    background: url("Images/game-1.png") no-repeat center center;
     width: 100%;
+    background-repeat:  no-repeat;
+    background-position: center center;
     background-size: cover; 
     height: 650px;
     display: flex;
