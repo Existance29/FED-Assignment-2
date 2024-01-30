@@ -92,3 +92,34 @@ h4 {
     background-color: #1A1E26 !important;
     color: white !important;
 }
+
+.draw-icon {
+    background: url('Images/gacha.png') no-repeat center center;
+    background-size: contain;
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+}
+
+.earn-more {
+    color: #3c4a64; /* Orange color for the link */
+    font-weight: bold;
+    text-decoration: none; /* Removes underline from link */
+}
+
+.credit-icon {
+    background: url('Images/credits.png') no-repeat center center;
+    background-size: contain;
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+}
+
+.shipping-icon {
+    background: url('Images/shipping.png') no-repeat center center;
+    background-size: contain;
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+}
+
+
+
+
