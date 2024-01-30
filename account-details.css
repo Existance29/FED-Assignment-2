@@ -44,6 +44,7 @@ h4 {
     font-weight: bold;
     background: transparent;
     color: #4E5155;
+    border-color: #3c4a64 !important;
 }
 
 
@@ -69,15 +70,56 @@ h4 {
     border-radius: 0.25rem;
 }
 
-/* Default button styles */
+/* Button styles */
 .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: white;
+    background-color: #3c4a64  !important;
+    border-color: #3c4a64 !important;
+    color: white !important;
 }
 
 .btn-default {
-    background-color: transparent;
-    color: #333;
-    border: 1px solid #ccc;
+    background-color: white !important;
+    color: #333 !important;
+    border: 1px solid #ccc !important;
 }
+
+.btn-primary:hover {
+    background-color: white !important;
+    color: #3c4a64 !important;
+}
+
+.btn-default:hover {
+    background-color: #1A1E26 !important;
+    color: white !important;
+}
+
+.draw-icon {
+    background: url('Images/gacha.png') no-repeat center center;
+    background-size: contain;
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+}
+
+.earn-more {
+    color: #3c4a64; /* Orange color for the link */
+    font-weight: bold;
+    text-decoration: none; /* Removes underline from link */
+}
+
+.credit-icon {
+    background: url('Images/credits.png') no-repeat center center;
+    background-size: contain;
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+}
+
+.shipping-icon {
+    background: url('Images/shipping.png') no-repeat center center;
+    background-size: contain;
+    width: 50px; /* Icon size */
+    height: 50px; /* Icon size */
+}
+
+
+
+

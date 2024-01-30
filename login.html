@@ -7,7 +7,7 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link href="cart.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </head>
   <body class="text-white" onload = "getUsers()">   
     <header>  <!---Header section--->
@@ -48,99 +48,43 @@
     </header> <!-----End of header section------>
 
     <main>
-    <!--------------Start of cart page-------------->
-    <div class="cart-page">
-      <div class="container py-5">
-        <!-- Cart Table -->
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Product</th>
-                <th scope="col">Quantity</th>
-                <th scope="col" class="text-end">Subtotal</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- Product Row -->
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img src="" class="img-thumbnail me-2">
-                    <div>
-                      <h6>Product Name</h6>
-                      <small class="text-muted">Price: $0.00</small>
-                      <div><a href="#" class="text-decoration-none">Remove</a></div>
-                    </div>
+    <!--------------Start of login page-------------->
+    <div class="account-page">
+      <div class="container">
+          <div class="row">
+              <div class="col">
+                  <div class="form-container">
+                      <div class="form-btn">
+                          <span onclick="login()">Login</span>
+                          <span onclick="register()">Register</span>
+                          <hr id="indicator">
+                      </div>
+
+                      <form id="loginform">
+                          <input type="text" id = "lemail" placeholder="Email" oninput = "clearMessages()">
+                          <input type="password" id = "lpassword" placeholder="Password" oninput = "clearMessages()">
+                          <label id = "login-status" class = "loginsignup-status"></label>
+                          <button type="submit" class="btn" onclick = "loginUser()">Login</button>
+                          <br>
+                          <a href="">Forgot Password</a>
+                          <label id = "login-status" class = "loginsignup-status"></label>
+                      </form>
+
+                      <form id="regform">
+                          <input type="text" id = "rusername" placeholder="Username" oninput = "clearMessages()">
+                          <input type="email" id = "remail" placeholder="Email" oninput = "clearMessages()">
+                          <input type="password" id = "rpassword" placeholder="Password" oninput = "clearMessages()">
+                          <input type="date" id = "rbirthday" placeholder="Birthday" onchange = "clearMessages()">
+                          <button type="submit" class="btn" onclick = "registerUser()" style="margin-bottom: 0;">Register</button>
+                          <label id = "register-status" class = "loginsignup-status"></label>
+                      </form>
                   </div>
-                </td>
-                <td>
-                  <input type="number" class="form-control" value="1" disabled>
-                </td>
-                <td class="text-end">$0.00</td>
-              </tr>              
-              <!-- Product Row -->
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img src="" class="img-thumbnail me-2">
-                    <div>
-                      <h6>Product Name</h6>
-                      <small class="text-muted">Price: $0.00</small>
-                      <div><a href="#" class="text-decoration-none">Remove</a></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <input type="number" class="form-control" value="1">
-                </td>
-                <td class="text-end">$0.00</td>
-              </tr>    
-            <!-- Product Row -->
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="" class="img-thumbnail me-2">
-                  <div>
-                    <h6>Product Name</h6>
-                    <small class="text-muted">Price: $0.00</small>
-                    <div><a href="#" class="text-decoration-none">Remove</a></div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <input type="number" class="form-control" value="1">
-              </td>
-              <td class="text-end">$0.00</td>
-            </tr>    
-            </tbody>
-          </table>
-        </div>
-        <!-- Cart Summary -->
-        <div class="d-flex justify-content-end">
-          <div class="w-50">
-            <table class="table">
-              <tr>
-                <th scope="row">Subtotal</th>
-                <td class="text-end">$0.00</td>
-              </tr>
-              <tr>
-                <th scope="row">GST</th>
-                <td class="text-end">$0.00</td>
-              </tr>
-              <tr>
-                <th scope="row">Total</th>
-                <td class="text-end">$0.00</td>
-              </tr>
-            </table>
-            <button class="btn btn-primary" onclick="checkOut()">Checkout</button>
+              </div>
           </div>
-        </div>
       </div>
     </div>
-   
-    
-    <!--------------End of cart page-------------->
+
+    <!--------------End of login page-------------->
 
     </main>
 <!--------Footer--------->
@@ -197,5 +141,6 @@
       AOS.init();
     </script>
     <script src="script.js"></script>
+    <script src="login.js"></script>
   </body>
 </html>

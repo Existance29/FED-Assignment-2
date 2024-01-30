@@ -12,7 +12,8 @@ timeLeft = maxTime,
 charIndex = 0,
 mistakes = 0,
 wpm = 0
-isTyping = 0
+let isTyping = 0
+let gameEnd = false
 
 
 async function getData(){
@@ -35,6 +36,9 @@ function loadParagraph() {
 }
 
 function endGame(){
+    //for some reason, this function is called multiple times. gameEnd is used to store and make sure its ran once
+    if (gameEnd) return
+    gameEnd = true
     clearInterval(timer)
     //update the user's game cooldown and add pulls
     var gameCD = JSON.parse(data["game-cds"])
@@ -95,7 +99,7 @@ function initTyping() {
         wpmText.innerText = wpm
         mistakeTag.innerText = mistakes
     } else {
-        //finished typing/timer ran out
+        //finished typing
         inpField.value = ""
         endGame()
     }   
@@ -107,10 +111,11 @@ function initTimer() {
         timeLeft--
         timeTag.innerText = `${timeLeft}s`
         //let wpm tick down when user is not typing
-        wpm = Math.round(((charIndex - mistakes)  / 5) / (maxTime - timeLeft) * 60)
+        wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60)
         wpmText.innerText = wpm;
     } else {
         //stop timer
+        
         endGame()
     }
 }

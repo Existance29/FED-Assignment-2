@@ -1,6 +1,21 @@
-var LoginForm = document.getElementById("loginform");
-var RegForm =document.getElementById("regform");
-var Indicator = document.getElementById("indicator");
+const LoginForm = document.getElementById("loginform");
+const RegForm =document.getElementById("regform");
+const Indicator = document.getElementById("indicator");
+
+const re = document.getElementById("register-status")
+const le = document.getElementById("login-status")
+const rusername = document.getElementById("rusername")
+const remail = document.getElementById("remail")
+const rbirthday = document.getElementById("rbirthday")
+const rpassword = document.getElementById("rpassword")
+const lusername = document.getElementById("lusername")
+const lemail = document.getElementById("lemail")
+const lpassword = document.getElementById("lpassword")
+
+//get user's country
+$.get("http://ip-api.com/json", function(response) {
+  country = response.country;
+}, "jsonp");
 
 function register() {
   RegForm.classList.add("active");
@@ -36,31 +51,72 @@ async function getUsers(){
   data = await getAPI("https://jsbtech-84ac.restdb.io/rest/profiles")
 }
 
-function loginUser(){
-  var email = document.getElementById("lemail").value
-  var password = document.getElementById("lpassword").value
+function message(element, text, status = "error"){
+  //show the message
+  element.style.display = "block"
+  //set the content
+  element.innerText = text
+  //set the colour (via class)
+  element.classList.add(status)
+}
+
+//hide the messages when user is typing in input form
+function clearMessages(){
+  re.style.display = "none"
+  le.style.display = "none"
+}
+
+async function loginUser(){
+  var email = lemail.value
+  var password = lpassword.value
   //check if the email and password matches
   for (var i = 0; i < data.length; i++){
     if (data[i]["email"] == email && data[i]["password"] == password){
       //success, save the id and redirect
+      message(le, "Login successful, redirecting", "success")
+      //wait one second before redirecting (use await for blocking)
+      await new Promise(resolve => setTimeout(resolve, 1000));
       sessionStorage.setItem("userid",data[i]["_id"])
+      sessionStorage.setItem("userdata", JSON.stringify(data[i]))
       redirect()
       return
+        
     }
   }
-  console.log()
+  message(le, "Email or password is incorrect")
 }
 async function registerUser(){
-  var username = document.getElementById("rusername").value 
-  var email = document.getElementById("remail").value
-  var password = document.getElementById("rpassword").value
+  var username = rusername.value 
+  var email = remail.value
+  var password = rpassword.value
+  var birthday = rbirthday.value
+  //input validation
+  if (isEmpty(username)){
+    message(re, "Enter a username")
+    return
+  }else if (isEmpty(email)){
+    message(re, "Enter an email")
+    return
+  }else if (isEmpty(password)){
+    message(re, "Enter a password")
+    return
+  }else if (birthday == ""){
+    message(re, "Enter a birthday")
+    return
+  }
   //check if email is already registered
   for (var i = 0; i < data.length; i++){
     if (data[i]["email"] == email){
-      console.log("email already registered")
+      message(re, "Email is already registered")
       return
     }
   }
+  message(re, "Regristration successful, redirecting", "success")
+  //clear input fields
+  rusername.value = ""
+  remail.value = ""
+  rpassword.value = ""
+  rbirthday.value = ""
   //create the data
   var cooldownData = {
     "2d-aim-trainer": 0,
@@ -73,11 +129,19 @@ async function registerUser(){
     "game-cds": JSON.stringify(cooldownData),
     "pulls": 0,
     "points": 0,
-    "pity": 0
+    "pity": 0,
+    "country": country,
+    "birthday": birthday
   }
   //store the data
-  uid = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)["_id"]
-  sessionStorage.setItem("userid",uid)
+  data = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)
+  sessionStorage.setItem("userid",data["_id"])
+  //clean up the data (remove excess keys)
+  for (const [key, value] of Object.entries(data)) {
+    if (key.startsWith("_") && key != "_id") delete data[key]
+  }
+  //store the user object for future use. Minimise number of API calls to retrieve user data.
+  sessionStorage.setItem("userdata", JSON.stringify(data))
   redirect()
 }
 
