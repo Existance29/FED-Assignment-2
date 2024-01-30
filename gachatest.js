@@ -16,9 +16,11 @@ var ultraRareDict = {
 }
 //contains the data for the prizes
 var prizeDict = {
-    "common": ["Images/credits.png","Images/shipping.png"],
-    "rare": ["https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad062520a3f041000002b6_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063efbc76544800001100_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfa8820a3f0410000029a_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063fbbc76544800001102_1.png"],
-    "ultra rare": ["https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b06197bc765448000010eb_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfb3020a3f0410000029d_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad078b20a3f041000002bf_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063ccbc765448000010fd_1.png"]
+    "common": [["store-credits","Images/credits.png"],["shipping-vouchers","Images/shipping.png"]],
+    "rare": [["WolfLawS Gaming Mouse","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad062520a3f041000002b6_1.png"],["G3000 Gaming Earpiece","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063efbc76544800001100_1.png"],
+    ["Logitech Gaming Mouse","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfa8820a3f0410000029a_1.png"], ["Logitech Gaming Earpiece","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063fbbc76544800001102_1.png"]],
+    "ultra rare": [["ROG Gaming PC","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b06197bc765448000010eb_1.png"], ["Razer Gaming Mouse","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfb3020a3f0410000029d_1.png"],
+    ["Logitech Keyboard","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad078b20a3f041000002bf_1.png"], ["Razer Gaming Headset","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063ccbc765448000010fd_1.png"]]
 }
 
 //know if api should be updated when page is hidden
@@ -128,7 +130,15 @@ function pullResults(){
 
         //Determine which item to get
         var prizeArray = prizeDict[rarity]
-        var prize = prizeArray[getRandomInt(0,prizeArray.length -1)]
+        var prizeData = prizeArray[getRandomInt(0,prizeArray.length -1)]
+        var prize = prizeData[0]
+        var prizeImg = prizeData[1]
+        //update the credits and shipping vouchers
+        if (prize == "store-credits"){
+            body["store-credits"] += 1
+        }else if (prize == "shipping-vouchers"){
+            body["shipping-vouchers"] += 1
+        }
 
         //display the items with a border for rarity
         if (rarity == "ultra rare"){
@@ -136,22 +146,22 @@ function pullResults(){
             row.innerHTML += `<div style = "border: 5px solid transparent;
                                             border-image: linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%);
                                             border-image-slice: 1;
-                                            background-image: url(${prize})"
+                                            background-image: url(${prizeImg})"
                                             class = "fade-in"
                                             ></div>`
         } else if (rarity == "rare"){
             //purple border for rare
-            row.innerHTML += `<div style = "border-color:#A020F0; background-image: url(${prize})" 
+            row.innerHTML += `<div style = "border-color:#A020F0; background-image: url(${prizeImg})" 
                                    class = "fade-in"
                                             ></div>`
         }else{
             //white border for common
-            row.innerHTML += `<div style = "border-color:white; background-image: url(${prize});" 
+            row.innerHTML += `<div style = "border-color:white; background-image: url(${prizeImg});" 
                                    class = "fade-in"
                                    ></div>`
         }
     }
-    //api should be updated
+    //api can be updated
     updateUser = true
     openAnim.style.display = "none"
     //wait 1 second before letting user continue
