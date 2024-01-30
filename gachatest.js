@@ -53,7 +53,7 @@ function gameCheckLogin(path = "./games.html"){
         location.href = path  
     }
     else{
-        location.href = "./profile.html"
+        location.href = "./login.html"
         //save the place to redirect after user signs in
         localStorage.setItem("profileRedirect","./games.html")
     }
@@ -168,7 +168,7 @@ function skipAnim(){
 function pull(n){
     //if user is not logged in, redirect to profile page
     if (!isLoggedIn()){
-        location.href = "./profile.html"
+        location.href = "./login.html"
         //save the place to redirect after user signs in
         localStorage.setItem("profileRedirect","./games.html")
         return

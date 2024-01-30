@@ -1,3 +1,4 @@
+sessionStorage.clear()
 var prevScrollpos = window.pageYOffset;
 const key = "65acea2790880b217c3a0f88"
 /* Get the header element and it's position */
@@ -39,12 +40,11 @@ function isLoggedIn(){
 }
 //check if user is logged in before redirecting to the page
 function checkLogin(path){
-  var user = sessionStorage.getItem("userid")
   if (isLoggedIn()){
     location.href = path
   }
   else{
-    location.href = "./profile.html"
+    location.href = "./login.html"
     //save the place to redirect after user signs in
     localStorage.setItem("profileRedirect",path)
   }
@@ -275,5 +275,16 @@ function addToCart(){
     document.getElementById("cart-success").style.display = "none";
   }, 2000)
 
+}
+
+function checkOut(){
+  //dont let user check out unless they are logged in
+    if (!isLoggedIn()){
+      localStorage.setItem("profileRedirect","./cart.html")
+      //save the place to redirect after user signs in
+      location.href = "./login.html"
+      return
+    }
+  var cart = JSON.parse(sessionStorage.getItem("cart"))
 }
 
