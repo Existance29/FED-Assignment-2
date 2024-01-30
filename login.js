@@ -76,8 +76,8 @@ async function loginUser(){
       message(le, "Login successful, redirecting", "success")
       //wait one second before redirecting (use await for blocking)
       await new Promise(resolve => setTimeout(resolve, 1000));
-      sessionStorage.setItem("userid",data[i]["_id"])
-      sessionStorage.setItem("userdata", JSON.stringify(data[i]))
+      localStorage.setItem("userid",data[i]["_id"])
+      localStorage.setItem("userdata", JSON.stringify(data[i]))
       redirect()
       return
         
@@ -137,13 +137,13 @@ async function registerUser(){
   }
   //store the data
   data = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)
-  sessionStorage.setItem("userid",data["_id"])
+  localStorage.setItem("userid",data["_id"])
   //clean up the data (remove excess keys)
   for (const [key, value] of Object.entries(data)) {
     if (key.startsWith("_") && key != "_id") delete data[key]
   }
   //store the user object for future use. Minimise number of API calls to retrieve user data.
-  sessionStorage.setItem("userdata", JSON.stringify(data))
+  localStorage.setItem("userdata", JSON.stringify(data))
   redirect()
 }
 

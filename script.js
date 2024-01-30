@@ -34,7 +34,7 @@ window.onscroll = function() {
 
 //check if user is logged in
 function isLoggedIn(){
-  var id = sessionStorage.getItem("userid")
+  var id = localStorage.getItem("userid")
   return !(id == null || id === "undefined")
 }
 function isEmpty(str){
@@ -75,7 +75,7 @@ async function getAPI(url){
 }
 
 async function getAccount(){
-  var id = sessionStorage.getItem("userid")
+  var id = localStorage.getItem("userid")
   console.log(id)
   //return some dummy data for display purposes
   if (id == null || id === "undefined"){
@@ -92,7 +92,7 @@ async function getAccount(){
     "birthday": "2024-01-17"
     }
   }
-  return JSON.parse(sessionStorage.getItem("userdata"))
+  return JSON.parse(localStorage.getItem("userdata"))
 }
 
 async function post(url, jsondata){
@@ -137,9 +137,9 @@ function update(url, id, jsondata){
 }
 
 function updateAccount(jsondata){
-  var id = sessionStorage.getItem("userid")
+  var id = localStorage.getItem("userid")
   update("https://jsbtech-84ac.restdb.io/rest/profiles", id, jsondata)
-  sessionStorage.setItem("userdata", JSON.stringify(jsondata))
+  localStorage.setItem("userdata", JSON.stringify(jsondata))
 }
 
 /* Handle which product category to show based */
@@ -246,7 +246,7 @@ function showProduct(){
 }
 
 function addToCart(){
-  cart = sessionStorage.getItem("cart")
+  cart = localStorage.getItem("cart")
   //check if a cart exists
   //if it doesnt, make a new one
   if (cart == null){
@@ -268,7 +268,7 @@ function addToCart(){
   cart.push(out)
   console.log(cart)
   //save the cart
-  sessionStorage.setItem("cart", JSON.stringify(cart))
+  localStorage.setItem("cart", JSON.stringify(cart))
 
   //shows the success alrt for 2 secs
   //start playing the lottie animation + enter text
@@ -291,6 +291,6 @@ function checkOut(){
       location.href = "./login.html"
       return
     }
-  var cart = JSON.parse(sessionStorage.getItem("cart"))
+  var cart = JSON.parse(localStorage.getItem("cart"))
 }
 
