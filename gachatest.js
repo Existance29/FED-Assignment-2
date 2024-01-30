@@ -21,6 +21,11 @@ var prizeDict = {
     "ultra rare": ["https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b06197bc765448000010eb_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65acfb3020a3f0410000029d_1.png","https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65ad078b20a3f041000002bf_1.png", "https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/65b063ccbc765448000010fd_1.png"]
 }
 
+//know if api should be updated when page is hidden
+//minimise number of api calls
+//avoid updating every pull, avoid updating everytime page is hidden
+let updateUser = false
+
 //play cooldown for games (in ms)
 //the idea is to let the user play each game every 20hours
 //for testing purposes, this has been disabled
@@ -60,7 +65,14 @@ function gameCheckLogin(path = "./games.html"){
     }
   }
 
-//update the api only when leaving the page
+//update the api only when leaving the page and updateUser is true
+document.onvisibilitychange = () => {
+    if (document.visibilityState === "hidden" && updateUser) {
+        updateAccount(data)
+        updateUser = false
+    }
+  };
+  
 function checkCDS(){
     currDate = new Date()
     for (const [key, value] of Object.entries(gameCDS)) {
@@ -140,7 +152,8 @@ function pullResults(){
                                    ></div>`
         }
     }
-    //updateAccount(data)
+    //api should be updated
+    updateUser = true
     openAnim.style.display = "none"
     //wait 1 second before letting user continue
     setTimeout(function(){
