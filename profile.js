@@ -10,6 +10,9 @@ const countryInput = document.getElementById("country-input")
 const currentPassword = document.getElementById("current-password")
 const newPassword = document.getElementById("new-password")
 const newPasswordAgain = document.getElementById("new-password-again")
+const currentPasswordWarning = document.getElementById("current-password-warning")
+const newPasswordWarning = document.getElementById("new-password-warning")
+const newPasswordAgainWarning = document.getElementById("new-password-again-warning")
 
 //each element in submittable represents if an input is valid
 //username, email, password, in order
@@ -91,4 +94,27 @@ function validateEmail(){
     submittable[1] = true
 }
 
-//check if email is already registered
+function validatePassword(){
+    if (currentPassword.value != data["password"]){
+        currentPasswordWarning.style.opacity = 1
+        currentPasswordWarning.innerText = "Password is incorrect"
+        submittable[2] = false
+        return
+    }
+    currentPasswordWarning.style.opacity = 0
+    if (isEmpty(newPassword.value)){
+        newPasswordWarning.style.opacity = 1
+        newPasswordWarning.innerText = "New Password cannot be blank"
+        submittable[2] = false
+        return
+    }
+    newPasswordWarning.style.opacity = 0
+    if (newPassword.value != newPasswordAgain.value && !isEmpty(newPasswordAgain.value)){
+        newPasswordAgainWarning.style.opacity = 1
+        newPasswordAgainWarning.innerText = "Passwords do not match"
+        submittable[2] = false
+        return
+    }
+    newPasswordAgainWarning.style.opacity = 0
+    submittable[2] = true
+}

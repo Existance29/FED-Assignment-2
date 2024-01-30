@@ -103,15 +103,18 @@
                             <div class="card-body pb-2">
                                 <div class="form-group">
                                     <label class="form-label">Enter current password</label>
-                                    <input type="password" id = "current-password" class="form-control">
+                                    <input type="password" id = "current-password" class="form-control" oninput="validatePassword()">
+                                    <label class = "warning-text" id = "current-password-warning"></label>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">New password</label>
-                                    <input type="password" id = "new-password" class="form-control">
+                                    <input type="password" id = "new-password" class="form-control" oninput="validatePassword()">
+                                    <label class = "warning-text" id = "new-password-warning"></label>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Repeat new password</label>
-                                    <input type="password" id = "new-password-again" class="form-control">
+                                    <input type="password" id = "new-password-again" class="form-control" oninput="validatePassword()">
+                                    <label class = "warning-text" id = "new-password-again-warning"></label>
                                 </div>
                             </div>
                         </div>
