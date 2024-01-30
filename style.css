@@ -369,6 +369,18 @@ form a {
     transform: translateX(100px);
     transition: transform 1s;
 }
+
+.loginsignup-status{
+    display: none;
+}
+
+.loginsignup-status.error{
+    color: red;
+}
+
+.loginsignup-status.success{
+    color: green;
+}
 /* Responsive adjustments */
 
 @media screen and (max-width: 600px) {

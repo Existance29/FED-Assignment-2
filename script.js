@@ -31,26 +31,11 @@ window.onscroll = function() {
 
 
 
-/*-----------*/
-var LoginForm = document.getElementById("loginform");
-var RegForm =document.getElementById("regform");
-var Indicator = document.getElementById("indicator");
 
-function register() {
-    RegForm.style.transform = "translateX(0px)";
-    LoginForm.style.transform = "translateX(0px)";
-    Indicator.style.transform = "translateX(100px)";
-}
-
-function login() {
-    RegForm.style.transform = "translateX(500px)";
-    LoginForm.style.transform = "translateX(500px)";
-    Indicator.style.transform = "translateX(0px)";
-}
-
-//check if user is logged on
+//check if user is logged in
 function isLoggedIn(){
-  return !sessionStorage.getItem("userid") == null
+  var id = sessionStorage.getItem("userid")
+  return !(id == null || id === "undefined")
 }
 //check if user is logged in before redirecting to the page
 function checkLogin(path){
@@ -89,8 +74,10 @@ async function getAPI(url){
 
 async function getAccount(){
   var id = sessionStorage.getItem("userid")
-  //return some dummy data for display
-  if (id == null){
+  console.log(id)
+  //return some dummy data for displayf
+  if (id == null || id === "undefined"){
+    console.log("Not logged in")
     return {
     "email": "",
     "password": "",
@@ -101,8 +88,7 @@ async function getAccount(){
     "pity": 0
     }
   }
-  var out = await getAPI(`https://jsbtech-84ac.restdb.io/rest/profiles?q={"_id":"${id}"}`)
-  return out[0]
+  return JSON.parse(sessionStorage.getItem("userdata"))
 }
 
 async function post(url, jsondata){
@@ -145,8 +131,9 @@ function update(url, id, jsondata){
 }
 
 function updateAccount(jsondata){
-  var id = "65b6fe715f523a05000000ad"
+  var id = sessionStorage.getItem("userid")
   update("https://jsbtech-84ac.restdb.io/rest/profiles", id, jsondata)
+  sessionStorage.setItem("userdata", JSON.stringify(jsondata))
 }
 
 /* Handle which product category to show based */
@@ -265,8 +252,14 @@ function addToCart(){
   //get the product object
   pObj = JSON.parse(localStorage.getItem("product"))
   //get the quantity and add it to the object
-  pObj["quantity"] = parseInt(document.getElementById("quantity").value)
-  cart.push(pObj)
+  out = {
+    "_id": pObj["_id"],
+    "name": pObj["name"],
+    "quantity": parseInt(document.getElementById("quantity").value),
+    "price": pObj["price"],
+    "src": `https://scintillating-licorice-cf9fec.netlify.app/.netlify/images?url=/${pObj["_id"]}_1.png`
+  }
+  cart.push(out)
   console.log(cart)
   //save the cart
   sessionStorage.setItem("cart", JSON.stringify(cart))

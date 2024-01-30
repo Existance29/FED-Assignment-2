@@ -50,7 +50,6 @@ function msToTime(duration) {
 }
 function gameCheckLogin(path = "./games.html"){
     if (isLoggedIn()){
-        window.alert("hi")
         location.href = path  
     }
     else{

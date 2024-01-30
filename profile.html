@@ -60,19 +60,21 @@
                       </div>
 
                       <form id="loginform">
-                          <input type="text" id = "lemail" placeholder="Email">
-                          <input type="password" id = "lpassword" placeholder="Password">
+                          <input type="text" id = "lemail" placeholder="Email" onchange = "clearMessages()">
+                          <input type="password" id = "lpassword" placeholder="Password" onchange = "clearMessages()">
+                          <label id = "login-status" class = "loginsignup-status"></label>
                           <button type="submit" class="btn" onclick = "loginUser()">Login</button>
                           <br>
                           <a href="">Forgot Password</a>
+                          <label id = "login-status" class = "loginsignup-status"></label>
                       </form>
 
                       <form id="regform">
-                          <input type="text" id = "rusername" placeholder="Username">
-                          <input type="email" id = "remail" placeholder="Email">
-                          <input type="password" id = "rpassword" placeholder="Password">
+                          <input type="text" id = "rusername" placeholder="Username" onchange = "clearMessages()">
+                          <input type="email" id = "remail" placeholder="Email" onchange = "clearMessages()">
+                          <input type="password" id = "rpassword" placeholder="Password" onchange = "clearMessages()">
                           <button type="submit" class="btn" onclick = "registerUser()">Register</button>
-
+                          <label id = "register-status" class = "loginsignup-status"></label>
                       </form>
                   </div>
               </div>
