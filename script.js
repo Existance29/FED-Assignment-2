@@ -1,4 +1,3 @@
-sessionStorage.clear()
 var prevScrollpos = window.pageYOffset;
 const key = "65acea2790880b217c3a0f88"
 /* Get the header element and it's position */

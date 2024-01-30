@@ -679,7 +679,8 @@ form a {
 }
 
 .gacha-button{
-    width: 200px;
+    width: 33%;
+    cursor: pointer;
 }
 .gacha-button:hover{
     background-color: #425270;
