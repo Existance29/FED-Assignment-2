@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"> 
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-</head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  </head>
 
 <body onload = "profileLoad()">
   <header id = "header">  <!---Header section--->
@@ -73,30 +74,28 @@
                     <div class="tab-content">
                         <div class="tab-pane fade active show" id="account-general">
                             <div class="card-body media align-items-center">
-                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile picture"
-                                    class="d-block ui-w-80">
+                                <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" alt="profile picture" id = "profile-img"
+                                    class="d-block ui-w-80" style="object-fit: cover; aspect-ratio: 1/1;">
                                 <div class="media-body ml-4">
                                     <label class="btn btn-outline-primary">
                                         Upload new photo
-                                        <input type="file" class="account-settings-fileinput">
+                                        <input type="file" class="account-settings-fileinput" id = "img-input" accept=".jpg,.png" onchange="imageInput()">
                                     </label> &nbsp;
-                                    <button type="button" class="btn btn-default md-btn-flat">Reset</button>
-                                    <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
+                                    <button type="button" class="btn btn-default md-btn-flat" onclick = "resetImage()">Reset</button>
+                                    <div class="small mt-1">Allowed JPG or PNG. Max size of 800K</div>
                                 </div>
                             </div>
                             <hr class="border-light m-0">
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label class="form-label">Email</label>
+                                    <input type="text" class="form-control mb-1" id = "email-input" oninput="validateEmail()">
+                                    <label class = "warning-text" id = "email-warning"></label>
+                                </div>
+                                <div class="form-group">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control mb-1">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">Name</label>
-                                    <input type="text" class="form-control">
-                                </div>
-                                <div class="form-group">
-                                    <label class="form-label">E-mail</label>
-                                    <input type="email" class="form-control mb-1">     
+                                    <input type="text" class="form-control" id = "username-input" oninput="validateUsername()">
+                                    <label class = "warning-text" id = "username-warning"></label>
                                 </div>
                             </div>
                         </div>
@@ -390,10 +389,10 @@
             </div>
         </div>
         <div class="text-right mt-3"> 
-            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
-            <button type="button" class="btn btn-primary" style="color: white;">Cancel</button>&nbsp;
-            <button type="button" class="btn btn-default">Log Out</button>&nbsp;
-        </div>
+            <button type="button" class="btn btn-primary" onclick = "save()">Save changes</button>&nbsp;
+            <button type="button" class="btn btn-default" style="color: white;" onclick = "location.href = './index.html'">Cancel</button>
+            <button type="button" class="btn btn-default" onclick = "logout()">Log Out</button>&nbsp;
+          </div>
         <br>
     </div>
     <!-----End of account details section----->

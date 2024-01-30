@@ -11,6 +11,11 @@ const lusername = document.getElementById("lusername")
 const lemail = document.getElementById("lemail")
 const lpassword = document.getElementById("lpassword")
 
+//get user's country
+$.get("http://ip-api.com/json", function(response) {
+  country = response.country;
+}, "jsonp");
+
 function register() {
   RegForm.classList.add("active");
   LoginForm.classList.remove("active");
@@ -85,13 +90,13 @@ async function registerUser(){
   var password = rpassword.value
   var birthday = rbirthday.value
   //input validation
-  if (username == ""){
+  if (isEmpty(username)){
     message(re, "Enter a username")
     return
-  }else if (email == ""){
+  }else if (isEmpty(email)){
     message(re, "Enter an email")
     return
-  }else if (password == ""){
+  }else if (isEmpty(password)){
     message(re, "Enter a password")
     return
   }else if (birthday == ""){
@@ -124,7 +129,9 @@ async function registerUser(){
     "game-cds": JSON.stringify(cooldownData),
     "pulls": 0,
     "points": 0,
-    "pity": 0
+    "pity": 0,
+    "country": country,
+    "birthday": "5"
   }
   //store the data
   data = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)

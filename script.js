@@ -37,6 +37,9 @@ function isLoggedIn(){
   var id = sessionStorage.getItem("userid")
   return !(id == null || id === "undefined")
 }
+function isEmpty(str){
+  return str.trim() == ""
+}
 //check if user is logged in before redirecting to the page
 function checkLogin(path){
   if (isLoggedIn()){
@@ -84,7 +87,9 @@ async function getAccount(){
     "pulls": 0,
     "game-cds": "{\"2d-aim-trainer\":0, \"typing-speed-tester\":0}",
     "points": 0,
-    "pity": 0
+    "pity": 0,
+    "country": "Singapore",
+    "birthday": "01/01/1999"
     }
   }
   return JSON.parse(sessionStorage.getItem("userdata"))
