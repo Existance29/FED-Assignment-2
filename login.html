@@ -74,7 +74,8 @@
                           <input type="text" id = "rusername" placeholder="Username" oninput = "clearMessages()">
                           <input type="email" id = "remail" placeholder="Email" oninput = "clearMessages()">
                           <input type="password" id = "rpassword" placeholder="Password" oninput = "clearMessages()">
-                          <button type="submit" class="btn" onclick = "registerUser()">Register</button>
+                          <input type="date" id = "rbirthday" placeholder="Birthday" onchange = "clearMessages()">
+                          <button type="submit" class="btn" onclick = "registerUser()" style="margin-bottom: 0;">Register</button>
                           <label id = "register-status" class = "loginsignup-status"></label>
                       </form>
                   </div>

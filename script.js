@@ -77,7 +77,7 @@ async function getAPI(url){
 async function getAccount(){
   var id = sessionStorage.getItem("userid")
   console.log(id)
-  //return some dummy data for displayf
+  //return some dummy data for display purposes
   if (id == null || id === "undefined"){
     console.log("Not logged in")
     return {
@@ -89,7 +89,7 @@ async function getAccount(){
     "points": 0,
     "pity": 0,
     "country": "Singapore",
-    "birthday": "01/01/1999"
+    "birthday": "2024-01-17"
     }
   }
   return JSON.parse(sessionStorage.getItem("userdata"))

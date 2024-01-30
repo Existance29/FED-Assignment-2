@@ -5,9 +5,14 @@ const profileImg = document.getElementById("profile-img")
 const imgInput = document.getElementById("img-input")
 const emailWarning = document.getElementById("email-warning")
 const usernameWarning = document.getElementById("username-warning")
+const birthdayInput = document.getElementById("birthday-input")
+const countryInput = document.getElementById("country-input")
+const currentPassword = document.getElementById("current-password")
+const newPassword = document.getElementById("new-password")
+const newPasswordAgain = document.getElementById("new-password-again")
 
 //each element in submittable represents if an input is valid
-//username, email, password in order
+//username, email, password, in order
 let submittable = [true,true,true]
 
 async function profileLoad(){
@@ -44,6 +49,9 @@ function save(){
     if (submittable.includes(false)) return
     data["email"] = emailInput.value
     data["username"] = usernameInput.value
+    data["birthday"] = birthdayInput.value
+    data["country"] = countryInput.value
+    console.log(data)
     //updateAccount(data)
 }
 

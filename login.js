@@ -6,6 +6,7 @@ const re = document.getElementById("register-status")
 const le = document.getElementById("login-status")
 const rusername = document.getElementById("rusername")
 const remail = document.getElementById("remail")
+const rbirthday = document.getElementById("rbirthday")
 const rpassword = document.getElementById("rpassword")
 const lusername = document.getElementById("lusername")
 const lemail = document.getElementById("lemail")
@@ -125,13 +126,12 @@ async function registerUser(){
     "email":email,
     "username": username,
     "password": password,
-    "birthday" : birthday,
     "game-cds": JSON.stringify(cooldownData),
     "pulls": 0,
     "points": 0,
     "pity": 0,
     "country": country,
-    "birthday": "5"
+    "birthday": birthday
   }
   //store the data
   data = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)
