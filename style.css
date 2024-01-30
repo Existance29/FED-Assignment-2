@@ -850,3 +850,10 @@ div.zoom_container {
 #cart-success{
     position: fixed;
 }
+
+.warning-text{
+    color: red;
+    font-weight: 400 !important;
+    margin-bottom: 2vh;
+    opacity: 0;
+}

@@ -6,10 +6,16 @@ const re = document.getElementById("register-status")
 const le = document.getElementById("login-status")
 const rusername = document.getElementById("rusername")
 const remail = document.getElementById("remail")
+const rbirthday = document.getElementById("rbirthday")
 const rpassword = document.getElementById("rpassword")
 const lusername = document.getElementById("lusername")
 const lemail = document.getElementById("lemail")
 const lpassword = document.getElementById("lpassword")
+
+//get user's country
+$.get("http://ip-api.com/json", function(response) {
+  country = response.country;
+}, "jsonp");
 
 function register() {
   RegForm.classList.add("active");
@@ -85,13 +91,13 @@ async function registerUser(){
   var password = rpassword.value
   var birthday = rbirthday.value
   //input validation
-  if (username == ""){
+  if (isEmpty(username)){
     message(re, "Enter a username")
     return
-  }else if (email == ""){
+  }else if (isEmpty(email)){
     message(re, "Enter an email")
     return
-  }else if (password == ""){
+  }else if (isEmpty(password)){
     message(re, "Enter a password")
     return
   }else if (birthday == ""){
@@ -120,11 +126,12 @@ async function registerUser(){
     "email":email,
     "username": username,
     "password": password,
-    "birthday" : birthday,
     "game-cds": JSON.stringify(cooldownData),
     "pulls": 0,
     "points": 0,
-    "pity": 0
+    "pity": 0,
+    "country": country,
+    "birthday": birthday
   }
   //store the data
   data = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)
