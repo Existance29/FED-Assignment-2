@@ -28,8 +28,14 @@ async function profileLoad(){
     }
     data = await getAccount()
     console.log(data)
+    //update fields
     emailInput.value = data["email"]
     usernameInput.value = data["username"]
+    birthdayInput.value = data["birthday"]
+    countryInput.value = data["country"]
+    document.getElementById("draws").innerText = data["pulls"]
+    document.getElementById("credit-vouchers").innerText = data["store-credits"]
+    document.getElementById("shipping-vouchers").innerText = data["shipping-vouchers"]
     //get all the user data for checking
     allData = await getAPI("https://jsbtech-84ac.restdb.io/rest/profiles")
 }
@@ -49,13 +55,20 @@ function logout(){
     location.href = "./index.html"
 }
 function save(){
+    //make sure
     if (submittable.includes(false)) return
+    //update all values
     data["email"] = emailInput.value
     data["username"] = usernameInput.value
     data["birthday"] = birthdayInput.value
     data["country"] = countryInput.value
+    //check if user inputted a new password and update it
+    if (newPassword.value != ""){
+        data["password"] = newPassword.value
+    }
+    data["country"] = countryInput.value
     console.log(data)
-    //updateAccount(data)
+    updateAccount(data)
 }
 
 //input validation functions

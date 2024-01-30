@@ -113,8 +113,10 @@ async function post(url, jsondata){
 }
 //update data
 //dont use async function, nothing to return and makes it easy to use with non-async functions
+//use keepalive, since this is usually called at the end
 function update(url, id, jsondata){
   let settings = {
+    keepalive: true,
     async: true,
     crossDomain: true,
     method: "PUT",

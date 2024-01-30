@@ -111,7 +111,7 @@ async function registerUser(){
       return
     }
   }
-  message(re, "Regristration successful, redirecting", "success")
+  message(re, "Registration successful, redirecting", "success")
   //clear input fields
   rusername.value = ""
   remail.value = ""
@@ -131,7 +131,9 @@ async function registerUser(){
     "points": 0,
     "pity": 0,
     "country": country,
-    "birthday": birthday
+    "birthday": birthday,
+    "store-credits":0,
+    "shipping-vouchers":0
   }
   //store the data
   data = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)
