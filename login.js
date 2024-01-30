@@ -71,7 +71,7 @@ async function loginUser(){
       //wait one second before redirecting (use await for blocking)
       await new Promise(resolve => setTimeout(resolve, 1000));
       sessionStorage.setItem("userid",data[i]["_id"])
-      sessionStorage.setItem("userdata", data[i])
+      sessionStorage.setItem("userdata", JSON.stringify(data[i]))
       redirect()
       return
         
