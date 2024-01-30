@@ -83,6 +83,7 @@ async function registerUser(){
   var username = rusername.value 
   var email = remail.value
   var password = rpassword.value
+  var birthday = rbirthday.value
   //input validation
   if (username == ""){
     message(re, "Enter a username")
@@ -92,6 +93,9 @@ async function registerUser(){
     return
   }else if (password == ""){
     message(re, "Enter a password")
+    return
+  }else if (birthday == ""){
+    message(re, "Enter a birthday")
     return
   }
   //check if email is already registered
@@ -106,6 +110,7 @@ async function registerUser(){
   rusername.value = ""
   remail.value = ""
   rpassword.value = ""
+  rbirthday.value = ""
   //create the data
   var cooldownData = {
     "2d-aim-trainer": 0,
@@ -115,6 +120,7 @@ async function registerUser(){
     "email":email,
     "username": username,
     "password": password,
+    "birthday" : birthday,
     "game-cds": JSON.stringify(cooldownData),
     "pulls": 0,
     "points": 0,
