@@ -135,9 +135,9 @@ function pullResults(){
         var prizeImg = prizeData[1]
         //update the credits and shipping vouchers
         if (prize == "store-credits"){
-            body["store-credits"] += 1
+            data["store-credits"] += 1
         }else if (prize == "shipping-vouchers"){
-            body["shipping-vouchers"] += 1
+            data["shipping-vouchers"] += 1
         }
 
         //display the items with a border for rarity
