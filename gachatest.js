@@ -113,9 +113,9 @@ function pullResults(){
         //increment the number of pulls (aka pity) 
         //check what nth pull it is and apply the correct prize pool
         data["pity"] += 1
-        if (data["pity"]%120 == 0){
+        if (data["pity"]%140 == 0){
             dict = ultraRareDict
-        } else if (data["pity"]%10 == 0){
+        } else if (data["pity"]%20 == 0){
             dict = rareDict
         }
         //iterate through dictionary
