@@ -69,6 +69,16 @@ function save(){
     data["country"] = countryInput.value
     console.log(data)
     updateAccount(data)
+    //shows the success alrt for 2 secs
+    //start playing the lottie animation + enter text
+    document.getElementById("profile-success-content").innerHTML = 
+    `<dotlottie-player src="https://lottie.host/4377115b-47bb-4c44-9302-598d7f225602/qpO9TCh4pH.json" background="transparent" speed="0.9" style="width: 60px; height: 60px;" autoplay></dotlottie-player>
+    Settings saved`
+    //use a slide down animation
+    $("#profile-success").slideDown(400)
+    setTimeout(function() {
+        document.getElementById("profile-success").style.display = "none";
+    }, 2000)
 }
 
 //input validation functions
