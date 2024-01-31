@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="cart.css" rel="stylesheet" type="text/css" />
   </head>
-  <body class="text-white" onload = "getUsers()">   
+  <body class="text-white" onload = "loadCart()">   
     <header>  <!---Header section--->
       <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
@@ -61,58 +61,8 @@
                 <th scope="col" class="text-end">Subtotal</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id = "cart-row">
               <!-- Product Row -->
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img src="" class="img-thumbnail me-2">
-                    <div>
-                      <h6>Product Name</h6>
-                      <small class="text-muted">Price: $0.00</small>
-                      <div><a href="#" class="text-decoration-none">Remove</a></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <input type="number" class="form-control" value="1" disabled>
-                </td>
-                <td class="text-end">$0.00</td>
-              </tr>              
-              <!-- Product Row -->
-              <tr>
-                <td>
-                  <div class="d-flex align-items-center">
-                    <img src="" class="img-thumbnail me-2">
-                    <div>
-                      <h6>Product Name</h6>
-                      <small class="text-muted">Price: $0.00</small>
-                      <div><a href="#" class="text-decoration-none">Remove</a></div>
-                    </div>
-                  </div>
-                </td>
-                <td>
-                  <input type="number" class="form-control" value="1">
-                </td>
-                <td class="text-end">$0.00</td>
-              </tr>    
-            <!-- Product Row -->
-            <tr>
-              <td>
-                <div class="d-flex align-items-center">
-                  <img src="" class="img-thumbnail me-2">
-                  <div>
-                    <h6>Product Name</h6>
-                    <small class="text-muted">Price: $0.00</small>
-                    <div><a href="#" class="text-decoration-none">Remove</a></div>
-                  </div>
-                </div>
-              </td>
-              <td>
-                <input type="number" class="form-control" value="1">
-              </td>
-              <td class="text-end">$0.00</td>
-            </tr>    
             </tbody>
           </table>
         </div>
@@ -122,15 +72,16 @@
             <table class="table">
               <tr>
                 <th scope="row">Subtotal</th>
-                <td class="text-end">$0.00</td>
+                <!-- Use span to split the dollar sign and the amount for a easier time when coding -->
+                <td class="text-end">$<span id = "subtotal">0.00</span></td>
               </tr>
               <tr>
                 <th scope="row">GST</th>
-                <td class="text-end">$0.00</td>
+                <td class="text-end">$<span id = "gst">0.00</span></td>
               </tr>
               <tr>
                 <th scope="row">Total</th>
-                <td class="text-end">$0.00</td>
+                <td class="text-end">$<span id = "total">0.00</span></td>
               </tr>
             </table>
             <button class="btn btn-primary" onclick="checkOut()">Checkout</button>
@@ -197,5 +148,6 @@
       AOS.init();
     </script>
     <script src="script.js"></script>
+    <script src="cart.js"></script>
   </body>
 </html>

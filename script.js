@@ -283,14 +283,5 @@ function addToCart(){
 
 }
 
-function checkOut(){
-  //dont let user check out unless they are logged in
-    if (!isLoggedIn()){
-      localStorage.setItem("profileRedirect","./cart.html")
-      //save the place to redirect after user signs in
-      location.href = "./login.html"
-      return
-    }
-  var cart = JSON.parse(localStorage.getItem("cart"))
-}
+
 

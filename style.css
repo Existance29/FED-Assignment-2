@@ -858,3 +858,7 @@ div.zoom_container {
     margin-bottom: 2vh;
     opacity: 0;
 }
+
+.cursor-pointer{
+    cursor: pointer;
+}
