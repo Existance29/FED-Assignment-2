@@ -92,7 +92,9 @@ async function getAccount(){
     "birthday": "2024-01-17"
     }
   }
-  return JSON.parse(localStorage.getItem("userdata"))
+  //else, get the user data
+  var out = await getAPI(`https://jsbtech-84ac.restdb.io/rest/profiles?q={"_id":"${id}"}`)
+  return out[0]
 }
 
 async function post(url, jsondata){
