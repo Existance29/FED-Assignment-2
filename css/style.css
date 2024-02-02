@@ -55,14 +55,21 @@ header {
     color: #3c4a64; /* For white icons */
 }
 
-.navbar-collapse {
-    background: #1E2532; 
-  }
 
 /*End of navigation bar styling*/
 
 
 /*-----------------------End of header styling------------------------*/
+
+
+/*-----------------------Start of footer styling------------------------*/
+footer {
+    background-color: #1E2532;
+}
+footer a{
+    color: #f1f1f1;
+}
+/*-----------------------End of footer styling------------------------*/
 
 
 /*-----------------------Start of hero /intro section styling------------------------*/
@@ -185,7 +192,7 @@ header {
 /*-------------------Start of product feature styling----------------*/  
 .product-feature {
     padding: 10%;
-    background-color: #3c4a64;
+    background-color: #f1f1f1;
     overflow: hidden;
 }
 
@@ -193,10 +200,14 @@ header {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
 }
 
-.text-center h1{
-    text-shadow:rgba(0, 0, 0, 0.4);
+.product-feature h1{
+    color: #1E2532;
+    font-weight: bold;
 }
 
+.product-feature p{
+    color: #777;
+}
 /*-------------------End of product feature styling----------------*/  
 
 
