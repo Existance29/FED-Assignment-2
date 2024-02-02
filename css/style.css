@@ -111,7 +111,7 @@ header {
 /*-----------------------Start of Games banner styling------------------------*/
 
 .games-banner .grid-container {
-    background: url("Images/Games-banner-1.webp") no-repeat center center;
+    background: url("../Images/Games-banner-1.webp") no-repeat center center;
     background-size: cover;
     height: 700px;
     display: flex;
@@ -161,7 +161,7 @@ header {
 
 @media only screen and (max-width: 600px) { /*Hiding the big video when screen is less than 600px and showing the small video instead*/
     .games-banner .grid-container {
-        background: url("Images/Games-banner-2.webp") no-repeat center center;
+        background: url("../Images/Games-banner-2.webp") no-repeat center center;
         background-size: cover;
         height: 100%;
         display: flex;
@@ -200,37 +200,8 @@ header {
 /*-------------------End of product feature styling----------------*/  
 
 
-/*-------------------Start of PC banner styling----------------*/  
-.pc-banner .grid-container{
-    background: url("Images/PC-banner-1.webp") no-repeat center center;
-    background-size: cover;
-    height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Aligns content to the center */
-    text-align: center; /* Aligns text to the center */
-    padding: 10%; 
-    color: white;
-}
-
 .grid-container h1, .grid-container p{
     text-shadow: 4px 4px 4px #000000;
-}
-
-.pc-banner .grid-container h1{
-    font-size: 3em;
-    margin: 0.5em 0;
-    font-weight: bold;
-}
-
-.pc-banner .grid-container p {
-    font-size: 1em;
-    margin: 0.25em 0 1em;
-}
-
-.pc-banner .grid-container .content {
-    max-width: 70%;
-    padding: 5%;
 }
 
 .grid-container .btn {
@@ -238,51 +209,11 @@ header {
 }
 
 
-/*-------------------Start of Keyboard banner styling----------------*/  
-.keyboard-banner .grid-container{
-    background: url("Images/Keyboard-banner-1.webp") no-repeat center center;
-    background-size: cover;
-    height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Aligns content to the left */
-    text-align: center; /* Aligns text to the left */
-    padding: 10%; 
-    color: white;
-}
-
-/*-------------------Start of Mouse banner styling----------------*/  
-.mouse-banner .grid-container{
-    background: url("Images/Mouse-banner-1.png") no-repeat center center;
-    background-size: cover;
-    height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Aligns content to the left */
-    text-align: center; /* Aligns text to the left */
-    padding: 10%; 
-    color: white;
-}
-
-
-/*-------------------Start of Audio banner styling----------------*/  
-.audio-banner .grid-container{
-    background: url("Images/Audio-banner-1.jpg") no-repeat center center;
-    background-size: cover;
-    height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Aligns content to the left */
-    text-align: center; /* Aligns text to the left */
-    padding: 10%; 
-    color: white;
-}
-
 
 /*-------Login page styling------*/
 .account-page {
     padding: 150px;
-    background-image: url("Images/about-banner-1.png");
+    background-image: url("../Images/about-banner-1.png");
     background-size: cover;
     background-position: center;
     font-size: 14px;
@@ -400,7 +331,7 @@ form a {
 
 /*-------Start of gacha page styling------*/
 .gacha-banner .grid-container{
-    background: url("Images/Gacha-banner-1.png") no-repeat center center;
+    background: url("../Images/Gacha-banner-1.png") no-repeat center center;
     background-size: cover;
     height: 700px;
     display: flex;
@@ -420,7 +351,7 @@ form a {
 
 /*---------About page----------*/
 .about-banner .grid-container {
-    background: url("Images/about-banner-1.png") no-repeat center center;
+    background: url("../Images/about-banner-1.png") no-repeat center center;
     background-size: cover;
     height: 700px;
     display: flex;

@@ -1,7 +1,7 @@
 /* Basic body styling for background and top margin */
 body {
     padding-top: 100px;
-    background: url("Images/about-banner-1.png") no-repeat center center;
+    background: url("../Images/about-banner-1.png") no-repeat center center;
     background-size: cover;
     min-height: 700px;
     align-items: center;
@@ -94,7 +94,7 @@ h4 {
 }
 
 .draw-icon {
-    background: url('Images/gacha.png') no-repeat center center;
+    background: url('../Images/gacha.png') no-repeat center center;
     background-size: contain;
     width: 50px; /* Icon size */
     height: 50px; /* Icon size */
@@ -107,14 +107,14 @@ h4 {
 }
 
 .credit-icon {
-    background: url('Images/credits.png') no-repeat center center;
+    background: url('../Images/credits.png') no-repeat center center;
     background-size: contain;
     width: 50px; /* Icon size */
     height: 50px; /* Icon size */
 }
 
 .shipping-icon {
-    background: url('Images/shipping.png') no-repeat center center;
+    background: url('../Images/shipping.png') no-repeat center center;
     background-size: contain;
     width: 50px; /* Icon size */
     height: 50px; /* Icon size */
