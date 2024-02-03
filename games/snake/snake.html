@@ -4,37 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="../general.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   </head>
-  <body>
+  <body onload = "getData()">
     <!-- where the game's content will be-->
     <div class = "wrapper">
        <!-- Game stats-->
       <div class = "game-details">
-        <span class = "score">Score: 0 </span>
-        <span class = "high-score">High score: 0</span>
+        <span class = "score">Score: <span id = "score">0</span></span>
       </div>  
        <!-- Where the gameplay is-->
       <div class = "play-board"></div>
        <!-- Clickables for controls-->
       <div class = "controls">
-        <i data-key = "arrowLeft" class = "fa-solid fa-arrow-left-long"></i>
-        <i data-key = "arrowUp" class = "fa-solid fa-arrow-up-long"></i>
-        <i data-key = "arrowRight" class = "fa-solid fa-arrow-right-long"></i>
-        <i data-key = "arrowDown" class = "fa-solid fa-arrow-down-long"></i>
+        <i data-key = "ArrowLeft" class = "fa-solid fa-arrow-left-long"></i>
+        <i data-key = "ArrowUp" class = "fa-solid fa-arrow-up-long"></i>
+        <i data-key = "ArrowRight" class = "fa-solid fa-arrow-right-long"></i>
+        <i data-key = "ArrowDown" class = "fa-solid fa-arrow-down-long"></i>
       </div>  
     </div>
-
-
-
-
 
     <div class = "overlay" id = "game-over-overlay">
       <div class = "stat-area">
           <label class = "game-over">Game Over!</label>
           <!-- Show stats-->
           <div class = "split-flex-row" style="margin-top: 4vh;">
-            <label class = "final-text">Wpm:</label>
+            <label class = "final-text">Score:</label>
             <label id = "final-score" class = "final-text stat-text">0</label>
         </div>
           <div class = "split-flex-row" style="margin-top: 4vh;">

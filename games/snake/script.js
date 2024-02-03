@@ -1,6 +1,5 @@
 const playBoard = document.querySelector(".play-board")
-const scoreElement = document.querySelector(".score")
-const highScoreElement = document.querySelector(".high-score")
+const scoreText = document.querySelector("#score")
 const controls = document.querySelectorAll(".controls i")
 console.log(controls)
 let gameOver = false
@@ -15,30 +14,47 @@ let snakeBody = []
 let setIntervalId
 let score = 0
 
+async function getData(){
+    data = await getAccount()
+}
 //set a random number between 1 and 30 for food position
-
 function updateFoodPosition(){
     foodX = Math.floor(Math.random()*30) + 1
     foodY = Math.floor(Math.random()*30) + 1
 }
 
 function gameEnd(){
+    if (gameOver) return
+    gameOver = true
     clearInterval(setIntervalId)
-    alert("a")
+    console.log("a")
+    //update the user's game cooldown and add pulls
+    var gameCD = JSON.parse(data["game-cds"])
+    gameCD["snake"] = Date.now()
+    data["game-cds"] = JSON.stringify(gameCD)
+    var pullsEarned = Math.floor(score/9) //calculate the pulls earned. Every 9 is one pull
+    data["pulls"] += pullsEarned
+    updateAccount(data)
+    setTimeout(function(){
+        document.getElementById("game-over-overlay").style.display = "block"
+        document.getElementById("final-score").innerText = score
+        document.getElementById("final-points").innerText = pullsEarned
+    },200)
 }
 
 //handle changing of direction
+//set the velocity to their appropriate values
 function changeDirection(e){
-    if (e.key == "arrowUp"){
+    if ((e.key == "ArrowUp" || e.key == "w") && velocityY != 1){
         velocityX = 0
         velocityY = -1
-    }else if (e.key == "arrowDown"){
+    }else if ((e.key == "ArrowDown" || e.key == "s") && velocityY != -1){
         velocityX = 0
         velocityY = 1
-    }else if (e.key == "arrowLeft"){
+    }else if ((e.key == "ArrowLeft" || e.key == "a") && velocityX != 1){
         velocityX = -1 
         velocityY = 0
-    }else if (e.key == "arrowRight"){
+    }else if ((e.key == "ArrowRight" || e.key == "d") && velocityX != -1){
         velocityX = 1
         velocityY = 0
     }
@@ -66,6 +82,7 @@ function gameLoop(){
         updateFoodPosition()
         snakeBody.push([foodY, foodX])
         score++
+        scoreText.innerText = score
     }
 
     //move the snake head
@@ -76,10 +93,26 @@ function gameLoop(){
         snakeBody[i] = snakeBody[i-1]
     }
 
-    snakeBody[0] = [snakeX, snakeY]
+    snakeBody[0] = [snakeY, snakeX]
 
     //check if touching wall
     if (snakeX <= 0 || snakeX > 30 || snakeY <= 0 || snakeY > 30){
-        
+        gameEnd()
     }
+
+    //generate snake body
+    for (var i = 0; i < snakeBody.length; i ++){
+        html += `<div class = "head" style = "grid-area: ${snakeBody[i][0]} / ${snakeBody[i][1]}"></div>`
+        //check if snake head hit body
+        if (i !== 0 && snakeBody[0][1] == snakeBody[i][1] && snakeBody[0][0] == snakeBody[i][0]){
+            gameEnd()
+        }
+    }
+
+    playBoard.innerHTML = html
 }
+
+updateFoodPosition()
+setIntervalId = setInterval(gameLoop, 90)
+//add event to handle keypresses
+document.addEventListener("keydown", (evt) => changeDirection(evt))
