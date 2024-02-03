@@ -1,7 +1,9 @@
 
 # Introduction
+This website focuses on e-commerce with gamification features. This website sells gaming-related gear, such as gaming mice, keyboards, audio devices and PCs. The gamification revolves around a lucky draw, where users can earn different items, such as credits and products. To earn the currency spent on the lucky draw, users can play the in-site games, and also earn some based on the price of items that they purchase ($50 = 1 draw)
 
 # User Audience
+The target audience are youths who are interested in gaming-related technology. More to be added
 
 # Value for audience
 
