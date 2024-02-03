@@ -2,6 +2,8 @@
 # JSB Tech
 This website focuses on e-commerce with gamification features. This website sells gaming-related gear, such as gaming mice, keyboards, audio devices and PCs. The gamification revolves around a lucky draw, where users can earn different items, such as credits and products. To earn the currency spent on the lucky draw, users can play the in-site games. The better they do on the games, the more draws they earn. When purchasing items, users can also earn additional draws based on how much they spend ($50 = 1 draw)
 
+##Important note
+The API used (restdb) has a API request limit of 500 per day, since we are using the free plan. Once the limit is reached, the API will fail
 ## Design Process
 The target audience are youths who are interested in gaming-related technology.
 
