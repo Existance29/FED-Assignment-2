@@ -42,8 +42,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 #### The code has been modified to fit personal programming and design preferences
  - [Snake game](https://www.youtube.com/watch?v=wM7eMJ26kc8)
  - [Typing test game](https://www.youtube.com/watch?v=Hg80AjDNnJk)
- - Product zoom:
-    https://stackoverflow.com/questions/40314220/hover-an-image-and-show-a-zoomed-version-of-an-area-around-the-cursor-in-a-canva
+ - [Product zoom](https://stackoverflow.com/questions/40314220/hover-an-image-and-show-a-zoomed-version-of-an-area-around-the-cursor-in-a-canva)
 
 ### Media
 - https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-hero/hero-gaming-keyboards-desktop.jpg?v=1
