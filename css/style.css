@@ -16,10 +16,28 @@ button{
     all: unset;
 }
 
+/*Fix a bug with bootstrap tables where it would overflow the parent width*/
+table {
+    word-wrap: break-word;
+}
+
 /*Responsive font sizes for em*/
+
+@media only screen and (max-width: 800px) {
+    html{
+        font-size: 11px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     html{
-        font-size: 10px;
+        font-size: 8px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    html{
+        font-size: 7px;
     }
 }
 
@@ -36,6 +54,11 @@ header {
     z-index: 100;
 }
 
+@media only screen and (max-width: 600px) {
+    header{
+        min-height: 60px;
+    }
+}
 
 .navbar-brand {
     font-weight: bold; 
@@ -207,6 +230,7 @@ footer a{
     }
 
     .games-banner .content {
+        padding-top: 10vh;
         max-width: 100%;
     }
 }
@@ -440,6 +464,13 @@ form a {
 .games-content {
     margin-bottom: 50px;
 }
+/*override default font-size for responsiveness*/
+.games-content .items th {
+    font-size: 1.3em !important;
+}
+.games-content .items tr{
+    font-size: 1.12em !important;
+}
 
 .games-content .text {
     text-shadow: 4px 4px 4px #000000;
@@ -584,6 +615,50 @@ form a {
     background-color: #425270;
 }
 
+/*mobile view */
+@media (max-width: 800px) {
+    .gacha-button-row{
+        margin-left: 0;
+        margin-top: 6vh;
+        margin-bottom: 3vh;
+        justify-content: space-evenly;
+    }
+
+    .gacha-button{
+        width: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .gacha-container{
+        width: 18vw;
+        height: 25px;
+    }
+    .gacha-text{
+        margin-left: 0;
+    }
+
+    .gacha-button .gacha-container{
+        margin-left: 0;
+    }
+
+    .gacha-banner img{
+        object-fit: contain; /*prevent stretching*/
+    }
+    
+    /*Increase content area */
+    .games-content{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+
+    .aim-banner{
+        padding-top: 5vh;
+        height: auto; /*Display entire banner */
+        padding-bottom: 5vh;
+    }
+}
+
 .dark-overlay{
     display: none; /*hide by default */
     z-index: 999999; /*Show over everything */
@@ -660,6 +735,7 @@ form a {
     overflow: hidden;
     position: relative;
 }
+
 /*-------------------Product Category  CSS----------------*/ 
 #product-banner{
     position: relative;
@@ -732,7 +808,6 @@ form a {
     object-fit: contain; /*Scale image appriopriately to show entire product and no warping/stretching */
 }
 
-/*Child elements will not be horizontally centered*/
 .product-display .text{
     width: 100%; /*fill up entire horizontal width*/
 }
