@@ -13,7 +13,7 @@ As a user type, I want to perform an action, so that I can achieve a goal.
 This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory) Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 ## Features
-### Exisiting features
+### Existing features
  - Account creation (logging in, signing in, database)
  - Account settings (change details, view inventory)
  - Product view (view different products in each category and view products' details)
