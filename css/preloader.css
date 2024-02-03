@@ -6,7 +6,7 @@
     overflow: hidden;
     width: 100%; /* Start with full width */
     height: 100%;
-    transition: 2s ease-in-out;
+    transition: 3s ease-in-out;
   }
   
   /* Define the animation */
@@ -21,6 +21,6 @@
   
   /* Apply the animation to the overlay */
   .overlay {
-    animation: slideOutLeft 2s ease forwards; /* Animation plays for 2 seconds */
+    animation: slideOutLeft 3s ease forwards; /* Animation plays for 2 seconds */
   }
   

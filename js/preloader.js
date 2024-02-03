@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
         if (fromTop > introHeight) {
             header.style.backgroundColor = "#1E2532"; // White background after scrolling past intro
-            header.style.transition = "background-color 0.5s ease"; // Smooth transition
+            header.style.transition = "background-color 1s ease"; // Smooth transition
         } else {
             header.style.backgroundColor = "rgba(0,0,0,0)"; // Transparent background initially
         }
