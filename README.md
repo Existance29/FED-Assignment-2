@@ -29,6 +29,34 @@ This section is also where you would share links to any wireframes, mockups, dia
  - Checkout (prompt for credit card details, order confirmation)
  - 
 
+## Testing
+ ### Navigation
+ - From any page, clicking on the top navigation bar should redirect the user to the associated page. (From left to right: home, products, about, games, profile, cart)
+ - From the products page, clicking on a product category should redirect to the associated product category
+ - From the product category page, clicking on a product should redirect to the product-details page with the information of the product
+ - The back button on the products category and products details page should bring the user back to the previous page
+ - Clicking the play icon on any of the games in the games page should redirect to the associated game
+ - Clicking the exit button after playing a game should redirect back to the games page
+ - After clicking the check out button on the carts page, the user should be sent to the home page
+### Log-in/Regristration
+ - When clicking on any page that use an account, the website should redirect the user to the login page
+ - When logging in, only allow the user to log in if the username and password is correct and the account exists
+ - When registering, accept only valid entries (no blank inputs, no already registered emails)
+### Database
+ - After playing a game/checking out, the number of pulls the user earns should be reflected in the game and profile pages
+ - After drawing on the lucky draws, the credit and shipping coupouns earned should be saved and reflected in the profile page
+ - The number of draws a user has done should be saved. This can be tested by tracking the guarantee system (every 20 draws gurantees a rare or above, every 120 is a ultra rare)
+ - Draws spent should be saved and reflected in the game profile pages
+ - Any details changed in the profile page should be saved and reflected
+ - In the product category page, only the products for their respective category will be displayed. There be at least one product per category
+ - Clicking the "log out" button on the profile page logs the user out, they will be redirected to the login page when nessecary
+ - When registering, a new account should be saved. The account should be accessible on subsequent log in attempts
+
+### Draws
+ - When doing a lucky draw, the items obtained should be displayed
+### Game
+ - Every game should have an end overlay screen, with an exit button
+
 ## Technologies Used
  - [Animation on scroll](https://michalsnik.github.io/aos/)
  - [Jquery](https://jquery.com/)
