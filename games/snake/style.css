@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /*makes sure it covers the entire screen at least */
+  background: #e3f3fd;
+}
+
+.wrapper{
+  width: 65vmin;
+  height: 70vmin;
+  display: flex;
+  overflow: hidden; /*hide content outside */
+  flex-direction: column;
+  justify-content: center;
+  background: #293447;
+  border-radius: 5px;
+  box-shadow: 0 20px 40px rgb(52, 87, 220, 0.2);
+}
+
+.game-details{
+  color: #b8c6dc;
+  font-weight: 500;
+  font-size: 1.2rem;
+  padding: 20px 27px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.play-board{
+  height: 100;
+  width: 100%;
+  display: grid;
+  background: #212837;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr); /*setting up the grid for the snake and apple spawn */
+}
+
+.play-board .food{
+  background: #ff003d;
+}
+
+/*hide by default, will show later for mobile */
+.controls{
+  display: none;
+  justify-content: space-between;
+}
+
+.controls i{
+  padding: 25px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  color: #b8c6dc;
+  width: 25%; /*25% for 4 controls*/
+  cursor: pointer;
+  border-right: 1px solid #171b26;
+}
+
+/*Mobile view */
+@media screen and (max-width: 800px){
+  .wrapper{
+    width: 90vmin;
+    height: 115vmin;
+  }
+
+  .game-details{
+    font-size: 1rem;
+    padding: 15px 27px;
+  }
+
+  .controls{
+    display: flex;
+  }
+
+  .controls i{
+    padding: 15px 0;
+    font-size: 1rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.overlay{
+  z-index: 2; /*show ontop of everything */
+  background: rgb(0, 0, 0, 0.8); /*make it a slightly transparent black overlay*/
+  /*Set the overlay's size */
+  width: 100%;
+  height: 100vh;
+  /*set overlay areay*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column; /*Use flex column. Display: flex will be set in code */
+  
+}
+
+button{
+  all: unset; /*Remove the default css from buttons */
+  /*Make own css */
+  color: white;
+  font-weight: 500;
+  font-size: 1.3vw;
+  border: white 0.1vw solid;
+  border-radius: 15px;
+  text-align: center;
+}
+
+#game-over-overlay{
+  display: none;
+}
+
+.stat-area{
+  display: flex;
+  flex-direction: column; /*Use flex column.*/
+  /*Use absolute position to center the area*/
+  width: 20%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.game-over{
+  color: white;
+  font-weight: 500;
+  font-size: 1.7vw;
+  width: 100%;
+  text-align: center;
+  margin-top: 2vh;
+}
+
+.final-text{
+  color: white;
+  font-size: 1.3vw;
+  font-weight: 400;
+
+}
+
+.stat-text{
+  color: aqua;
+}
+.split-flex-row{
+  display: flex;
+  justify-content: space-between;
+}
+
+.exit-button{
+  margin-top: 7vh;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  width: 70%;
+}
+

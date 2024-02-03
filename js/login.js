@@ -12,11 +12,6 @@ const lusername = document.getElementById("lusername")
 const lemail = document.getElementById("lemail")
 const lpassword = document.getElementById("lpassword")
 
-//get user's country
-$.get("http://ip-api.com/json", function(response) {
-  country = response.country;
-}, "jsonp");
-
 function register() {
   RegForm.classList.add("active");
   LoginForm.classList.remove("active");
@@ -111,6 +106,11 @@ async function registerUser(){
       return
     }
   }
+  //get user's country
+  $.get("http://ip-api.com/json", function(response) {
+    country = response.country;
+  }, "jsonp");
+
   message(re, "Registration successful, redirecting", "success")
   //clear input fields
   rusername.value = ""
@@ -120,7 +120,8 @@ async function registerUser(){
   //create the data
   var cooldownData = {
     "2d-aim-trainer": 0,
-    "typing-speed-tester":0
+    "typing-speed-tester":0,
+    "snake": 0
   }
   var newData = {
     "email":email,

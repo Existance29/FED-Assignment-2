@@ -2,34 +2,33 @@
 $( '#productImg' ).mousemove(function(e) {
     // Show original picture    
     var $original = $( '#' + this.id + '_original');
+    //upscale the image by 1.5 for zoom
+    $original.css("width",`${$original.get(0).naturalWidth*1.5}px`)
+    $original.css("height",`${$original.get(0).naturalHeight*1.5}px`)
     var $container = $original.parent();
-    var zoom_container_size = $(this).width()/3
-    var zoom_area_size = zoom_container_size/2
-    var zoom_radius = zoom_area_size / 2;
-    $container.css("width",`${zoom_container_size}px`)
-    $container.css("height",`${zoom_container_size}px`)
+    var zoom_container_size = $(this).width()/8
+    $container.css("width",`${zoom_container_size*2}px`)
+    $container.css("height",`${zoom_container_size*2}px`)
     $container.removeClass( 'hidden' );
 
     // Thumbnail
     var offset = $( this ).offset();
-    var tX = e.pageX - offset.left;
+    var tX =  e.pageX - offset.left;
     var tY = e.pageY - offset.top;
     // Ratios
-    var ratioX = ( $original.width() - zoom_container_size) / ( $( this ).width() - zoom_area_size )
-    var ratioY = ( $original.height() - zoom_container_size) / ( $( this ).height() - zoom_area_size )
+    var ratioX = ( $original.width()) / ( $( this ).width())
+    var ratioY = ( $original.height()) / ( $( this ).height())
     // Margin to be set in the original    
-    var moX = -Math.floor( ( tX - zoom_radius ) * ratioX )
-    var moY = -Math.floor( ( tY - zoom_radius ) * ratioY )
+    var moX = -Math.floor( tX * ratioX - zoom_container_size)
+    var moY = -Math.floor( tY * ratioY - zoom_container_size)
     // Apply zoom efect
     $original.css( 'marginLeft', moX );
     $original.css( 'marginTop', moY );
     //Calculate the position of the zoom
-    console.log( $('#header').height())
-    var y = $(this).position().top + (e.pageY - $(this).offset().top) - $container.height()/2
-    var x = $(this).position().left + (e.pageX - $(this).offset().left) - $container.width()/2
-    console.log(e.pageX)
-    $container.css('top',y)
-    $container.css('left',x)
+    var y = $(this).position().top + (e.pageY - offset.top) - zoom_container_size
+    var x = $(this).position().left + (e.pageX - offset.left) - zoom_container_size
+    $container.css("top", y)
+    $container.css("left", x)
 });
 
 $( '#productImg' ).mouseout(function(e) {
