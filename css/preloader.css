@@ -1,0 +1,26 @@
+.overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #1E2532;
+    overflow: hidden;
+    width: 100%; /* Start with full width */
+    height: 100%;
+    transition: 3s ease-in-out;
+  }
+  
+  /* Define the animation */
+  @keyframes slideOutLeft {
+    from {
+      width: 100%;
+    }
+    to {
+      width: 0;
+    }
+  }
+  
+  /* Apply the animation to the overlay */
+  .overlay {
+    animation: slideOutLeft 3s ease forwards; /* Animation plays for 2 seconds */
+  }
+  
