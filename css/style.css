@@ -8,7 +8,9 @@
 body { /*Setting the entire body to be the Poppins font from google fonts*/
     font-family: 'Poppins', sans-serif;
     color: white;
+    scroll-behavior: smooth;
 }
+
 /*Remove default css properties from button */
 button{
     all: unset;
@@ -72,18 +74,43 @@ footer a{
 /*-----------------------End of footer styling------------------------*/
 
 
+
+
+/*-----------------------Start of preloader animation styling------------------------*/
+.preloader_div_d {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 100dvw;
+    height: 100dvh;
+    background-color: #1E2532;
+    z-index: 9999;
+}
+
+.preloader_animation_hide {
+    animation: fadeOut 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
 /*-----------------------Start of hero /intro section styling------------------------*/
 .intro-video {
     display: flex;
-    position: relative; 
+    position: relative;
 }
 
 .intro-video video { /*Setting the video to be 100% of the width of the screen*/
     width: 100%;
     height: 100%; 
-    object-fit: cover; 
+    object-fit: cover;
 }
-
 
 .intro-video #small { /*Hiding the small video when screen is greater than 600px*/
     display: none;
