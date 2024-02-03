@@ -39,7 +39,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ## Credits: 
 ### Tutorials/External code
-##### The code has been modified to fit personal programming and design preferences
+#### The code has been modified to fit personal programming and design preferences
  - [Snake game](https://www.youtube.com/watch?v=wM7eMJ26kc8)
  - [Typing test game](https://www.youtube.com/watch?v=Hg80AjDNnJk)
  - Product zoom:
