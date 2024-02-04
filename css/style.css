@@ -471,6 +471,10 @@ form a {
     margin-top: 70px;
 }
 
+.details input {
+    width: 70px;
+}
+
 @media screen and (max-width: 600px) {
     .details {
         margin-top: 35px;
@@ -478,12 +482,15 @@ form a {
     .details h3 {
         margin-top: 10px !important;
     }
-
 }
 
 
 
 /*---------Game page----------*/
+.game-page {
+    margin-top: 50px;
+}
+
 .aim-banner {
     width: 100%;
     background-repeat:  no-repeat;

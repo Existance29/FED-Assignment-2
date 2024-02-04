@@ -1,7 +1,8 @@
 /* Adjusts the top padding of the cart page for better alignment */
 .cart-page {
-  padding-top: 2rem; 
+  margin-top: 50px; 
   background-color: #2A374F;
+  height: 100dvh;
 }
 
 /* Ensures that the images in the cart are thumbnail-sized and rounded*/
@@ -44,14 +45,16 @@ a {
 /* Media query for small screens to adjust padding and hide certain text */
 @media only screen and (max-width: 600px) {
   .cart-page {
-    padding-top: 1rem; /* Smaller top padding on small screens */
-    padding-left: 0.5rem; /* Reduced left padding on small screens */
-    padding-right: 0.5rem; /* Reduced right padding on small screens */
+    margin-top: 30px;
   }
 
   /* Hides verbose text on small screens for a cleaner look */
   .hide-on-mobile {
     display: none;
+  }
+
+  .table-responsive tbody tr {
+    height: 150px;
   }
 }
 
