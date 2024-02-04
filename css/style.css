@@ -339,12 +339,20 @@ footer a{
     background-size: cover;
     background-position: center;
     font-size: 14px;
+    height: 100dvh;
+}
+
+@media only screen and (max-width: 600px) { /*Hiding the big video when screen is less than 600px and showing the small video instead*/
+    .account-page .container{
+        padding-top: 100px;
+    }
 }
   
 .form-container {
     background: white;
     width: 300px;
     height: 400px;
+    border-radius: 30px;
     position: relative;
     text-align: center;
     padding: 20px 0;
@@ -379,6 +387,7 @@ form input {
     height: 30px;
     margin: 10px 0;
     padding: 0 10px;
+    border-radius: 30px;
     border: 1px solid #3c4a64;
 }
   
