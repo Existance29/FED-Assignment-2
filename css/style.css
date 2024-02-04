@@ -41,6 +41,15 @@ table {
     }
 }
 
+.grid-container h1, .grid-container p{
+    text-shadow: 4px 4px 4px #000000;
+}
+
+.grid-container .btn {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+}
+
+
 /*-----------------------Start of header styling------------------------*/
 
 header {
@@ -55,13 +64,18 @@ header {
 }
 
 @media only screen and (max-width: 600px) {
-    header{
-        min-height: 60px;
+    header .navbar-brand{
+        width: 50px;
+    }
+    header {
+        min-height: 0;
     }
 }
 
 .navbar-brand {
     font-weight: bold; 
+    margin-right: 0 !important;
+    width: 80px;
 }
 .navbar-nav .nav-link {
     color: #FFF; /* For white text */
@@ -241,15 +255,11 @@ footer a{
     }
 
     .games-banner .content {
-        padding-top: 10vh;
+        padding: 10vh;
         max-width: 100%;
     }
 }
-    
-
- /*-------------------Start of slideshow styling----------------*/  
-
-/*-------------------End of slideshow styling----------------*/    
+     
 
 /*-------------------Start of product feature styling----------------*/  
 .product-feature {
@@ -270,16 +280,55 @@ footer a{
 .product-feature p{
     color: #777;
 }
+
+@media only screen and (max-width: 600px) { /*Hiding the big video when screen is less than 600px and showing the small video instead*/
+    .product-feature .product-text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
+
 /*-------------------End of product feature styling----------------*/  
 
 
-.grid-container h1, .grid-container p{
-    text-shadow: 4px 4px 4px #000000;
+/*---------About page----------*/
+.about-banner .grid-container {
+    background: url("../Images/about-banner-1.png") no-repeat center center;
+    background-size: cover;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Aligns content to the left */
+    text-align: center; /* Aligns text to the left */
+    padding: 10%; 
+    color: white;
+}
+.about .story {
+    text-align: center;
+    justify-content: center;
+}
+.about .content{
+    max-width: 100%;
+    padding: 10%;
+}
+.about .story h1{
+    text-shadow: none;
+    color: #1E2532;
 }
 
-.grid-container .btn {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+.about .story p {
+    text-shadow: none;
+    color: #3c4a64;
 }
+
+
+@media only screen and (max-width: 600px) { /*Hiding the big video when screen is less than 600px and showing the small video instead*/
+    .about-banner .grid-container{
+        height: 400px;
+    }
+}
+/*-------------------End of about page styling----------------*/ 
+
 
 
 
@@ -422,35 +471,6 @@ form a {
     margin-top: 70px;
 }
 
-/*---------About page----------*/
-.about-banner .grid-container {
-    background: url("../Images/about-banner-1.png") no-repeat center center;
-    background-size: cover;
-    height: 700px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Aligns content to the left */
-    text-align: center; /* Aligns text to the left */
-    padding: 10%; 
-    color: white;
-}
-.about .story {
-    text-align: center;
-    justify-content: center;
-}
-.about .content{
-    max-width: 100%;
-    padding: 10%;
-}
-.about .story h1{
-    text-shadow: none;
-    color: #1E2532;
-}
-
-.about .story p {
-    text-shadow: none;
-    color: #3c4a64;
-}
 
 
 /*---------Game page----------*/
