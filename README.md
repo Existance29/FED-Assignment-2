@@ -82,7 +82,7 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 - [Home-slideshow-3](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.razer.com%2Feu-en%2Fpc%2Fgaming-laptops&psig=AOvVaw3sFLn6svb4QLEertcaqWbC&ust=1705986678588000&source=images&cd=vfe&opi=89978449&ved=0CBMQjhxqFwoTCOjg0OSd8IMDFQAAAAAdAAAAABAX)
 
-- Products:
+- Products:  
 https://www.amazon.sg/Logitech-G502-Performance-Gaming-Mouse/dp/B07GBZ4Q68  
 https://arcus-www.amazon.sg/Logitech-LIGHTSPEED-Wireless-Gaming-Mouse/dp/B07W6HDB55  
 https://www.amazon.sg/SteelSeries-62513-Rival-Gaming-Mouse/dp/B08176SM7C  
