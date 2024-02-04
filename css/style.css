@@ -471,6 +471,16 @@ form a {
     margin-top: 70px;
 }
 
+@media screen and (max-width: 600px) {
+    .details {
+        margin-top: 35px;
+    }
+    .details h3 {
+        margin-top: 10px !important;
+    }
+
+}
+
 
 
 /*---------Game page----------*/

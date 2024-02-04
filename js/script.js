@@ -165,7 +165,7 @@ async function productCategoryLoad(){
   var cutoff = "Mouse"
   //change the banner image, title, subtitle based on what category is selected
   if (category == "pc"){
-    bannerURL += "PC-banner-1.webp"
+    bannerURL += "PC-banner-1.png"
     cutoff = /,|-/ //use a regex statement to split by either commas or dashes
   }else if (category == "mice"){
     bannerURL += "Mouse-banner-1.png"
