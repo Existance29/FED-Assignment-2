@@ -502,7 +502,6 @@ form a {
         box-sizing: border-box; /* Adjusts the CSS box model to include padding and border in the element's total width and height, preventing content overflow. */
     }
 }
-
 /*-------End of login page styling------*/
 
 
@@ -519,7 +518,7 @@ form a {
     padding: 10%; /* Adds padding around the content to prevent it from touching the edges of the container. */
     color: white; /* Sets the text color to white for better visibility against the banner background. */
 }
-/*-------ENd of gacha page styling------*/
+/*-------End of gacha page styling------*/
 
 
 /*-------------Start of Product details-------------*/
@@ -869,7 +868,7 @@ form a {
 /*-----------------End of game page styling-------------*/
 
 
-/*-------------------Product Category  CSS----------------*/ 
+/*-------------------Start of Product Category CSS----------------*/ 
 #product-banner {
     position: relative;
     background-image: url(./Images/PC-banner-1.webp); /* Sets a background image for the banner */
@@ -1035,3 +1034,4 @@ div.zoom_container {
 .cursor-pointer {
     cursor: pointer; /* Changes the cursor to indicate the element is clickable */
 }
+/*-------------------End of Product Category CSS----------------*/ 
