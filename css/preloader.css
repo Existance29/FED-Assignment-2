@@ -1,26 +1,26 @@
+/* Sets the overlay to cover its container fully with a specific background color */
 .overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #1E2532;
-    overflow: hidden;
-    width: 100%; /* Start with full width */
-    height: 100%;
-    transition: 3s ease-in-out;
+  position: absolute; /* Positions the overlay out of the normal document flow */
+  top: 0; /* Aligns the top edge of the overlay with its container */
+  right: 0; /* Aligns the right edge of the overlay with its container */
+  background-color: #1E2532; /* Dark background color for the overlay */
+  overflow: hidden; /* Ensures no content spills outside the overlay */
+  width: 100%; /* Initially, the overlay covers the full width of its parent */
+  height: 100%; /* Ensures the overlay covers the full height of its parent */
+  transition: 3s ease-in-out; /* Smooth transition effect for any changes */
+}
+
+/* Keyframes for the slide out left animation */
+@keyframes slideOutLeft {
+  from {
+    width: 100%; /* Starting with the overlay fully visible */
   }
-  
-  /* Define the animation */
-  @keyframes slideOutLeft {
-    from {
-      width: 100%;
-    }
-    to {
-      width: 0;
-    }
+  to {
+    width: 0; /* Ending with the overlay fully hidden to the left */
   }
-  
-  /* Apply the animation to the overlay */
-  .overlay {
-    animation: slideOutLeft 3s ease forwards; /* Animation plays for 2 seconds */
-  }
-  
+}
+
+/* Applying the animation to the overlay */
+.overlay {
+  animation: slideOutLeft 3s ease forwards; /* Specifies the name, duration, timing function, and fill mode of the animation */
+}

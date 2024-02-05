@@ -1,58 +1,65 @@
-a{
+/* Removes underline from all anchor tags to make the design cleaner */
+a {
     text-decoration: none;
 }
 
-/* carousel */
-.carousel{
-    height: 100dvh;
+/* Styles for the carousel container, setting its height, top margin, full width, and making it a relative container for positioned items */
+.carousel {
+    height: 100dvh; /* Likely intended to be 100vh for full viewport height */
     margin-top: 70px;
     width: 100%;
-    overflow: hidden;
-    position: relative;
+    overflow: hidden; /* Hides any child content that overflows the carousel's box */
+    position: relative; /* Establishes a positioning context for absolutely positioned children */
 }
 
+/* Adjusts the carousel's top margin on smaller screens for a more responsive design */
 @media screen and (max-width: 600px) {
-    .carousel{
+    .carousel {
         margin-top: 0;
     }
 }
 
-.carousel .list .item{
+/* Styles for each carousel item, making them cover the full area of the carousel */
+.carousel .list .item {
     width: 100%;
     height: 100%;
-    position: absolute;
-    inset: 0 0 0 0;
+    position: absolute; /* Positions each item over the other */
+    inset: 0; /* Shorthand to set all inset properties (top, right, bottom, left) to 0 */
 }
-.carousel .list .item img{
+.carousel .list .item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Ensures the image covers the item area without distortion */
     display: block;
 }
 
-.carousel .list .item .content{
+
+/* Positions the content within each carousel item and adjusts for smaller screens */
+.carousel .list .item .content {
     position: absolute;
     top: 20%;
     width: 100%;
     max-width: 80%;
     left: 50%;
-    transform: translateX(-50%);
-    padding-right: 30%;
-    box-sizing: border-box;
-    color: #fff;
-    text-shadow: 0 5px 10px #0004;
+    transform: translateX(-50%); /* Centers the content horizontally */
+    padding-right: 30%; /* Provides spacing to the right */
+    box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+    color: #fff; /* Text color */
+    text-shadow: 0 5px 10px #0004; /* Text shadow for better readability */
 }
 
 @media screen and (max-width: 600px) {
     .carousel .list .item .content{
-        padding: 0%;
-        text-align: center;
+        padding: 0%;    /* Removes padding on smaller screens */
+        text-align: center;     /* Centers text */
     }   
+    /* Adjusts object position for images with class 'desktop' on smaller screens to focus on the right side */
     .carousel .list .item .desktop {
-        object-position: 60% 50% ; /* Adjust this as needed */
+        object-position: 60% 50% ; 
     }
 }
 
+/* Styles for the title and topic within carousel items, including font size and weight */
 .carousel .list .item .title,
 .carousel .list .item .topic{
     font-size: 5em;
@@ -63,27 +70,27 @@ a{
     color: #3c4a64;
 }
 
-/* thumbail */
-.thumbnail{
+/* Styling for thumbnail navigation */
+.thumbnail {
     position: absolute;
     bottom: 50px;
     left: 50%;
-    width: max-content;
+    width: max-content; /* Width based on content size */
     z-index: 100;
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Space between thumbnail items */
 }
 .thumbnail .item{
     width: 150px;
     height: 220px;
-    flex-shrink: 0;
+    flex-shrink: 0;     /* Prevents the item from shrinking */
     position: relative;
 }
 .thumbnail .item img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    border-radius: 20px;
+    object-fit: cover; /* Ensures images cover the thumbnail area */
+    border-radius: 20px; /* Rounded corners */
 }
 .thumbnail .item .content{
     color: #fff;
@@ -93,12 +100,14 @@ a{
     right: 10px;
 }
 .thumbnail .item .content .title{
-    font-weight: 500;
+    font-weight: 500;       /* Medium font weight for title */
 }
 .thumbnail .item .content .description{
-    font-weight: 300;
+    font-weight: 300;       /* Light font weight for description */
 }
-/* arrows */
+
+
+/* Styles for navigation arrows */
 .arrows{
     position: absolute;
     top: 80%;
@@ -107,7 +116,7 @@ a{
     width: 300px;
     max-width: 30%;
     display: flex;
-    gap: 10px;
+    gap: 10px;  /* Space between buttons */
     align-items: center;
 }
 .arrows button{
@@ -116,44 +125,46 @@ a{
     align-items: center;
     width: 40px;
     height: 40px;
-    border-radius: 50%;
-    background-color: #eee4;
+    border-radius: 50%; /* Circular buttons */
+    background-color: #eee4; /* Semi-transparent background */
     border: none;
-    color: #fff;
+    color: #fff; /* White text/icon */
     font-family: monospace;
     font-weight: bold;
-    transition: .5s;
+    transition: .5s; /* Smooth transition for hover effects */
 }
 .arrows button:hover{
-    background-color: #fff;
-    color: #000;
+    background-color: #fff; /* Background turns white on hover */
+    color: #000; /* Text/icon turns black on hover */
 }
 
-/* animation */
-.carousel .list .item:nth-child(1){
-    z-index: 1;
+/* Animation styles for content within carousel items */
+.carousel .list .item:nth-child(1) {
+    z-index: 1; /* Ensures the first item is on top */
 }
 
-/* animation text in first item */
 
+
+/* Animation for content appearance */
 .carousel .list .item:nth-child(1) .content .author,
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
 .carousel .list .item:nth-child(1) .content .des,
 .carousel .list .item:nth-child(1) .content .btn
 {
-    transform: translateY(50px);
-    filter: blur(20px);
-    opacity: 0;
-    animation: showContent .5s 1s linear 1 forwards;
+    transform: translateY(50px); /* Starts 50px below its final position */
+    filter: blur(20px); /* Starts blurred */
+    opacity: 0; /* Starts invisible */
+    animation: showContent .5s 1s linear 1 forwards; /* Animation to final state */
 }
 @keyframes showContent{
     to{
-        transform: translateY(0px);
-        filter: blur(0px);
-        opacity: 1;
+        transform: translateY(0px); /* Ends at its final position */
+        filter: blur(0px); /* Ends clear */
+        opacity: 1; /* Ends fully visible */
     }
 }
+/* Additional animation specifics for title, topic, description, and button */
 .carousel .list .item:nth-child(1) .content .title{
     animation-delay: 1.2s!important;
 }
@@ -166,7 +177,7 @@ a{
 .carousel .list .item:nth-child(1) .content .btn{
     animation-delay: 1.8s!important;
 }
-/* create animation when next click */
+/* Animation for the transition of images during carousel navigation */
 .carousel.next .list .item:nth-child(1) img{
     width: 150px;
     height: 220px;
@@ -182,35 +193,39 @@ a{
         left: 0;
         width: 100%;
         height: 100%;
-        border-radius: 0;
+        border-radius: 0;   /* Image expands to fill the item */
     }
 }
 
+/* Animation for the appearance of the last thumbnail item */
 .carousel.next .thumbnail .item:nth-last-child(1){
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
+/* Sets the z-index for images in the previous state of the carousel */
 .carousel.prev .list .item img{
     z-index: 100;
 }
-@keyframes showThumbnail{
-    from{
+/* Keyframe for showing thumbnail */
+@keyframes showThumbnail {
+    from {
         width: 0;
-        opacity: 0;
+        opacity: 0; /* Thumbnail starts invisible and expands into view */
     }
 }
+
+/* Animation effect for the next action on thumbnails */
 .carousel.next .thumbnail{
     animation: effectNext .5s linear 1 forwards;
 }
 
-@keyframes effectNext{
-    from{
-        transform: translateX(150px);
+@keyframes effectNext {
+    from {
+        transform: translateX(150px); /* Thumbnails slide in from the right */
     }
 }
 
-/* running time */
-
+/* Running time indicator styles */
 .carousel .time{
     position: absolute;
     z-index: 99;
@@ -221,20 +236,20 @@ a{
     top: 0;
 }
 
+/* Animation for the running time bar */
 .carousel.next .time,
 .carousel.prev .time{
     animation: runningTime 3s linear 1 forwards;
 }
 @keyframes runningTime{
     from{ width: 100%}
-    to{width: 0}
+    to{width: 0}    /* Time bar shrinks from full width to none */
 }
 
 
-/* prev click */
-
-.carousel.prev .list .item:nth-child(2){
-    z-index: 2;
+/* Styles for the previous click action */
+.carousel.prev .list .item:nth-child(2) {
+    z-index: 2; /* Ensures the second item is above the first */
 }
 
 .carousel.prev .list .item:nth-child(2) img{
@@ -249,7 +264,7 @@ a{
         height: 220px;
         bottom: 50px;
         left: 50%;
-        border-radius: 20px;
+        border-radius: 20px; /* Image contracts to a thumbnail */
     }
 }
 
@@ -258,10 +273,14 @@ a{
     opacity: 0;
     animation: showThumbnail .5s linear 1 forwards;
 }
+
+/* Disables pointer events on buttons during transition */
 .carousel.next .arrows button,
 .carousel.prev .arrows button{
     pointer-events: none;
 }
+
+/* Animation for content fading out during the previous action */
 .carousel.prev .list .item:nth-child(2) .content .author,
 .carousel.prev .list .item:nth-child(2) .content .title,
 .carousel.prev .list .item:nth-child(2) .content .topic,
@@ -273,11 +292,14 @@ a{
 
 @keyframes contentOut{
     to{
-        transform: translateY(-150px);
+        transform: translateY(-150px); /* Content moves up and fades out */
         filter: blur(20px);
         opacity: 0;
     }
 }
+
+
+/* Adjusts padding and font size for carousel content on smaller screens */
 @media screen and (max-width: 678px) {
     .carousel .list .item .content{
         padding-right: 0;
