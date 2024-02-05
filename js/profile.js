@@ -50,8 +50,8 @@ function resetImage(){
 }
 
 function logout(){
-    sessionStorage.removeItem("userdata")
-    sessionStorage.removeItem("userid") 
+    localStorage.removeItem("userdata")
+    localStorage.removeItem("userid") 
     location.href = "./index.html"
 }
 function save(){
