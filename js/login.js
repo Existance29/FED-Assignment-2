@@ -107,7 +107,7 @@ async function registerUser(){
     }
   }
   //get user's country
-  var country = await getAPI("http://ip-api.com/json").country
+  var countryAPI = await getAPI("http://ip-api.com/json")
   message(re, "Registration successful, redirecting", "success")
   //clear input fields 
   rusername.value = ""
@@ -128,7 +128,7 @@ async function registerUser(){
     "pulls": 0,
     "points": 0,
     "pity": 0,
-    "country": country,
+    "country": countryAPI.country,
     "birthday": birthday,
     "store-credits":0,
     "shipping-vouchers":0
