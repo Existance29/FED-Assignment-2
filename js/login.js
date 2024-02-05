@@ -107,12 +107,9 @@ async function registerUser(){
     }
   }
   //get user's country
-  $.get("http://ip-api.com/json", function(response) {
-    country = response.country;
-  }, "jsonp");
-
+  var country = await getAPI("http://ip-api.com/json").country
   message(re, "Registration successful, redirecting", "success")
-  //clear input fields
+  //clear input fields 
   rusername.value = ""
   remail.value = ""
   rpassword.value = ""
