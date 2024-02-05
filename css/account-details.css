@@ -10,6 +10,10 @@ body {
     color: white;
 }
 
+.account {
+    height: 100dvh;
+}
+
 h4 {
     color: white;
 }

@@ -295,7 +295,7 @@ footer a{
 .about-banner .grid-container {
     background: url("../Images/about-banner-1.png") no-repeat center center;
     background-size: cover;
-    height: 700px;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center; /* Aligns content to the left */
@@ -494,8 +494,7 @@ form a {
 }
 
 
-
-/*---------Game page----------*/
+/*-------------------Game Page CSS----------------*/ 
 .game-page {
     margin-top: 50px;
 }
@@ -559,13 +558,6 @@ form a {
 }
 
 
-
-
-
-
-
-/*-------------------Game Page CSS----------------*/ 
-
 #game-banner{
     position: relative;
     background-image: url(./Images/Games-banner-1.webp);
@@ -573,7 +565,7 @@ form a {
     background-size: cover;
     background-position: center center;
     width: 100%;
-    height: 70vh; /*Occupy 70% in height*/
+    height: 100dvh; /*Occupy 70% in height*/
     display: flex;
     flex-direction: column;
     justify-content: center;
