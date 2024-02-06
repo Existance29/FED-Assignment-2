@@ -1,26 +1,27 @@
-/* Basic body styling for background and top margin */
+/* Sets a padding at the top of the body to avoid overlapping with fixed navigation and applies a background image with styling */
 body {
-    padding-top: 100px;
-    background: url("../Images/about-banner-1.png") no-repeat center center;
-    background-size: cover;
-    min-height: 700px;
-    align-items: center;
-    justify-content: center; /* Aligns content to the left */
-    text-align: center; /* Aligns text to the left */
-    color: white;
+    padding-top: 100px; /* Adds space at the top of the page */
+    background: url("../Images/about-banner-1.png") no-repeat center center; /* Background image */
+    background-size: cover; /* Ensures the background image covers the entire area */
+    min-height: 700px; /* Minimum height to ensure the background image covers larger screens */
+    align-items: center; /* Centers content vertically (for flex containers) */
+    justify-content: center; /* Centers content horizontally (for flex containers) */
+    text-align: center; /* Aligns text to the center */
+    color: white; /* Sets the text color to white for better readability against dark backgrounds */
 }
 
 .account {
-    height: 100dvh;
+    height: 100dvh; /* Sets the height of the account section to fill the entire viewport height */
 }
 
 h4 {
-    color: white;
+    color: white; /* Sets the color of all h4 elements to white */
 }
-/* Style for profile picture with fixed width and auto height */
+
+/* Applies specific width and auto height for profile pictures to maintain aspect ratio */
 .ui-w-80 {
-    width: 80px;
-    height: auto;
+    width: 80px; /* Fixed width */
+    height: auto; /* Height adjusts automatically to maintain aspect ratio */
 }
 
 /* Style for buttons, ensuring the cursor indicates a clickable element */
@@ -43,12 +44,12 @@ h4 {
     border-color: rgba(24, 28, 33, 0.03);
 }
 
-/* Style for active state of list-group items */
+/* Styles for the active state of list-group items to differentiate them from others */
 .account-settings-links .list-group-item.active {
-    font-weight: bold;
-    background: transparent;
-    color: #4E5155;
-    border-color: #3c4a64 !important;
+    font-weight: bold; /* Makes text bold */
+    background: transparent; /* Removes default background */
+    color: #4E5155; /* Dark grey color for text */
+    border-color: #3c4a64 !important; /* Dark border color */
 }
 
 
@@ -59,12 +60,13 @@ h4 {
     }
 }
 
-/* Styles for select2 component if used */
+/* Ensures the select2 dropdown matches the width of its container */
 .account-settings-multiselect ~ .select2-container {
     width: 100%;
 }
 
-/* Enhanced label styling for better readability */
+
+/* Applies bold font weight to labels for clarity */
 .form-group label {
     font-weight: bold;
 }
@@ -74,29 +76,36 @@ h4 {
     border-radius: 0.25rem;
 }
 
-/* Button styles */
+
+/* Primary button styling with custom colors */
 .btn-primary {
-    background-color: #3c4a64  !important;
-    border-color: #3c4a64 !important;
-    color: white !important;
+    background-color: #3c4a64  !important; /* !important to override default bootstrap style*/
+    border-color: #3c4a64 !important; /* !important to override default bootstrap style*/
+    color: white !important; /* !important to override default bootstrap style*/
 }
 
+
+/* Default button styling with a white background and dark text */
 .btn-default {
-    background-color: white !important;
-    color: #333 !important;
-    border: 1px solid #ccc !important;
+    background-color: white !important;     /* !important to override default bootstrap style*/
+    color: #333 !important;                 /* !important to override default bootstrap style*/
+    border: 1px solid #ccc !important;      /* !important to override default bootstrap style*/
 }
 
+
+/* Hover effects for primary and default buttons to invert their colors */
 .btn-primary:hover {
-    background-color: white !important;
-    color: #3c4a64 !important;
+    background-color: white !important;     /* !important to override default bootstrap style*/
+    color: #3c4a64 !important;              /* !important to override default bootstrap style*/
 }
 
 .btn-default:hover {
-    background-color: #1A1E26 !important;
-    color: white !important;
+    background-color: #1A1E26 !important;   /* !important to override default bootstrap style*/
+    color: white !important;                /* !important to override default bootstrap style*/
 }
 
+
+/* Styles for specific icons with background images */
 .draw-icon {
     background: url('../Images/gacha.png') no-repeat center center;
     background-size: contain;
@@ -104,10 +113,12 @@ h4 {
     height: 50px; /* Icon size */
 }
 
+
+/* Styling for a link that suggests earning more with specific color and no underline */
 .earn-more {
-    color: #3c4a64; /* Orange color for the link */
+    color: #3c4a64; /* Specific color for the text */
     font-weight: bold;
-    text-decoration: none; /* Removes underline from link */
+    text-decoration: none; /* Removes underline from the link */
 }
 
 .credit-icon {

@@ -1,16 +1,21 @@
 ## https://github.com/Existance29/FED-Assignment-2
 # JSB Tech
-This website focuses on e-commerce with gamification features. This website sells gaming-related gear, such as gaming mice, keyboards, audio devices and PCs. The gamification revolves around a lucky draw, where users can earn different items, such as credits and products. To earn the currency spent on the lucky draw, users can play the in-site games. The better they do on the games, the more draws they earn. When purchasing items, users can also earn additional draws based on how much they spend ($50 = 1 draw)
+JSB Tech is an innovative ecommerce platform dedicated to providing gamers and tech enthusiasts with the latest in gaming gear and accessories. From high-performance keyboards and mice to immersive gaming headsets and cutting-edge gaming PCs, JSB Tech aims to be the one-stop-shop for all gaming needs. Our platform is designed to offer a seamless shopping experience, allowing users to easily find, compare, and purchase the best products to enhance their gaming experience. This website also focuses on e-commerce with gamification features. The gamification revolves around a lucky draw, where users can earn different items, such as credits and products. To earn the currency spent on the lucky draw, users can play the in-site games, mainly being the 2d aim trainer, typing speed test, as well as the 2d snake game. The better their in-game performance, the more draws they get to earn. When purchasing items, users can also earn additional draws based on how much they spend ($50 = 1 draw)
+
+Our mission is to empower gamers by offering a curated selection of the best gaming gear on the market, ensuring they have access to the tools they need to achieve peak performance. Whether you're a casual gamer looking to enhance your gaming setup or a professional esports athlete seeking competitive edge, JSB Tech has you covered.
 
 ##Important note
 The API used (restdb) has a API request limit of 500 per day, since we are using the free plan. Once the limit is reached, the API will fail
 ## Design Process
-The target audience are youths who are interested in gaming-related technology.
+The design process for JSB Tech focused on understanding the needs and desires of the gaming community. We aimed to create a user-friendly platform that makes it easy for gamers to find the gear that fits their gaming style and preferences.
 
-Instructions:
-the user audience intent and purpose.
-● Who the website is catering for? Value that it is providing to users
-● What is the website catering for?
+The target audience are (but not limited to) youths who are interested in gaming, and wants to enhance their gaming experience and setup, or are interested in technology and computer hardware.
+
+As a casual gamer, I want to explore the latest gaming accessories, so that I can enhance my gaming setup.
+As an esports professional, I want to find high-performance gaming gear, so that I can improve my competitive play.
+As a tech enthusiast, I want to compare different gaming PCs, so that I can make an informed decision before purchasing.
+As a gift shopper, I want to find popular gaming gear, so that I can buy the perfect gift for my gamer friends.
+
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:

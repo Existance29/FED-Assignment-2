@@ -2,7 +2,7 @@
 .cart-page {
   margin-top: 50px; 
   background-color: #2A374F;
-  height: 100dvh;
+  min-height: 100dvh;
 }
 
 /* Ensures that the images in the cart are thumbnail-sized and rounded*/
