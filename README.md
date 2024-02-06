@@ -7,12 +7,15 @@ Our mission is to empower gamers by offering a curated selection of the best gam
 ##Important note
 The API used (restdb) has a API request limit of 500 per day, since we are using the free plan. Once the limit is reached, the API will fail
 ## Design Process
-The target audience are youths who are interested in gaming-related technology.
+The design process for JSB Tech focused on understanding the needs and desires of the gaming community. We aimed to create a user-friendly platform that makes it easy for gamers to find the gear that fits their gaming style and preferences.
 
-Instructions:
-the user audience intent and purpose.
-● Who the website is catering for? Value that it is providing to users
-● What is the website catering for?
+The target audience are (but not limited to) youths who are interested in gaming, and wants to enhance their gaming experience and setup, or are interested in technology and computer hardware.
+
+As a casual gamer, I want to explore the latest gaming accessories, so that I can enhance my gaming setup.
+As an esports professional, I want to find high-performance gaming gear, so that I can improve my competitive play.
+As a tech enthusiast, I want to compare different gaming PCs, so that I can make an informed decision before purchasing.
+As a gift shopper, I want to find popular gaming gear, so that I can buy the perfect gift for my gamer friends.
+
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
