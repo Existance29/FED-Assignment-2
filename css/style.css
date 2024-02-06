@@ -263,6 +263,7 @@ footer a{
 @media only screen and (max-width: 600px) {
     .games-banner .grid-container {
         background: url("../Images/Games-banner-2.webp") no-repeat center center; /* Changes background image for smaller screens. */
+        background-size: cover; /* Ensures the background covers the entire container. */
         height: 100%; /* Makes height adjustable to content size. */
         text-align: center; /* Centers text for smaller screens. */
         padding-left: 0; /* Removes left padding for alignment. */
