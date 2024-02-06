@@ -92,8 +92,16 @@ async function getAccount(){
     }
   }
   //else, get the user data
-  var out = await getAPI(`https://jsbtech-84ac.restdb.io/rest/profiles?q={"_id":"${id}"}`)
-  return out[0]
+  var resp = await getAPI(`https://jsbtech-84ac.restdb.io/rest/profiles?q={"_id":"${id}"}`)
+  var out = resp[0]
+  //convert gacha-items to a array
+  var gachaArray = JSON.parse(out["gacha-items"])
+  out["gacha-items"] = gachaArray
+  console.log(out)
+  console.log(gachaArray)
+  console.log(out["gacha-items"])
+
+  return out
 }
 
 async function post(url, jsondata){
@@ -139,8 +147,13 @@ function update(url, id, jsondata){
 
 function updateAccount(jsondata){
   var id = localStorage.getItem("userid")
-  update("https://jsbtech-84ac.restdb.io/rest/profiles", id, jsondata)
-  localStorage.setItem("userdata", JSON.stringify(jsondata))
+  //stringify gacha-items
+  //create a deep clone of the parameter. We do not want changes made here to affect the variable passed in.
+  //Avoid pass by sharing
+  var dataCopy = structuredClone(jsondata)
+  dataCopy["gacha-items"] = JSON.stringify(dataCopy["gacha-items"])
+  update("https://jsbtech-84ac.restdb.io/rest/profiles", id, dataCopy)
+  localStorage.setItem("userdata", JSON.stringify(dataCopy))
 }
 
 /* Handle which product category to show based */

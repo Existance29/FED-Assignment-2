@@ -131,7 +131,8 @@ async function registerUser(){
     "country": countryAPI.country,
     "birthday": birthday,
     "store-credits":0,
-    "shipping-vouchers":0
+    "shipping-vouchers":0,
+    "gacha-items": "[]"
   }
   //store the data
   data = await post("https://jsbtech-84ac.restdb.io/rest/profiles", newData)

@@ -102,7 +102,6 @@ async function gamePageLoad(){
 }
 
 function pullResults(){
-    console.log("b")
     //remove the skipAnim listener, prevents it from triggering again
     screen.removeEventListener("click",skipAnim)
     for (var i = 0; i < pullNum; i++){
@@ -138,6 +137,9 @@ function pullResults(){
             data["store-credits"] += 1
         }else if (prize == "shipping-vouchers"){
             data["shipping-vouchers"] += 1
+        }else{
+            console.log(data["gacha-items"])
+            data["gacha-items"].push(prizeData)
         }
 
         //display the items with a border for rarity
@@ -182,7 +184,6 @@ function pullResults(){
 }
 function skipAnim(){
     //cancel the timeout and trigger the results
-    console.log("a")
     clearTimeout(animationTime) 
     pullResults()
     openAnim.style.display = "none"
