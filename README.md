@@ -81,11 +81,29 @@ This section is also where you would share links to any wireframes, mockups, dia
 
 ### Media
 - https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-hero/hero-gaming-keyboards-desktop.jpg?v=1
-
-
+- [Audio-banner-1](https://assets3.razerzone.com/KVAV6hqVqiVqRhMwj1CaI2ADHIg=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhb8%2Fhcb%2F9510181666846%2F230427-blackshark-v2-pro-black-2023-1500x1000-1.jpg)
+- [Games-banner-1](https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-cameras-lighting/pdp-litra-beam-lx-led-light/banners/litra-beam-lx-feature-5-alt-desktop.jpg?v=1)
+- [Games-banner-2](https://resource.logitechg.com/w_420,h_1024,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-cameras-lighting/pdp-litra-beam-lx-led-light/banners/litra-beam-lx-feature-5-alt2-mobile.jpg?v=1)
+- [Home-slideshow-1](https://images.secretlab.co/theme/common/gaming-chair-secretlab-home-streamer-setup-bg.jpg)
 - [Home-slideshow-2](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.behance.net%2Fgallery%2F60784401%2FLogitech-Shadows&psig=AOvVaw1HkVAl4zjuP0-7fg_QGMOy&ust=1705986624189000&source=images&cd=vfe&opi=89978449&ved=0CBMQjhxqFwoTCNjBvsmd8IMDFQAAAAAdAAAAABAD)
-
 - [Home-slideshow-3](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.razer.com%2Feu-en%2Fpc%2Fgaming-laptops&psig=AOvVaw3sFLn6svb4QLEertcaqWbC&ust=1705986678588000&source=images&cd=vfe&opi=89978449&ved=0CBMQjhxqFwoTCOjg0OSd8IMDFQAAAAAdAAAAABAX)
+- [Keyboard-banner-1](https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-hero/hero-gaming-keyboards-desktop.jpg?v=1)
+- [Keyboard-banner-2](https://resource.logitechg.com/w_420,h_1024,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-hero/hero-gaming-keyboards-mobile.jpg?v=1)
+- [Mouse-banner-1](https://assets3.razerzone.com/ZMxKPXVfVJg38jHQWK2IU4t61_o=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fh6d%2Fhee%2F9657631080478%2F230914-viper-v3-hyperspeed-black-1500x1000-1.jpg)
+- [PC-banner-1](https://images.prismic.io/aftershock-singapore/e27c88a4-86c9-41f8-8839-dbb1d2110732_Astrocore+SLP+KV.png?auto=compress,format)
+- [PC-banner-2](https://cdn.shopify.com/s/files/1/0637/0407/2436/files/ASTROCORE_1000x1000_BG.png?v=1700732267)
+- [Product-feature-1](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0637%2F0407%2F2436%2Ffiles%2FUltimateSeriesIntelExtremePlus.jpg%3Fv%3D1704687204&w=640&q=75)
+- [Product-Feature-2](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0637%2F0407%2F2436%2Ffiles%2FCOOLER_c4c3bfa9-a952-4e70-830b-09143e3f8755.jpg%3Fv%3D1706090262&w=640&q=75)
+- [Product-feature-3](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0637%2F0407%2F2436%2Ffiles%2FGPU_79bc7147-6f83-4fbe-bea3-c9848c20fe06.jpg%3Fv%3D1706090262&w=640&q=75)
+- [Product-feature-4](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0637%2F0407%2F2436%2Ffiles%2FBLACKTFORCEARES_0622e659-cf05-4f3c-b62d-e1f283f2e0a8.jpg%3Fv%3D1706090262&w=640&q=75)
+- [About-banner-1](//assets2.razerzone.com/images/pnx.assets/e518afc039675ca9681752617e6631df/new-year-2024-hero-mobile.webp)
+- [Gacha]()
+- [Gacha-banner](https://blinkmena.qa/cdn/shop/articles/40e100b7401087d4a18c524f1f94bbe1.jpg?v=1671116997&width=1024)
+- [mini-banner-audio](https://www.razer.com/eu-en/thx-spatial-audio)
+- [mini-banner-mice]()
+- [mini-banner-keyboard]()
+- [mini-banner-pc](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Faftershock-singapore%2F6c087942-5d29-4a96-bf5f-f3293ac0f71b_ASTROCORE%2B01.png%3Fauto%3Dcompress%2Cformat&w=1920&q=75)
+
 
 - Products:  
 https://www.amazon.sg/Logitech-G502-Performance-Gaming-Mouse/dp/B07GBZ4Q68  
