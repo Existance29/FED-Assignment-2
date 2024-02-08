@@ -97,7 +97,6 @@ This section is also where you would share links to any wireframes, mockups, dia
 - [Product-feature-3](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0637%2F0407%2F2436%2Ffiles%2FGPU_79bc7147-6f83-4fbe-bea3-c9848c20fe06.jpg%3Fv%3D1706090262&w=640&q=75)
 - [Product-feature-4](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fcdn.shopify.com%2Fs%2Ffiles%2F1%2F0637%2F0407%2F2436%2Ffiles%2FBLACKTFORCEARES_0622e659-cf05-4f3c-b62d-e1f283f2e0a8.jpg%3Fv%3D1706090262&w=640&q=75)
 - [About-banner-1](//assets2.razerzone.com/images/pnx.assets/e518afc039675ca9681752617e6631df/new-year-2024-hero-mobile.webp)
-- [Gacha]()
 - [Gacha-banner](https://blinkmena.qa/cdn/shop/articles/40e100b7401087d4a18c524f1f94bbe1.jpg?v=1671116997&width=1024)
 - [mini-banner-audio](https://www.razer.com/eu-en/thx-spatial-audio)
 - [mini-banner-mice]()
