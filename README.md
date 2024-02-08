@@ -2,7 +2,7 @@
 ## Wireframes (High fidelity mobile, desktop as well as low fidelity included inside.): https://www.figma.com/file/rLzP4gqtDxOqX0mLNKtzrX/FED-ASSG2?type=design&node-id=0%3A1&mode=design&t=DDYUWWpjVgscKrow-1
 ## Video pitch: https://drive.google.com/file/d/1fNgpubO42NIux_gzYRVHAOSIPD6jdwPm/view?usp=drive_link
 # JSB Tech
-JSB Tech is an innovative ecommerce platform dedicated to providing gamers and tech enthusiasts with the latest in gaming gear and accessories. From high-performance keyboards and mice to immersive gaming headsets and cutting-edge gaming PCs, JSB Tech aims to be the one-stop-shop for all gaming needs. Our platform is designed to offer a seamless shopping experience, allowing users to easily find, compare, and purchase the best products to enhance their gaming experience. This website also focuses on e-commerce with gamification features. The gamification revolves around a lucky draw, where users can earn different items, such as credits and products. To earn the currency spent on the lucky draw, users can play the in-site games, mainly being the 2d aim trainer, typing speed test, as well as the 2d snake game. The better their in-game performance, the more draws they get to earn. When purchasing items, users can also earn additional draws based on how much they spend ($50 = 1 draw)
+JSB Tech is an innovative ecommerce platform dedicated to providing gamers and tech enthusiasts with the latest in gaming gear and accessories. From high-performance keyboards and mice to immersive gaming headsets and cutting-edge gaming PCs, JSB Tech aims to be the one-stop-shop for all gaming needs. Our platform is designed to offer a seamless shopping experience, allowing users to easily find and purchase the best products to enhance their gaming experience. This website also focuses on e-commerce with gamification features. The gamification revolves around a lucky draw, where users can earn different items, such as credits and products.The prize pool ranges from in-store credits ($15), shipping vouchers, to gaming keyboards, gaming mice, gaming headsets and even gaming PCs worth $2000! To earn Draws for the lucky draw, users can play the in-site games, mainly being the 2d aim trainer, typing speed test, as well as the 2d snake game. The better their in-game performance, the more draws they get to earn. When purchasing items, users can also earn additional draws based on how much they spend ($50 = 1 draw)
 
 Our mission is to empower gamers by offering a curated selection of the best gaming gear on the market, ensuring they have access to the tools they need to achieve peak performance. Whether you're a casual gamer looking to enhance your gaming setup or a professional esports athlete seeking competitive edge, JSB Tech has you covered.
 
@@ -13,17 +13,15 @@ The design process for JSB Tech focused on understanding the needs and desires o
 
 The target audience are (but not limited to) youths who are interested in gaming, and wants to enhance their gaming experience and setup, or are interested in technology and computer hardware.
 
+Some user stories as well as customer requirements that we have put into thought when developing this website are as followed;
 As a casual gamer, I want to explore the latest gaming accessories, so that I can enhance my gaming setup.
 As an esports professional, I want to find high-performance gaming gear, so that I can improve my competitive play.
 As a tech enthusiast, I want to compare different gaming PCs, so that I can make an informed decision before purchasing.
 As a gift shopper, I want to find popular gaming gear, so that I can buy the perfect gift for my gamer friends.
 
-Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+Putting this into thought, we have come up with a very sleek, minimalistic design and overall theme for the website which very much embodies our brand as a gaming gear shop, using clean colours where the pages consists of mainly dark blue, white and black.
+Understanding the needs of gamers as well, everything needs to be swift and bold, which is also another element we took into consideration when designing the pages. The landing page is carefully crafted to catch the attention of users using a looping background video as the intro/hero section, as well as striking bold text in the Poppins font, taken from google fonts, which is a very modern, sleek looking font that fits the overall vibe of the brand. The product catalouge is also created in a purposefully sophisticated manner to provide a unique shopping experience beating that of other competition sites, and not to mention out in-site games which really hook these gamers to keep coming back to our site.
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-
-As a user type, I want to perform an action, so that I can achieve a goal.
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in an separate directory) Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 ## Features
 ### Existing features
@@ -82,6 +80,7 @@ This section is also where you would share links to any wireframes, mockups, dia
  - [Product zoom](https://stackoverflow.com/questions/40314220/hover-an-image-and-show-a-zoomed-version-of-an-area-around-the-cursor-in-a-canva)
 
 ### Media
+- Logitech commercial: https://www.youtube.com/watch?v=qbpkm_S1gQc&pp=ygUSbG9naXRlY2ggY29tZXJjaWFs
 - https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-hero/hero-gaming-keyboards-desktop.jpg?v=1
 - [Audio-banner-1](https://assets3.razerzone.com/KVAV6hqVqiVqRhMwj1CaI2ADHIg=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhb8%2Fhcb%2F9510181666846%2F230427-blackshark-v2-pro-black-2023-1500x1000-1.jpg)
 - [Games-banner-1](https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-cameras-lighting/pdp-litra-beam-lx-led-light/banners/litra-beam-lx-feature-5-alt-desktop.jpg?v=1)
@@ -101,8 +100,6 @@ This section is also where you would share links to any wireframes, mockups, dia
 - [About-banner-1](//assets2.razerzone.com/images/pnx.assets/e518afc039675ca9681752617e6631df/new-year-2024-hero-mobile.webp)
 - [Gacha-banner](https://blinkmena.qa/cdn/shop/articles/40e100b7401087d4a18c524f1f94bbe1.jpg?v=1671116997&width=1024)
 - [mini-banner-audio](https://www.razer.com/eu-en/thx-spatial-audio)
-- [mini-banner-mice]()
-- [mini-banner-keyboard]()
 - [mini-banner-pc](https://www.aftershockpc.com/_next/image?url=https%3A%2F%2Fimages.prismic.io%2Faftershock-singapore%2F6c087942-5d29-4a96-bf5f-f3293ac0f71b_ASTROCORE%2B01.png%3Fauto%3Dcompress%2Cformat&w=1920&q=75)
 
 
