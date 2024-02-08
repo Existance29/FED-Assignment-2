@@ -1,5 +1,6 @@
 ## https://github.com/Existance29/FED-Assignment-2
 ## Wireframes (High fidelity mobile, desktop as well as low fidelity included inside.): https://www.figma.com/file/rLzP4gqtDxOqX0mLNKtzrX/FED-ASSG2?type=design&node-id=0%3A1&mode=design&t=DDYUWWpjVgscKrow-1
+## Video pitch: https://drive.google.com/file/d/1fNgpubO42NIux_gzYRVHAOSIPD6jdwPm/view?usp=drive_link
 # JSB Tech
 JSB Tech is an innovative ecommerce platform dedicated to providing gamers and tech enthusiasts with the latest in gaming gear and accessories. From high-performance keyboards and mice to immersive gaming headsets and cutting-edge gaming PCs, JSB Tech aims to be the one-stop-shop for all gaming needs. Our platform is designed to offer a seamless shopping experience, allowing users to easily find, compare, and purchase the best products to enhance their gaming experience. This website also focuses on e-commerce with gamification features. The gamification revolves around a lucky draw, where users can earn different items, such as credits and products. To earn the currency spent on the lucky draw, users can play the in-site games, mainly being the 2d aim trainer, typing speed test, as well as the 2d snake game. The better their in-game performance, the more draws they get to earn. When purchasing items, users can also earn additional draws based on how much they spend ($50 = 1 draw)
 
