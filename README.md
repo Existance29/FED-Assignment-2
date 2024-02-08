@@ -81,7 +81,6 @@ Understanding the needs of gamers as well, everything needs to be swift and bold
 
 ### Media
 - Logitech commercial: https://www.youtube.com/watch?v=qbpkm_S1gQc&pp=ygUSbG9naXRlY2ggY29tZXJjaWFs
-- https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-hero/hero-gaming-keyboards-desktop.jpg?v=1
 - [Audio-banner-1](https://assets3.razerzone.com/KVAV6hqVqiVqRhMwj1CaI2ADHIg=/1500x1000/https%3A%2F%2Fhybrismediaprod.blob.core.windows.net%2Fsys-master-phoenix-images-container%2Fhb8%2Fhcb%2F9510181666846%2F230427-blackshark-v2-pro-black-2023-1500x1000-1.jpg)
 - [Games-banner-1](https://resource.logitechg.com/w_1800,h_1800,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-cameras-lighting/pdp-litra-beam-lx-led-light/banners/litra-beam-lx-feature-5-alt-desktop.jpg?v=1)
 - [Games-banner-2](https://resource.logitechg.com/w_420,h_1024,c_limit,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/plp-cameras-lighting/pdp-litra-beam-lx-led-light/banners/litra-beam-lx-feature-5-alt2-mobile.jpg?v=1)
